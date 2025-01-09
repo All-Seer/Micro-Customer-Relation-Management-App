@@ -1,13 +1,13 @@
 package com.example.phinmaedapp
 
-import android.app.Notification.Action
 import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Toast
 import android.widget.VideoView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
 import com.example.phinmaedapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +22,23 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toggle = ActionBarDrawerToggle(this, binding.iyot,R.string.open, R.string.close)
+        //Navigation Bar Settings
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout,R.string.open, R.string.close)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
 
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        binding.navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.home -> Toast.makeText(applicationContext, "Clicked Item Home", Toast.LENGTH_SHORT).show()
+                R.id.schools -> Toast.makeText(applicationContext, "Clicked Item Schools", Toast.LENGTH_SHORT).show()
+                R.id.about -> Toast.makeText(applicationContext, "Clicked Item About", Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
+
+        // Video Settings
         videoView = binding.phinmaedVideo
         val videoPath = "android.resource://" + packageName + "/" + R.raw.phinmaedvideo
         val uri = Uri.parse(videoPath)
@@ -32,6 +47,15 @@ class MainActivity : AppCompatActivity() {
             mediaPlayer.setVolume(0f, 0f)
         }
         videoView.start()
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)){
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
     }
     override fun onPause() {
         super.onPause()
