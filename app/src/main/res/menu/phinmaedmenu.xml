@@ -4,7 +4,7 @@
         <item
             android:id="@+id/home"
             android:title="Home"
-            android:icon="@color/white"/>
+            android:icon="@drawable/vector_home"/>
 
         <item
             android:id="@+id/schools"
