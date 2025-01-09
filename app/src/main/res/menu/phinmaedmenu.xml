@@ -6,6 +6,16 @@
             android:title="Home"
             android:icon="@color/white"/>
 
+        <item
+            android:id="@+id/schools"
+            android:title="Schools"
+            android:icon="@color/white"/>
+
+        <item
+            android:id="@+id/about"
+            android:title="About"
+            android:icon="@color/white"/>
+
 
 
     </group>

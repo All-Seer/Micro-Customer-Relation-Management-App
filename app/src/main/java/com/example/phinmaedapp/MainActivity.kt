@@ -1,10 +1,13 @@
 package com.example.phinmaedapp
 
+import android.app.Notification.Action
 import android.net.Uri
 import android.os.Bundle
 import android.widget.VideoView
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import com.example.phinmaedapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,11 +15,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var videoView: VideoView
     private var currentPosition: Int = 0
     private var isVideoPlaying: Boolean = false
+    private lateinit var toggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        toggle = ActionBarDrawerToggle(this, binding.iyot,R.string.open, R.string.close)
 
         videoView = binding.phinmaedVideo
         val videoPath = "android.resource://" + packageName + "/" + R.raw.phinmaedvideo
@@ -35,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             isVideoPlaying = false
         }
     }
-
     override fun onResume() {
         super.onResume()
         if (!isVideoPlaying) {
@@ -44,7 +49,6 @@ class MainActivity : AppCompatActivity() {
             isVideoPlaying = true
         }
     }
-
     override fun onStop() {
         super.onStop()
         if (isVideoPlaying) {
