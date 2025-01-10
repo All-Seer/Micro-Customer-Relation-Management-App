@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var videoView: VideoView
     private var currentPosition: Int = 0
     private var isVideoPlaying: Boolean = false
-    private lateinit var toggle: ActionBarDrawerToggle
+    lateinit var toggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
