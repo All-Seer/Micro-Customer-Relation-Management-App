@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/itemhome"
+            android:title="Home" />
+    </group>
+
+    <item android:title="Student Management">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/itemPersonalDetails"
+                    android:title="Personal Details"
+                    android:icon="@drawable/phinmaupang"/>
+
+                <item
+                    android:id="@+id/itemAddressDetails"
+                    android:title="Address Details"
+                    android:icon="@drawable/phinmacoc"/>
+
+                <item
+                    android:id="@+id/itemCourseDetails"
+                    android:title="Course Details"
+                    android:icon="@drawable/phinmaau"/>
+
+                <item
+                    android:id="@+id/itemPhotoSignature"
+                    android:title="Photo Signature"
+                    android:icon="@drawable/phinmaui"/>
+
+                <item
+                    android:id="@+id/itemEnlistedSubjects"
+                    android:title="Enlisted Subjects"
+                    android:icon="@drawable/phinmaeswu"/>
+            </group>
+        </menu>
+    </item>
+
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group2">
+        <item
+            android:id="@+id/itemCommunity"
+            android:title="Modality Help Page" />
+        <item
+            android:id="@+id/itemAbout"
+            android:title="Scholarship Page" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/group3">
+        <item
+            android:id="@+id/itemLogOut"
+            android:title="Log Out" />
+    </group>
 
 </menu>
