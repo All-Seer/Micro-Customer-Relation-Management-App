@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
         val phinmaedhomeFragment = PhinmaedHome()
+        val phinmaedaboutFragment = PhinmaedAbout()
+        val phinmaedcommunityFragment = PhinmaedCommunity()
 
         setCurrentFragment(phinmaedhomeFragment)
 
@@ -51,11 +53,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.itemUpang -> {
                     startActivity(Intent(this, LoginActivity::class.java))
                 }
-                R.id.itemAbout -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item About",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.itemAbout -> setCurrentFragment(phinmaedaboutFragment)
+
+                R.id.itemAbout -> setCurrentFragment(phinmaedcommunityFragment)
             }
             it.isChecked = false
             binding.drawerLayout.closeDrawer(GravityCompat.START)

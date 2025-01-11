@@ -11,6 +11,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.ActivityUpangMainBinding
 
 class UpangMainActivity : AppCompatActivity() {
@@ -25,6 +26,15 @@ class UpangMainActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.statusBarColor = Color.TRANSPARENT
 
+        val upanghomeFragment = UpangHomeFragment()
+        val upangpdFragment = UpangPersonalDetailsFragment()
+        val upangadFragment = UpangAddressDetailsFragment()
+        val upangcdFragment = UpangCourseDetailsFragment()
+        val upangpsFragment = UpangPhotoSignatureFragment()
+        val upangesFragment = UpangEnlistedSubjectsFragment()
+        val upangmodalityFragment = UpangModalityFragment()
+        val upangscholarshipFragment = UpangScholarshipFragment()
+
 
         toggle = ActionBarDrawerToggle(this, binding.upangdrawerLayout, R.string.open, R.string.close)
         binding.upangdrawerLayout.addDrawerListener(toggle)
@@ -34,54 +44,21 @@ class UpangMainActivity : AppCompatActivity() {
 
         binding.upangnavView.setNavigationItemSelectedListener{
             when (it.itemId) {
-                R.id.itemUpanghome -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item Home",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.itemUpanghome -> setCurrentFragment(upanghomeFragment)
 
-                R.id.itemPersonalDetails -> {
-                    Toast.makeText(
-                        applicationContext,
-                        "Clicked Item Personal Details",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                R.id.itemAddressDetails -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item Address Details",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.itemPersonalDetails -> setCurrentFragment(upangpdFragment)
 
-                R.id.itemCourseDetails -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item Course Details",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.itemAddressDetails -> setCurrentFragment(upangadFragment)
 
-                R.id.itemPhotoSignature -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item Photo Signature",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.itemCourseDetails -> setCurrentFragment(upangcdFragment)
 
-                R.id.itemEnlistedSubjects -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item Enlisted Subjects",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.itemPhotoSignature -> setCurrentFragment(upangpsFragment)
 
-                R.id.itemModality -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item Modality Help Page",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.itemEnlistedSubjects -> setCurrentFragment(upangesFragment)
 
-                R.id.itemScholar -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item Scholarship Page",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.itemModality -> setCurrentFragment(upangmodalityFragment)
+
+                R.id.itemScholar -> setCurrentFragment(upangscholarshipFragment)
 
                 R.id.itemLogOut -> startActivity(Intent(this, MainActivity::class.java))
             }
@@ -98,5 +75,10 @@ class UpangMainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+    private fun setCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.flFragment, fragment)
+            commit()
+        }
 
 }
