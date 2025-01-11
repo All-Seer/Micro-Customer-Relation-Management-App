@@ -4,4 +4,39 @@
     <string name="close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="tvQuote1">We started with just a single school serving 5,000 students in Cabanatuan City.
+        Today, we are a fast-growing network of ten educational institutions serving over 144,000 students in the Philippines and Indonesia.</string>
+
+    <string name="tvQuote1part2">In 2024, leading global investment firm KKR began investing in PHINMA Education from its Global Impact Fund II,
+        which targets companies whose core business contributes meaningfully towards one or more of the United Nations Sustainable Development Goals (SDGs).</string>
+
+    <string name="tvQuote1part3">PHINMA Education’s mission directly contributes toward SDG 4 (Quality Education). KKR, along with our existing shareholder Kaizenvest,
+        are just two of our many partners in making lives better through education. </string>
+
+    <string name="tvQuote2">Since 2004, PHINMA Education has provided quality education to underserved youth who are often the first in their
+        families to go to college.</string>
+    <string name="tvdesc1">144k+</string>
+    <string name="tvdesc1part2">STUDENTS IN THE PHILIPPINES AND INDONESIA</string>
+
+    <string name="tvdesc2">168</string>
+    <string name="tvdesc2part2">BOARD EXAM TOPNOTCHERS IN THE PHILIPPINES</string>
+
+    <string name="tvdesc3">110+</string>
+    <string name="tvdesc3part2">PROGRAMS OFFERED ACCROSS THE NETWORK</string>
+
+    <string name="tvdesc4">71%+</string>
+    <string name="tvdesc4part2">GRADUATES EMPLOYED WITHIN A YEAR AFTER GRADUATION</string>
+
+    <string name="tvdesc5">75%</string>
+    <string name="tvdesc5part2">PASSING RATE FOR FIRST-TIME BOARD EXAM TAKERS</string>
+
+    <string name="tvdesc6">33K+</string>
+    <string name="tvdesc6part2">LICENCES PROFESSIONALS IN THE PHILIPPINES</string>
+
+    <string name="tvPluzon">PHINMAED LUZON</string>
+    <string name="tvPVisayas">PHINMAED VISAYAS</string>
+    <string name="tvPMindanao">PHINMAED MINDANAO</string>
+    <string name="tvPForeign">PHINMAED FOREIGN</string>
+
 </resources>

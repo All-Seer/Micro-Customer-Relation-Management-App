@@ -33,7 +33,7 @@
                     <ImageView
                         android:id="@+id/imageView"
                         android:layout_width="match_parent"
-                        android:layout_height="320dp"
+                        android:layout_height="280dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitStart"
                         app:srcCompat="@drawable/phinmaheader"
@@ -52,6 +52,14 @@
                         android:layout_marginEnd="100dp"
                         app:srcCompat="@drawable/phinmalogo" />
                 </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvQuote2"
+                    android:textAlignment="center"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:layout_margin="8sp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -61,9 +69,306 @@
                     <VideoView
                         android:id="@+id/phinmaedVideo"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp" />
+                        android:layout_height="300dp"/>
                 </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="30sp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20sp"
+                            android:layout_marginBottom="20sp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="@string/tvdesc1"
+                                android:textColor="#036e03"
+                                android:textSize="30sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc1part2"
+                                android:textColor="@color/black"
+                                android:textAlignment="center"
+                                android:layout_gravity="center"/>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D3D3D3" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20sp"
+                            android:layout_marginBottom="20sp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc2"
+                                android:textColor="#036e03"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:textSize="30sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc2part2"
+                                android:textColor="@color/black"
+                                android:textAlignment="center"
+                                android:layout_gravity="center"/>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D3D3D3" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20sp"
+                            android:layout_marginBottom="20sp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc3"
+                                android:textColor="#036e03"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:textSize="30sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc3part2"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"/>
+
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D3D3D3" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20sp"
+                            android:layout_marginBottom="20sp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc4"
+                                android:textColor="#036e03"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:textSize="30sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc4part2"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"/>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D3D3D3" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20sp"
+                            android:layout_marginBottom="20sp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc5"
+                                android:textColor="#036e03"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:textSize="30sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc5part2"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"/>
+
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D3D3D3" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20sp"
+                            android:layout_marginBottom="20sp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc6"
+                                android:textColor="#036e03"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:textSize="30sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvdesc6part2"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"/>
+
+                        </LinearLayout>
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvQuote1"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_margin="12sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvQuote1part2"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_margin="12sp"/>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8sp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="18dp">
+
+                            <ImageView
+                                android:layout_width="250dp"
+                                android:layout_height="250dp"
+                                android:src="@drawable/phinmaschoolsluzon"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/tvPluzon"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="11sp"
+                                android:layout_gravity="center"
+                                android:text="@string/tvPluzon"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="18dp">
+
+                                <ImageView
+                                    android:layout_width="250dp"
+                                    android:layout_height="250dp"
+                                    android:src="@drawable/phinmaschoolsvisayas"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@string/tvPVisayas"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="11sp"
+                                    android:layout_gravity="center"
+                                    android:text="@string/tvPVisayas"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="18dp">
+
+                                <ImageView
+                                    android:layout_width="250dp"
+                                    android:layout_height="250dp"
+                                    android:src="@drawable/phinmaschoolsmindanao"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@string/tvPMindanao"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="11sp"
+                                    android:layout_gravity="center"
+                                    android:text="@string/tvPMindanao"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="18dp">
+
+                                <ImageView
+                                    android:layout_width="250dp"
+                                    android:layout_height="250dp"
+                                    android:src="@drawable/phinmaschoolforeign"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@string/tvPForeign"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="11sp"
+                                    android:layout_gravity="center"
+                                    android:text="@string/tvPForeign"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvQuote1part3"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_margin="12sp"/>
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
