@@ -14,23 +14,28 @@
                 <group android:checkableBehavior="single">
                     <item
                         android:id="@+id/itemUpang"
-                        android:title="UPANG" />
+                        android:title="UPANG"
+                        android:icon="@drawable/phinmaupang"/>
 
                     <item
                         android:id="@+id/itemCoc"
-                        android:title="COC" />
+                        android:title="COC"
+                        android:icon="@drawable/phinmacoc"/>
 
                     <item
                         android:id="@+id/itemarAullo"
-                        android:title="AU" />
+                        android:title="AU"
+                        android:icon="@drawable/phinmaau"/>
 
                     <item
                         android:id="@+id/itemIloilo"
-                        android:title="UPANG" />
+                        android:title="UI"
+                        android:icon="@drawable/phinmaui"/>
 
                     <item
                         android:id="@+id/itemSWU"
-                        android:title="SWU" />
+                        android:title="SWU"
+                        android:icon="@drawable/phinmaeswu"/>
                 </group>
             </menu>
         </item>

@@ -27,6 +27,7 @@
         app:headerLayout="@layout/phinmaedmenuheader"
         app:menu="@menu/phinmaedmenu"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"/>
+        android:fitsSystemWindows="true"
+        app:itemIconTint="@null"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
