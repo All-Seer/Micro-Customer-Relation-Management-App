@@ -38,5 +38,16 @@
     <string name="tvPVisayas">PHINMAED VISAYAS</string>
     <string name="tvPMindanao">PHINMAED MINDANAO</string>
     <string name="tvPForeign">PHINMAED FOREIGN</string>
+    <string name="hintStudNum">Student Number</string>
+    <string name="phinmahorizon">HORIZON UNIVERSITY</string>
+    <string name="phinmaucl">UCL</string>
+    <string name="phinmarcl">RCL</string>
+    <string name="phinmarc">RC</string>
+    <string name="phinmasjc">SJC</string>
+    <string name="phinmaswu">SWU</string>
+    <string name="phinmaui">UI</string>
+    <string name="phinmaupang">UPANG</string>
+    <string name="phinmaau">AU</string>
+    <string name="phinmacoc">COC</string>
 
 </resources>

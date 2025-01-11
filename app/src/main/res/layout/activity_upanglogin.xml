@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        android:paddingTop="20dp"
+        android:src="@drawable/phinmaedbanner" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PHINMA UPANG"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:scaleType="fitCenter"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:src="@drawable/phinmaupang"/>
+
+            <TextView
+                android:layout_width="153dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingStart="20dp"
+                android:text="USERNAME" />
+
+            <EditText
+                android:id="@+id/etStudUsername"
+                android:layout_width="290dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/editviews"
+                android:drawableStart="@drawable/user"
+                android:drawablePadding="3dp"
+                android:hint="@string/hintStudNum"
+                android:inputType="text"
+                android:paddingStart="10dp" />
+
+            <TextView
+                android:layout_width="153dp"
+                android:layout_height="20dp"
+                android:paddingStart="20dp"
+                android:text="PASSWORD" />
+
+            <EditText
+                android:id="@+id/etStudPassword"
+                android:layout_width="290dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/editviews"
+                android:drawableLeft="@drawable/lock"
+                android:drawablePadding="3dp"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
+
+            <Button
+                android:id="@+id/Sign"
+                android:layout_width="290dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:background="#036e03"
+                android:text="SIGN IN"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:shadowRadius="@integer/material_motion_duration_long_1"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

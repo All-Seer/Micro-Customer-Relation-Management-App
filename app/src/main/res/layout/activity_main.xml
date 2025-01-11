@@ -12,6 +12,14 @@
 
     <!-- Parent -->
 
+    <Spinner
+        android:id="@+id/spinnerSchools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:layout_margin="16dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:layout_gravity="center" />
 
     <FrameLayout
         android:id="@+id/flFragment"

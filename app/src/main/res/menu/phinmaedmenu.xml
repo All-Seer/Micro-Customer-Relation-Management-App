@@ -12,30 +12,55 @@
         <item android:title="Schools">
             <menu>
                 <group android:checkableBehavior="single">
-                    <item
-                        android:id="@+id/itemUpang"
-                        android:title="UPANG"
-                        android:icon="@drawable/phinmaupang"/>
 
                     <item
                         android:id="@+id/itemCoc"
-                        android:title="COC"
+                        android:title="@string/phinmacoc"
                         android:icon="@drawable/phinmacoc"/>
 
                     <item
                         android:id="@+id/itemarAullo"
-                        android:title="AU"
+                        android:title="@string/phinmaau"
                         android:icon="@drawable/phinmaau"/>
+                    <item
+                        android:id="@+id/itemUpang"
+                        android:title="@string/phinmaupang"
+                        android:icon="@drawable/phinmaupang"/>
 
                     <item
                         android:id="@+id/itemIloilo"
-                        android:title="UI"
+                        android:title="@string/phinmaui"
                         android:icon="@drawable/phinmaui"/>
 
                     <item
                         android:id="@+id/itemSWU"
-                        android:title="SWU"
+                        android:title="@string/phinmaswu"
                         android:icon="@drawable/phinmaeswu"/>
+
+                    <item
+                        android:id="@+id/itemSJC"
+                        android:title="@string/phinmasjc"
+                        android:icon="@drawable/phinmasjc"/>
+
+                    <item
+                        android:id="@+id/itemRC"
+                        android:title="@string/phinmarc"
+                        android:icon="@drawable/phinmaeswu"/>
+
+                    <item
+                        android:id="@+id/itemRCL"
+                        android:title="@string/phinmarcl"
+                        android:icon="@drawable/phinmaeswu"/>
+
+                    <item
+                        android:id="@+id/itemUCL"
+                        android:title="@string/phinmaucl"
+                        android:icon="@drawable/phinmaeswu"/>
+                    <item
+                        android:id="@+id/itemHorizon"
+                        android:title="@string/phinmahorizon"
+                        android:icon="@drawable/phinmahorizon"/>
+
                 </group>
             </menu>
         </item>

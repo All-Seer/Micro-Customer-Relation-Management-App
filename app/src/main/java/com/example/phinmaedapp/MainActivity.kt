@@ -1,5 +1,6 @@
 package com.example.phinmaedapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
@@ -41,21 +42,20 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.itemhome -> setCurrentFragment(phinmaedhomeFragment)
 
-                R.id.itemUpang -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item Schools",
-                    Toast.LENGTH_SHORT
-                ).show()
-
+                R.id.itemUpang -> {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                }
                 R.id.itemAbout -> Toast.makeText(
                     applicationContext,
                     "Clicked Item About",
                     Toast.LENGTH_SHORT
                 ).show()
             }
+            it.isChecked = false
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -70,4 +70,6 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.flFragment, fragment)
             commit()
         }
+
+
 }
