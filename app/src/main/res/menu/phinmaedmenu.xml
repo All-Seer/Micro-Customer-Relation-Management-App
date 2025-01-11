@@ -1,22 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/home"
-            android:title="Home"
-            android:icon="@drawable/vector_home"/>
-
-        <item
-            android:id="@+id/schools"
-            android:title="Schools"
-            android:icon="@color/white"/>
-
-        <item
-            android:id="@+id/about"
-            android:title="About"
-            android:icon="@color/white"/>
-
-
-
+            android:id="@+id/itemhome"
+            android:title="Home" />
     </group>
+
+        <item android:title="Schools">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/itemUpang"
+                        android:title="UPANG" />
+
+                    <item
+                        android:id="@+id/itemCoc"
+                        android:title="COC" />
+
+                    <item
+                        android:id="@+id/itemarAullo"
+                        android:title="AU" />
+
+                    <item
+                        android:id="@+id/itemIloilo"
+                        android:title="UPANG" />
+
+                    <item
+                        android:id="@+id/itemSWU"
+                        android:title="SWU" />
+                </group>
+            </menu>
+        </item>
+
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group2">
+        <item
+            android:id="@+id/itemCommunity"
+            android:title="Community" />
+        <item
+            android:id="@+id/itemAbout"
+            android:title="About" />
+    </group>
+
 </menu>

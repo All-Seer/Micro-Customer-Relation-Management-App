@@ -1,82 +1,73 @@
 package com.example.phinmaedapp
 
-import android.net.Uri
+import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
-import android.widget.VideoView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var videoView: VideoView
-    private var currentPosition: Int = 0
-    private var isVideoPlaying: Boolean = false
     lateinit var toggle: ActionBarDrawerToggle
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        window.statusBarColor = Color.TRANSPARENT
+
+        val phinmaedhomeFragment = PhinmaedHome()
+
+        setCurrentFragment(phinmaedhomeFragment)
 
         //Navigation Bar Settings
-        toggle = ActionBarDrawerToggle(this, binding.drawerLayout,R.string.open, R.string.close)
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.navView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.home -> Toast.makeText(applicationContext, "Clicked Item Home", Toast.LENGTH_SHORT).show()
-                R.id.schools -> Toast.makeText(applicationContext, "Clicked Item Schools", Toast.LENGTH_SHORT).show()
-                R.id.about -> Toast.makeText(applicationContext, "Clicked Item About", Toast.LENGTH_SHORT).show()
+        binding.navView.setNavigationItemSelectedListener{
+            when (it.itemId) {
+                R.id.itemhome -> setCurrentFragment(phinmaedhomeFragment)
+
+                R.id.itemUpang -> Toast.makeText(
+                    applicationContext,
+                    "Clicked Item Schools",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                R.id.itemAbout -> Toast.makeText(
+                    applicationContext,
+                    "Clicked Item About",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
-
-        // Video Settings
-        videoView = binding.phinmaedVideo
-        val videoPath = "android.resource://" + packageName + "/" + R.raw.phinmaedvideo
-        val uri = Uri.parse(videoPath)
-        videoView.setVideoURI(uri)
-        videoView.setOnPreparedListener { mediaPlayer ->
-            mediaPlayer.setVolume(0f, 0f)
-        }
-        videoView.start()
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)){
+        if (toggle.onOptionsItemSelected(item)) {
             return true
         }
-
         return super.onOptionsItemSelected(item)
     }
-    override fun onPause() {
-        super.onPause()
-        if (isVideoPlaying) {
-            currentPosition = videoView.currentPosition
-            videoView.pause()
-            isVideoPlaying = false
+
+    private fun setCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.flFragment, fragment)
+            commit()
         }
-    }
-    override fun onResume() {
-        super.onResume()
-        if (!isVideoPlaying) {
-            videoView.seekTo(currentPosition)
-            videoView.start()
-            isVideoPlaying = true
-        }
-    }
-    override fun onStop() {
-        super.onStop()
-        if (isVideoPlaying) {
-            currentPosition = videoView.currentPosition
-        }
-    }
 }
