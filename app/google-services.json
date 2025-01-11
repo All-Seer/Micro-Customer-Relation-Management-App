@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "422321011631",
+    "project_id": "phinmaedapp",
+    "storage_bucket": "phinmaedapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422321011631:android:00e930f3622c133e65cd5a",
+        "android_client_info": {
+          "package_name": "com.example.phinmaedapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDxpEwIjPmyk-LoSlbJQaIxc_HwoGiy5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,31 +3,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawerLayout"
+    android:id="@+id/upangdrawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
+    tools:context=".UpangMainActivity"
     android:background="@color/white">
 
     <!-- Parent -->
 
 
     <FrameLayout
-        android:id="@+id/flFragment"
+        android:id="@+id/upangFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
 
     <!-- Navigation Bar -->
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navView"
+        android:id="@+id/upangnavView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:headerLayout="@layout/phinmaedmenuheader"
-        app:menu="@menu/phinmaedmenu"
+        app:menu="@menu/upangmenu"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:itemIconTint="@null"/>
+        android:fitsSystemWindows="true"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -5,7 +5,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/itemhome"
+            android:id="@+id/itemUpanghome"
             android:title="Home" />
     </group>
 
@@ -14,28 +14,23 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/itemPersonalDetails"
-                    android:title="Personal Details"
-                    android:icon="@drawable/phinmaupang"/>
+                    android:title="Personal Details"/>
 
                 <item
                     android:id="@+id/itemAddressDetails"
-                    android:title="Address Details"
-                    android:icon="@drawable/phinmacoc"/>
+                    android:title="Address Details" />
 
                 <item
                     android:id="@+id/itemCourseDetails"
-                    android:title="Course Details"
-                    android:icon="@drawable/phinmaau"/>
+                    android:title="Course Details" />
 
                 <item
                     android:id="@+id/itemPhotoSignature"
-                    android:title="Photo Signature"
-                    android:icon="@drawable/phinmaui"/>
+                    android:title="Photo Signature" />
 
                 <item
                     android:id="@+id/itemEnlistedSubjects"
-                    android:title="Enlisted Subjects"
-                    android:icon="@drawable/phinmaeswu"/>
+                    android:title="Enlisted Subjects" />
             </group>
         </menu>
     </item>
@@ -44,10 +39,10 @@
     <group android:checkableBehavior="single"
         android:id="@+id/group2">
         <item
-            android:id="@+id/itemCommunity"
+            android:id="@+id/itemModality"
             android:title="Modality Help Page" />
         <item
-            android:id="@+id/itemAbout"
+            android:id="@+id/itemScholar"
             android:title="Scholarship Page" />
     </group>
     <group android:checkableBehavior="single"

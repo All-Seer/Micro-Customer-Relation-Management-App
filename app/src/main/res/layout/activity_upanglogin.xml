@@ -15,12 +15,11 @@
         android:layout_height="150dp"
         android:layout_gravity="top"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
-        android:paddingTop="20dp"
+        android:layout_marginBottom="30dp"
         android:src="@drawable/phinmaedbanner" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
+        android:layout_width="340dp"
         android:layout_height="450dp"
         android:layout_gravity="center"
         app:cardCornerRadius="20dp">
@@ -31,7 +30,6 @@
             android:layout_gravity="center"
             android:orientation="vertical"
             android:padding="20dp">
-
 
 
             <TextView
@@ -58,7 +56,7 @@
             <EditText
                 android:id="@+id/etStudUsername"
                 android:layout_width="290dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/editviews"
@@ -77,24 +75,24 @@
             <EditText
                 android:id="@+id/etStudPassword"
                 android:layout_width="290dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:background="@drawable/editviews"
                 android:drawableLeft="@drawable/lock"
                 android:drawablePadding="3dp"
-                android:hint="Enter Password"
+                android:hint="@string/etPass"
                 android:inputType="textPassword"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
 
-            <Button
-                android:id="@+id/Sign"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btSignin"
                 android:layout_width="290dp"
-                android:layout_height="36dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_gravity="center"
                 android:background="#036e03"
-                android:text="SIGN IN"
+                android:text="@string/btSign"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:shadowRadius="@integer/material_motion_duration_long_1"

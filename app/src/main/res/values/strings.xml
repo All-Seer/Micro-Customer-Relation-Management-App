@@ -49,5 +49,7 @@
     <string name="phinmaupang">UPANG</string>
     <string name="phinmaau">AU</string>
     <string name="phinmacoc">COC</string>
+    <string name="etPass">Enter Password</string>
+    <string name="btSign">SIGN IN</string>
 
 </resources>
