@@ -1,13 +1,13 @@
 package com.example.phinmaedapp
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.phinmaedapp.databinding.ActivityUpangloginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -21,9 +21,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding = ActivityUpangloginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         imageView = findViewById(R.id.logo)
-        setImageBasedOnTheme()
 
         supportActionBar?.hide()
 
@@ -38,20 +37,6 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Invalid Username or Password", Toast.LENGTH_SHORT).show()
             }
 
-        }
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        setImageBasedOnTheme()
-    }
-    private fun setImageBasedOnTheme() {
-        val nightModeFlags = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-
-        if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
-            imageView.setImageResource(R.drawable.logodark)
-        } else {
-            imageView.setImageResource(R.drawable.phinmaedbanner)
         }
     }
 }

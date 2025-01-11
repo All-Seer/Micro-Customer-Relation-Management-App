@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +21,7 @@ class UpangMainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityUpangMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.statusBarColor = Color.TRANSPARENT
@@ -35,6 +35,7 @@ class UpangMainActivity : AppCompatActivity() {
         val upangmodalityFragment = UpangModalityFragment()
         val upangscholarshipFragment = UpangScholarshipFragment()
 
+        setCurrentFragment(upanghomeFragment)
 
         toggle = ActionBarDrawerToggle(this, binding.upangdrawerLayout, R.string.open, R.string.close)
         binding.upangdrawerLayout.addDrawerListener(toggle)
@@ -77,7 +78,7 @@ class UpangMainActivity : AppCompatActivity() {
     }
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment, fragment)
+            replace(R.id.upangFragment, fragment)
             commit()
         }
 

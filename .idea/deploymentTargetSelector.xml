@@ -19,6 +19,9 @@
       <SelectionState runConfigName="Micro-Customer-Relation-Management-App.PhinmaEdApp.app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="app.unitTest">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

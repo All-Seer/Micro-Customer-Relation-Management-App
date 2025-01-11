@@ -9,7 +9,7 @@ import android.widget.VideoView
 import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.FragmentPhinmaedHomeBinding
 
-class PhinmaedHome : Fragment() {
+class PhinmaedDefaultHome : Fragment() {
 
     private var _binding: FragmentPhinmaedHomeBinding? = null
     private val binding get() = _binding!!

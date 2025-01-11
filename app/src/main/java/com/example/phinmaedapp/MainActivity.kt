@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
-        val phinmaedhomeFragment = PhinmaedHome()
+        val phinmaedhomeFragment = PhinmaedDefaultHome()
         val phinmaedaboutFragment = PhinmaedAbout()
         val phinmaedcommunityFragment = PhinmaedCommunity()
 
@@ -55,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.itemAbout -> setCurrentFragment(phinmaedaboutFragment)
 
-                R.id.itemAbout -> setCurrentFragment(phinmaedcommunityFragment)
+                R.id.itemCommunity -> setCurrentFragment(phinmaedcommunityFragment)
             }
             it.isChecked = false
             binding.drawerLayout.closeDrawer(GravityCompat.START)
