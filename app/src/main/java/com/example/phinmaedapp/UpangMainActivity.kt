@@ -43,7 +43,7 @@ class UpangMainActivity : AppCompatActivity() {
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Phinma UPANG"
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
 
         binding.upangnavView.setNavigationItemSelectedListener{
