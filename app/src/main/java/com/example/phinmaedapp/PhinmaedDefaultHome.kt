@@ -22,7 +22,6 @@ class PhinmaedDefaultHome : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout using View Binding
         _binding = FragmentPhinmaedHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -30,7 +29,6 @@ class PhinmaedDefaultHome : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Interact with views
         videoView = binding.phinmaedVideo
         val videoPath = "android.resource://" + activity?.packageName + "/" + R.raw.phinmaedvideo
         val uri = Uri.parse(videoPath)
@@ -44,7 +42,6 @@ class PhinmaedDefaultHome : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Avoid memory leaks
         _binding = null
     }
 

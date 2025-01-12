@@ -20,6 +20,28 @@ class UpangPersonalDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentUpangPersonalDetailsBinding.inflate(inflater, container, false)
+
+
+        binding.btpdSubmit.setOnClickListener{
+
+            val bundle = Bundle().apply {
+                putString("LASTNAME", binding.etLastName.text.toString())
+                putString("FIRSTNAME", binding.etFirstName.text.toString())
+                putString("MIDDLENAME", binding.etMiddleName.text.toString())
+                putString("EXTENSIONNAME", binding.etExtensionName.text.toString())
+            }
+            val upangfetchHome = UpangHomeFragment().apply {
+                arguments = bundle
+            }
+        }
+
+
+
+
+
+
+
+
         spinnerGender = binding.root.findViewById(R.id.spinnerGender)
         val genderOptions = listOf("Select Gender", "Male", "Female", "Other")
         val adapter =

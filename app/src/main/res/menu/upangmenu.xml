@@ -39,6 +39,9 @@
     <group android:checkableBehavior="single"
         android:id="@+id/group2">
         <item
+            android:id="@+id/itemSchoolMap"
+            android:title="School Map Page" />
+        <item
             android:id="@+id/itemModality"
             android:title="Modality Help Page" />
         <item
@@ -51,5 +54,4 @@
             android:id="@+id/itemLogOut"
             android:title="Log Out" />
     </group>
-
 </menu>

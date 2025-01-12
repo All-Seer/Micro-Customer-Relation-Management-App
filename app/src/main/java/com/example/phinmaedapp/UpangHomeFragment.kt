@@ -18,6 +18,8 @@ class UpangHomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_upang_home, container, false)
+
+
     }
 
 }
