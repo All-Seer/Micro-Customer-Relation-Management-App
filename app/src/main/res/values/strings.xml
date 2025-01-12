@@ -38,7 +38,9 @@
     <string name="tvPVisayas">PHINMAED VISAYAS</string>
     <string name="tvPMindanao">PHINMAED MINDANAO</string>
     <string name="tvPForeign">PHINMAED FOREIGN</string>
+
     <string name="hintStudNum">Student Number</string>
+
     <string name="phinmahorizon">HORIZON UNIVERSITY</string>
     <string name="phinmaucl">UCL</string>
     <string name="phinmarcl">RCL</string>
@@ -51,5 +53,7 @@
     <string name="phinmacoc">COC</string>
     <string name="etPass">Enter Password</string>
     <string name="btSign">SIGN IN</string>
+    <string name="tvPass">Password</string>
+    <string name="tvUser">Username</string>
 
 </resources>
