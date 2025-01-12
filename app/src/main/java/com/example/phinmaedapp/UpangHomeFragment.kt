@@ -17,9 +17,15 @@ class UpangHomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_upang_home, container, false)
-
-
+        binding = FragmentUpangHomeBinding.inflate(inflater, container, false)
+        arguments?.let {
+            val lastName = it.getString("LASTNAME")
+            val firstName = it.getString("FIRSTNAME")
+            val middleName = it.getString("MIDDLENAME")
+            val extensionName = it.getString("EXTENSIONNAME")
+            binding.tvstudName.text = "$lastName, $firstName $middleName $extensionName"
+        }
+        return binding.root
     }
 
 }

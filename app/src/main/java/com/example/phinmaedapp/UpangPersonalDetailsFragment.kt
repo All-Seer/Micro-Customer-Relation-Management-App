@@ -23,24 +23,19 @@ class UpangPersonalDetailsFragment : Fragment() {
 
 
         binding.btpdSubmit.setOnClickListener{
-
+            val passfragment = UpangHomeFragment()
             val bundle = Bundle().apply {
                 putString("LASTNAME", binding.etLastName.text.toString())
                 putString("FIRSTNAME", binding.etFirstName.text.toString())
                 putString("MIDDLENAME", binding.etMiddleName.text.toString())
                 putString("EXTENSIONNAME", binding.etExtensionName.text.toString())
             }
-            val upangfetchHome = UpangHomeFragment().apply {
-                arguments = bundle
-            }
+            passfragment.arguments = bundle
+
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.upangFragment, passfragment)
+            transaction.commit()
         }
-
-
-
-
-
-
-
 
         spinnerGender = binding.root.findViewById(R.id.spinnerGender)
         val genderOptions = listOf("Select Gender", "Male", "Female", "Other")
