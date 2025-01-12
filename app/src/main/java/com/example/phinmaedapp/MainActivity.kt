@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "PhinmaEd IS"
 
         binding.navView.setNavigationItemSelectedListener{
             when (it.itemId) {

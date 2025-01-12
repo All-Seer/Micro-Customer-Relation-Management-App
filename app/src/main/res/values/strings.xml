@@ -56,4 +56,14 @@
     <string name="tvPass">Password</string>
     <string name="tvUser">Username</string>
 
+    <string name="ModFlex1">• A combination of studying in school and studying at home.</string>
+    <string name="ModFlex2">• 2 days face-to-face and 4 days remote learning.</string>
+    <string name="ModFlex3">• Teacher support will be via text, call and social media during the remote coaching.</string>
+    <string name="ModR1">• Largely home-based learning.</string>
+    <string name="ModR2">• Suited for regular student who live far away and have difficulties traveling to come to school.</string>
+    <string name="ModR3">• Learn online together with your classmates.</string>
+    <string name="ModR4">• Teacher support will be via text, call and social media during the remote coaching.</string>
+    <string name="scholarshipDesc">In our Scholarship program we provide our students 50% to 75% discount on tuition and miscellaneous fees.</string>
+    <string name="scholarshipInstruc">Check our complete list of scholarships below:</string>
+
 </resources>
