@@ -36,6 +36,10 @@ class UpangModalityFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_upang_modality, container, false)
     }
+    override fun onResume() {
+        super.onResume()
+        (activity as UpangMainActivity).updateActionBarTitle("Modality Help")
+    }
 
     companion object {
         /**

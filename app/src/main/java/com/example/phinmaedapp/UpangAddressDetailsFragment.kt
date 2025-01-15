@@ -36,6 +36,10 @@ class UpangAddressDetailsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_upang_address_details, container, false)
     }
+    override fun onResume() {
+        super.onResume()
+        (activity as UpangMainActivity).updateActionBarTitle("Address Details")
+    }
 
     companion object {
         /**

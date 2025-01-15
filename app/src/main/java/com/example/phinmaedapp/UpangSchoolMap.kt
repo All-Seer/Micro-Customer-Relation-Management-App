@@ -66,26 +66,8 @@ class UpangSchoolMap : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-    override fun onPause() {
-        super.onPause()
-        if (isVideoPlaying) {
-            currentPosition = videoView.currentPosition
-            videoView.pause()
-            isVideoPlaying = false
-        }
-    }
     override fun onResume() {
         super.onResume()
-        if (!isVideoPlaying) {
-            videoView.seekTo(currentPosition)
-            videoView.start()
-            isVideoPlaying = true
-        }
-    }
-    override fun onStop() {
-        super.onStop()
-        if (isVideoPlaying) {
-            currentPosition = videoView.currentPosition
-        }
+        (activity as UpangMainActivity).updateActionBarTitle("School Map")
     }
 }

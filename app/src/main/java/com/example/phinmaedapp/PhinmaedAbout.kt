@@ -37,6 +37,11 @@ class PhinmaedAbout : Fragment() {
         return inflater.inflate(R.layout.fragment_phinmaed_about, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).updateActionBarTitle("About")
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of

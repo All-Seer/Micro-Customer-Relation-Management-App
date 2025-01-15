@@ -401,6 +401,29 @@
                         android:textSize="12sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/phinmaPrimary">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/tvtoLink"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnOpenLink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GET IN TOUCH"
+                        android:textColor="@color/black"
+                        android:backgroundTint="#ebb000"
+                        android:layout_margin="8dp"
+                        android:elevation="4dp"/>
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

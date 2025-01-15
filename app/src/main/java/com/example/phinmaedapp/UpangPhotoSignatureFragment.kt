@@ -36,6 +36,10 @@ class UpangPhotoSignatureFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_upang_photo_signature, container, false)
     }
+    override fun onResume() {
+        super.onResume()
+        (activity as UpangMainActivity).updateActionBarTitle("Photo Signature")
+    }
 
     companion object {
         /**

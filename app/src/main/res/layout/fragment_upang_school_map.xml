@@ -34,11 +34,7 @@
             android:layout_height="200dp"
             android:src="@drawable/upang_dagupan_map"
             android:layout_marginBottom="30dp"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#D3D3D3" />
-
+\
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,9 +42,8 @@
             android:layout_marginBottom="30dp"
             android:fontFamily="monospace"
             android:text="FACILITIES"
-            android:layout_marginTop="20dp"
             android:textColor="@color/phinmaPrimary"
-            android:textSize="32sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <VideoView
@@ -201,9 +196,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginBottom="30dp"
-                android:text="UPANG URDANETA MAP"
+                android:text="URDANETA CAMPUS"
                 android:fontFamily="sans-serif-black"
                 android:textColor="@color/phinmaPrimary"
                 android:textSize="30sp"
@@ -218,11 +213,6 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/pu_map" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#D3D3D3" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -230,9 +220,8 @@
                 android:layout_marginBottom="30dp"
                 android:fontFamily="monospace"
                 android:text="FACILITIES"
-                android:layout_marginTop="20dp"
                 android:textColor="@color/phinmaPrimary"
-                android:textSize="32sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <HorizontalScrollView
@@ -356,9 +345,5 @@
             android:layout_height="1dp"
             android:layout_marginBottom="30dp"
             android:background="#D3D3D3" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/phinmaPrimary"/>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

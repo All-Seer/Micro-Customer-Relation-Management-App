@@ -281,6 +281,10 @@ class UpangScholarshipFragment : Fragment() {
             }
         }
     }
+    override fun onResume() {
+        super.onResume()
+        (activity as UpangMainActivity).updateActionBarTitle("Scholarship Programs")
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

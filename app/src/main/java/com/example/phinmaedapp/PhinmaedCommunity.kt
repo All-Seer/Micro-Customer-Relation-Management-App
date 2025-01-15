@@ -37,6 +37,11 @@ class PhinmaedCommunity : Fragment() {
         return inflater.inflate(R.layout.fragment_phinmaed_community, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).updateActionBarTitle("Community")
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of

@@ -60,4 +60,8 @@ class UpangPersonalDetailsFragment : Fragment() {
         }
         return binding.root
     }
+    override fun onResume() {
+        super.onResume()
+        (activity as UpangMainActivity).updateActionBarTitle("Personal Details")
+    }
 }

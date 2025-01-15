@@ -36,14 +36,15 @@ class UpangMainActivity : AppCompatActivity() {
         val upangmodalityFragment = UpangModalityFragment()
         val upangscholarshipFragment = UpangScholarshipFragment()
 
-        setCurrentFragment(upanghomeFragment)
+        if (savedInstanceState == null) {
+            setCurrentFragment(upanghomeFragment)
+        }
 
         toggle = ActionBarDrawerToggle(this, binding.upangdrawerLayout, R.string.open, R.string.close)
         binding.upangdrawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
 
 
         binding.upangnavView.setNavigationItemSelectedListener{
@@ -83,8 +84,10 @@ class UpangMainActivity : AppCompatActivity() {
     }
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.upangFragment, fragment)
+            replace(R.id.upangFragment, fragment).addToBackStack(null)
             commit()
         }
-
+    fun updateActionBarTitle(title: String) {
+        supportActionBar?.title = title
+    }
 }

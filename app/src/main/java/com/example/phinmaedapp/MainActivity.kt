@@ -36,7 +36,9 @@ class MainActivity : AppCompatActivity() {
         val phinmaedaboutFragment = PhinmaedAbout()
         val phinmaedcommunityFragment = PhinmaedCommunity()
 
-        setCurrentFragment(phinmaedhomeFragment)
+        if (savedInstanceState == null) {
+            setCurrentFragment(phinmaedhomeFragment)
+        }
 
         //Navigation Bar Settings
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setTitle("PhinmaEd Information System")
 
         binding.navView.setNavigationItemSelectedListener{
             when (it.itemId) {
@@ -73,9 +75,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment, fragment)
+            replace(R.id.flFragment, fragment).addToBackStack(null)
             commit()
         }
-
-
+    fun updateActionBarTitle(title: String) {
+        supportActionBar?.title = title
+    }
 }

@@ -36,6 +36,10 @@ class UpangEnlistedSubjectsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_upang_enlisted_subjects, container, false)
     }
+    override fun onResume() {
+        super.onResume()
+        (activity as UpangMainActivity).updateActionBarTitle("Enlisted Subjects")
+    }
 
     companion object {
         /**

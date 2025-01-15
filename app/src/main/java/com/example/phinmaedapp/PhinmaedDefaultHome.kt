@@ -1,10 +1,12 @@
 package com.example.phinmaedapp
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import android.widget.VideoView
 import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.FragmentPhinmaedHomeBinding
@@ -28,6 +30,17 @@ class PhinmaedDefaultHome : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnOpenLink.setOnClickListener{
+            val url = "https://www.phinma.edu.ph/contact-us/" // Replace with your desired URL
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            if (intent.resolveActivity(requireContext().packageManager) != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(requireContext(), "No browser available to open the link", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         videoView = binding.phinmaedVideo
         val videoPath = "android.resource://" + activity?.packageName + "/" + R.raw.phinmaedvideo
@@ -55,6 +68,7 @@ class PhinmaedDefaultHome : Fragment() {
     }
     override fun onResume() {
         super.onResume()
+        (activity as MainActivity).updateActionBarTitle("Home")
         if (!isVideoPlaying) {
             videoView.seekTo(currentPosition)
             videoView.start()
