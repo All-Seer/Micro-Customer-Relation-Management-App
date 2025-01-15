@@ -17,10 +17,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="50dp"
-
-            >
+            app:cardCornerRadius="20dp">
 
 
             <LinearLayout
@@ -28,15 +25,23 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <EditText
+                <TextView
                     android:id="@+id/c_coursedetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginStart="14dp"
                     android:textStyle="bold"
-                    android:layout_weight="1"
                     android:ems="10"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
                     android:text="@string/c_coursedetails" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@color/black" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -239,19 +244,29 @@
                         android:text="@string/c_mentor2" />
 
                 </LinearLayout>
-                <EditText
+                <TextView
                     android:id="@+id/c_education"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginStart="14dp"
                     android:ems="10"
                     android:text="@string/c_education"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
                     android:textStyle="bold"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@color/black" />
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:scrollbars="none">
 
                     <TableLayout
                         android:layout_width="match_parent"

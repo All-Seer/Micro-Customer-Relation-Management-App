@@ -67,13 +67,6 @@
     <string name="scholarshipInstruc">Check our complete list of scholarships below:</string>
     <string name="tvtoLink">INTERESTED TO LEARN MORE?</string>
 
-    <string name="ModFlex1">• A combination of studying in school and studying at home.</string>
-    <string name="ModFlex2">• 2 days face-to-face and 4 days remote learning.</string>
-    <string name="ModFlex3">• Teacher support will be via text, call and social media during the remote coaching.</string>
-    <string name="ModR1">• Largely home-based learning.</string>
-    <string name="ModR2">• Suited for regular student who live far away and have difficulties traveling to come to school.</string>
-    <string name="ModR3">• Learn online together with your classmates.</string>
-    <string name="ModR4">• Teacher support will be via text, call and social media during the remote coaching.</string>
 
     <string name="c_coursedetails">Course details</string>
     <string name="c_intake">Intake</string>
@@ -113,10 +106,5 @@
     <string name="c_school4">Name of School</string>
     <string name="c_year4">Year Attended</string>
     <string name="c_type4">Type</string>
-
-
-
-
-
 
 </resources>
