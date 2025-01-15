@@ -53,7 +53,7 @@ class UpangSchoolMap : Fragment() {
     private fun scrollHorizontallySlowlyUrdaneta() {
         val scrollView = binding.horizontalScrollViewUrdaneta
         val scrollAmount = 9000
-        val duration = 20000L
+        val duration = 18000L
 
         ObjectAnimator.ofInt(scrollView, "scrollX", scrollAmount).apply {
             this.duration = duration
