@@ -26,15 +26,24 @@ class UpangModalityFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonCourses.setOnClickListener {
-            toggleCourseListVisibility()
+        binding.btDagupanCourses.setOnClickListener {
+            toggleDagupanCourseListVisibility()
+        }
+        binding.btUrdanetaCourses.setOnClickListener {
+            toggleUrdanetaCourseListVisibility()
         }
     }
-    private fun toggleCourseListVisibility() {
-        val isVisible = binding.layoutCourseList.visibility == View.VISIBLE
+    private fun toggleDagupanCourseListVisibility() {
+        val isVisible = binding.layoutDagupanCourseList.visibility == View.VISIBLE
         val transition = AutoTransition()
-        TransitionManager.beginDelayedTransition(binding.cardViewCourses, transition)
-        binding.layoutCourseList.visibility = if (isVisible) View.GONE else View.VISIBLE
+        TransitionManager.beginDelayedTransition(binding.cvDagupanCourses, transition)
+        binding.layoutDagupanCourseList.visibility = if (isVisible) View.GONE else View.VISIBLE
+    }
+    private fun toggleUrdanetaCourseListVisibility(){
+        val isVisible = binding.layoutUrdanetaCourseList.visibility == View.VISIBLE
+        val transition = AutoTransition()
+        TransitionManager.beginDelayedTransition(binding.cvUrdanetaCourses, transition)
+        binding.layoutUrdanetaCourseList.visibility = if (isVisible) View.GONE else View.VISIBLE
     }
     override fun onDestroyView() {
         super.onDestroyView()

@@ -72,6 +72,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
                             android:text="@string/ModFlex1"
                             android:textAlignment="textStart" />
 
@@ -79,6 +81,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
                             android:text="@string/ModFlex2"
                             android:textAlignment="textStart" />
 
@@ -86,11 +90,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
                             android:text="@string/ModFlex3"
                             android:textAlignment="textStart" />
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/cardViewCourses"
+                            android:id="@+id/cvDagupanCourses"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -105,7 +111,7 @@
                                 android:orientation="vertical">
 
                                 <Button
-                                    android:id="@+id/buttonCourses"
+                                    android:id="@+id/btDagupanCourses"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:background="@color/phinmaPrimary"
@@ -113,7 +119,7 @@
                                     android:text="Dagupan Campus Courses" />
 
                                 <LinearLayout
-                                    android:id="@+id/layoutCourseList"
+                                    android:id="@+id/layoutDagupanCourseList"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical"
@@ -154,6 +160,206 @@
                                         android:layout_height="wrap_content"
                                         android:padding="8dp"
                                         android:text="Bachelor of Secondary Education - Social Studies" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="Bachelor of Secondary Education - English" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Accountancy" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Hospitality Management" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Management Accounting" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Accounting Information System" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Business Administration - Financial Management" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Business Administration - Marketing Management" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Information Technology" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Nursing" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Pharmacy" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Psychology" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Medical Laboratory Science" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Architecture" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Civil Engineer" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Computer Engineer" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Electronics Engineer" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Electrical Engineer" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Mechanical Engineer" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvUrdanetaCourses"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="4dp"
+                            android:layout_marginBottom="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <Button
+                                    android:id="@+id/btUrdanetaCourses"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/phinmaPrimary"
+                                    android:textColor="@color/white"
+                                    android:text="Urdaneta Campus Courses" />
+
+                                <LinearLayout
+                                    android:id="@+id/layoutUrdanetaCourseList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="AB English Language" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Medical Laboratory Science" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Criminology" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Computer Science" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Entrepreneurship" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Accounting Information System" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Civil Engineering" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Architecture" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Accountancy" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="8dp"
+                                        android:text="BS Tourism Management" />
                                 </LinearLayout>
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -189,6 +395,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
                             android:text="@string/ModR1"
                             android:textAlignment="textStart" />
 
@@ -196,6 +404,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
                             android:text="@string/ModR2"
                             android:textAlignment="textStart" />
 
@@ -203,6 +413,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
                             android:text="@string/ModR3"
                             android:textAlignment="textStart" />
 
@@ -210,6 +422,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
                             android:text="@string/ModR4"
                             android:textAlignment="textStart" />
                         
