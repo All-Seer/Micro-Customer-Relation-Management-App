@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.ActivityUpangMainBinding
 
 class UpangMainActivity : AppCompatActivity() {
+    private val upanghomeFragment = UpangHomeFragment()
     lateinit var toggle: ActionBarDrawerToggle
     private lateinit var binding: ActivityUpangMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +27,7 @@ class UpangMainActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.statusBarColor = Color.TRANSPARENT
 
-        val upanghomeFragment = UpangHomeFragment()
+
         val upangpdFragment = UpangPersonalDetailsFragment()
         val upangadFragment = UpangAddressDetailsFragment()
         val upangcdFragment = UpangCourseDetailsFragment()
@@ -74,6 +75,16 @@ class UpangMainActivity : AppCompatActivity() {
             true
         }
 
+    }
+
+    override fun onBackPressed() {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.flFragment)
+
+        if (currentFragment !is UpangHomeFragment){
+            setCurrentFragment(upanghomeFragment)
+        }else {
+            super.onBackPressed()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

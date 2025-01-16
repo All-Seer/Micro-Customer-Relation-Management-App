@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var toggle: ActionBarDrawerToggle
     private lateinit var mFirebaseAnalytics: FirebaseAnalytics
+    private val phinmaedhomeFragment = PhinmaedDefaultHome()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +65,16 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+    }
+
+    override fun onBackPressed() {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.flFragment)
+
+        if (currentFragment !is UpangHomeFragment){
+            setCurrentFragment(phinmaedhomeFragment)
+        }else {
+            super.onBackPressed()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
