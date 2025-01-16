@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     private lateinit var mFirebaseAnalytics: FirebaseAnalytics
     private val phinmaedhomeFragment = PhinmaedDefaultHome()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -66,7 +65,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
     override fun onBackPressed() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.flFragment)
 
@@ -76,14 +74,12 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)
     }
-
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flFragment, fragment).addToBackStack(null)

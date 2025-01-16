@@ -1,11 +1,11 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
     <style name="Base.Theme.PhinmaEdApp" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/phinmaPrimary</item>
         <item name="colorPrimaryDark">@color/phinmaPrimary</item>
         <item name="colorOnPrimary">#ffffff</item>
         <item name="colorAccent">@color/phinmaPrimary</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:isLightTheme">true</item>
     </style>
-
-    <style name="Theme.PhinmaEdApp" parent="Base.Theme.PhinmaEdApp" />
 </resources>

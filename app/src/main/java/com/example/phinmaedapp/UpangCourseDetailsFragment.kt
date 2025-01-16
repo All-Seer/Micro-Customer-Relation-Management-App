@@ -1,63 +1,98 @@
 package com.example.phinmaedapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import androidx.fragment.app.Fragment
+import com.example.phinmaedapp.databinding.FragmentUpangCourseDetailsBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [UpangCourseDetailsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class UpangCourseDetailsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
+    private var _binding: FragmentUpangCourseDetailsBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var spinnerType: Spinner
+    private lateinit var spinnerType2: Spinner
+    private lateinit var spinnerType3: Spinner
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_upang_course_details, container, false)
+        _binding = FragmentUpangCourseDetailsBinding.inflate(inflater, container, false)
+
+        spinnerType = binding.root.findViewById(com.example.phinmaedapp.R.id.type_elem)
+        spinnerType2 = binding.root.findViewById(com.example.phinmaedapp.R.id.type_junior)
+        spinnerType3 = binding.root.findViewById(com.example.phinmaedapp.R.id.type_senior)
+        val typeOptions = listOf("Select", "Private", "Public")
+
+        val adapter =
+            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, typeOptions)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        spinnerType.adapter = adapter
+        spinnerType2.adapter = adapter
+        spinnerType3.adapter = adapter
+
+        spinnerType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val selectedType = parent.getItemAtPosition(position) as String
+                if (selectedType == "Select") {
+                    return
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+            }
+        }
+        spinnerType2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val selectedType = parent.getItemAtPosition(position) as String
+                if (selectedType == "Select") {
+                    return
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+            }
+        }
+        spinnerType3.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val selectedType = parent.getItemAtPosition(position) as String
+                if (selectedType == "Select") {
+                    return
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+            }
+        }
+        return binding.root
     }
     override fun onResume() {
         super.onResume()
         (activity as UpangMainActivity).updateActionBarTitle("Course Details")
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment UpangCourseDetails.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            UpangCourseDetailsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }
