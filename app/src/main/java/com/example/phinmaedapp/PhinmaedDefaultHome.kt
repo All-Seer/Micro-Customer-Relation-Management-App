@@ -32,13 +32,9 @@ class PhinmaedDefaultHome : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnOpenLink.setOnClickListener{
-            val url = "https://www.phinma.edu.ph/contact-us/" // Replace with your desired URL
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(url)
-            if (intent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(intent)
-            } else {
-                Toast.makeText(requireContext(), "No browser available to open the link", Toast.LENGTH_SHORT).show()
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.phinma.edu.ph/contact-us/"))
+            if (browserIntent.resolveActivity(requireContext().packageManager) != null) {
+                startActivity(browserIntent)
             }
         }
 
