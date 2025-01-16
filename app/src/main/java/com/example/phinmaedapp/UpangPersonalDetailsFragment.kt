@@ -23,7 +23,8 @@ class UpangPersonalDetailsFragment : Fragment() {
 
 
         binding.btpdSubmit.setOnClickListener{
-            val passfragment = UpangHomeFragment()
+            binding.tvPDStudentID.text = binding.etStudentID.text.toString()
+           val passfragment = UpangHomeFragment()
             val bundle = Bundle().apply {
                 putString("LASTNAME", binding.etLastName.text.toString())
                 putString("FIRSTNAME", binding.etFirstName.text.toString())

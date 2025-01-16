@@ -449,7 +449,7 @@
                                     android:layout_height="wrap_content"
                                     android:background="@color/phinmaPrimary"
                                     android:textColor="@color/white"
-                                    android:text="Urdaneta Campus Courses" />
+                                    android:text="Offered Courses" />
 
                                 <LinearLayout
                                     android:id="@+id/layoutFlexRemoteList"
