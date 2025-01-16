@@ -32,6 +32,9 @@ class UpangModalityFragment : Fragment() {
         binding.btUrdanetaCourses.setOnClickListener {
             toggleUrdanetaCourseListVisibility()
         }
+        binding.btFlexRemoteCourses.setOnClickListener {
+            toggleFLexRemoteCourseListVisibility()
+        }
     }
     private fun toggleDagupanCourseListVisibility() {
         val isVisible = binding.layoutDagupanCourseList.visibility == View.VISIBLE
@@ -45,6 +48,14 @@ class UpangModalityFragment : Fragment() {
         TransitionManager.beginDelayedTransition(binding.cvUrdanetaCourses, transition)
         binding.layoutUrdanetaCourseList.visibility = if (isVisible) View.GONE else View.VISIBLE
     }
+
+    private fun toggleFLexRemoteCourseListVisibility(){
+        val isVisible = binding.layoutFlexRemoteList.visibility == View.VISIBLE
+        val transition = AutoTransition()
+        TransitionManager.beginDelayedTransition(binding.cvFlexRemoteCourses, transition)
+        binding.layoutFlexRemoteList.visibility = if (isVisible) View.GONE else View.VISIBLE
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
