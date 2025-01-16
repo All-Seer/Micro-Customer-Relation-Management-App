@@ -29,6 +29,10 @@ class UpangPersonalDetailsFragment : Fragment() {
                 putString("FIRSTNAME", binding.etFirstName.text.toString())
                 putString("MIDDLENAME", binding.etMiddleName.text.toString())
                 putString("EXTENSIONNAME", binding.etExtensionName.text.toString())
+                putString("STUDENTID", binding.etStudentID.text.toString())
+                putString("STUDENTEMAIL", binding.etEmail.text.toString())
+                putString("STUDENTCONTACT", binding.etContact.text.toString())
+                putString("FACEBOOKLINK", binding.etFBlink.text.toString())
             }
             passfragment.arguments = bundle
 

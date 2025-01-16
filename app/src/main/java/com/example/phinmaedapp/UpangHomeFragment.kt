@@ -23,6 +23,15 @@ class UpangHomeFragment : Fragment() {
             val firstName = it.getString("FIRSTNAME")
             val middleName = it.getString("MIDDLENAME")
             val extensionName = it.getString("EXTENSIONNAME")
+            val studentID = it.getString("STUDENTID")
+            val email = it.getString("STUDENTEMAIL")
+            val contact = it.getString("STUDENTCONTACT")
+            val fblink = it.getString("FACEBOOKLINK")
+
+            binding.tvstudNum.text = "$studentID"
+            binding.tvStudEmail.text = "$email"
+            binding.tvStudContact.text = "$contact"
+            binding.tvStudFB.text = "$fblink"
             binding.tvstudName.text = "$lastName, $firstName $middleName $extensionName"
         }
         return binding.root
