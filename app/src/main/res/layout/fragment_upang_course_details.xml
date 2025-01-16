@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UpangCourseDetailsFragment">
 
 
@@ -17,8 +17,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardCornerRadius="20dp"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            app:cardCornerRadius="20dp">
 
 
             <LinearLayout
@@ -31,11 +31,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="14dp"
-                    android:textStyle="bold"
                     android:ems="10"
+                    android:text="@string/c_coursedetails"
                     android:textColor="@color/black"
-                    android:textSize="24dp"
-                    android:text="@string/c_coursedetails" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"
@@ -47,215 +47,225 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/c_intake"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
                         android:text="@string/c_intake"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/c_intake2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="10dp"
-                        android:textAlignment="textEnd"
-                        android:text="@string/c_intake2" />
+                        android:layout_weight="1"
+                        android:text="@string/c_intake2"
+                        android:textAlignment="textEnd" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/c_college"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
                         android:text="@string/c_college"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/c_college2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="10dp"
-                        android:textAlignment="textEnd"
-                        android:text="@string/c_college2" />
+                        android:layout_weight="1"
+                        android:text="@string/c_college2"
+                        android:textAlignment="textEnd" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/c_course"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
                         android:text="@string/c_course"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/c_course2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="10dp"
-                        android:textAlignment="textEnd"
-                        android:text="@string/c_course2" />
+                        android:layout_weight="1"
+                        android:text="@string/c_course2"
+                        android:textAlignment="textEnd" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/c_curriculum"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
                         android:text="@string/c_curriculum"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/c_curriculum2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="10dp"
-                        android:textAlignment="textEnd"
-                        android:text="@string/c_curriculum2" />
+                        android:layout_weight="1"
+                        android:text="@string/c_curriculum2"
+                        android:textAlignment="textEnd" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/c_semester"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
                         android:text="@string/c_semester"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/c_semester2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="10dp"
-                        android:textAlignment="textEnd"
-                        android:text="@string/c_semester2" />
+                        android:layout_weight="1"
+                        android:text="@string/c_semester2"
+                        android:textAlignment="textEnd" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/c_modality"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
                         android:text="@string/c_modality"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/c_modality2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="10dp"
-                        android:textAlignment="textEnd"
-                        android:text="@string/c_modality2" />
+                        android:layout_weight="1"
+                        android:text="@string/c_modality2"
+                        android:textAlignment="textEnd" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/c_advisor"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
                         android:text="@string/c_advisor"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/c_advisor2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="10dp"
-                        android:textAlignment="textEnd"
-                        android:text="@string/c_advisor2" />
+                        android:layout_weight="1"
+                        android:text="@string/c_advisor2"
+                        android:textAlignment="textEnd" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/c_mentor"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
                         android:text="@string/c_mentor"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/c_mentor2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="10dp"
-                        android:textAlignment="textEnd"
-                        android:text="@string/c_mentor2" />
+                        android:layout_weight="1"
+                        android:text="@string/c_mentor2"
+                        android:textAlignment="textEnd" />
 
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/c_education"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginStart="14dp"
+                    android:layout_weight="1"
                     android:ems="10"
                     android:text="@string/c_education"
                     android:textColor="@color/black"
-                    android:textSize="24dp"
-                    android:textStyle="bold"/>
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -270,56 +280,56 @@
                     android:scrollbars="none">
 
                     <TableLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="10dp">
+                        android:layout_margin="10dp"
+                        android:layout_weight="1">
 
                         <TableRow
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="#aaa583"
-                            android:layout_margin="10dp">
+                            android:layout_margin="10dp"
+                            android:background="#aaa583">
 
                             <TextView
                                 android:id="@+id/sr"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textAlignment="center"
-                                android:text="@string/c_sr" />
+                                android:text="@string/c_sr"
+                                android:textAlignment="center" />
 
                             <TextView
                                 android:id="@+id/c_level"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textAlignment="center"
-                                android:text="@string/c_level" />
+                                android:text="@string/c_level"
+                                android:textAlignment="center" />
 
                             <TextView
                                 android:id="@+id/c_school"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
-                                android:textAlignment="center"
-                                android:text="@string/c_school" />
+                                android:text="@string/c_school"
+                                android:textAlignment="center" />
 
                             <TextView
                                 android:id="@+id/c_year"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textAlignment="center"
-                                android:text="@string/c_year" />
+                                android:text="@string/c_year"
+                                android:textAlignment="center" />
 
                             <TextView
                                 android:id="@+id/c_type"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textAlignment="center"
-                                android:text="@string/c_type" />
+                                android:text="@string/c_type"
+                                android:textAlignment="center" />
                         </TableRow>
 
                         <TableRow
@@ -333,8 +343,8 @@
                                 android:id="@+id/c_sr2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="@string/c_sr2" />
+                                android:text="@string/c_sr2"
+                                android:textAlignment="center" />
 
                             <TextView
                                 android:id="@+id/c_level2"
@@ -346,23 +356,23 @@
                                 android:id="@+id/nameofSchool_elem"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"
+                                android:text=""
                                 android:textAlignment="center"
-                                android:text=""/>
+                                android:textSize="12sp" />
 
                             <EditText
                                 android:id="@+id/year_elem"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"
-                                android:textAlignment="center"
                                 android:inputType="date"
-                                android:text=""/>
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textSize="12sp" />
 
                             <Spinner
                                 android:id="@+id/type_elem"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content" />
 
 
                         </TableRow>
@@ -376,8 +386,8 @@
                                 android:id="@+id/c_sr3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="@string/c_sr3" />
+                                android:text="@string/c_sr3"
+                                android:textAlignment="center" />
 
                             <TextView
                                 android:id="@+id/c_level3"
@@ -389,23 +399,23 @@
                                 android:id="@+id/nameofSchool_junior"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"
+                                android:text=""
                                 android:textAlignment="center"
-                                android:text=""/>
+                                android:textSize="12sp" />
 
                             <EditText
                                 android:id="@+id/year_junior"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:inputType="date"
-                                android:textSize="12sp"
+                                android:text=""
                                 android:textAlignment="center"
-                                android:text=""/>
+                                android:textSize="12sp" />
 
                             <Spinner
                                 android:id="@+id/type_junior"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content" />
                         </TableRow>
 
                         <TableRow
@@ -417,8 +427,8 @@
                                 android:id="@+id/c_sr4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="@string/c_sr4" />
+                                android:text="@string/c_sr4"
+                                android:textAlignment="center" />
 
                             <TextView
                                 android:id="@+id/c_level4"
@@ -430,23 +440,23 @@
                                 android:id="@+id/nameofSchool_senior"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"
+                                android:text=""
                                 android:textAlignment="center"
-                                android:text=""/>
+                                android:textSize="12sp" />
 
                             <EditText
                                 android:id="@+id/year_senior"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:inputType="date"
-                                android:textSize="12sp"
+                                android:text=""
                                 android:textAlignment="center"
-                                android:text=""/>
+                                android:textSize="12sp" />
 
                             <Spinner
                                 android:id="@+id/type_senior"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content" />
                         </TableRow>
                     </TableLayout>
                 </HorizontalScrollView>
