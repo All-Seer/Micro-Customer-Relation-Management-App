@@ -17,8 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_gravity="top"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:contentDescription="phinmaedbanner"
         android:src="@drawable/phinmaedbanner" />
 
@@ -71,13 +71,13 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etStudUsername"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="60sp"
                     android:drawableStart="@drawable/custom_user_icon"
                     android:hint="@string/tvUser"
                     android:inputType="text"
                     android:maxLength="20"
                     android:paddingStart="16dp"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Password Input -->
@@ -93,12 +93,12 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etStudPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="60sp"
                     android:drawableStart="@drawable/custom_lock_icon"
                     android:hint="@string/tvPass"
                     android:inputType="textPassword"
                     android:paddingStart="16dp"
-                    android:textSize="14sp"/>
+                    android:textSize="18sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Sign In Button -->

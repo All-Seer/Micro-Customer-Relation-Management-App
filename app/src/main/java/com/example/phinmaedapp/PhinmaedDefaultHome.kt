@@ -6,12 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import android.widget.VideoView
 import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.FragmentPhinmaedHomeBinding
 
-class PhinmaedDefaultHome : Fragment() {
+class PhinmaedDefaultHome : Fragment(R.layout.fragment_phinmaed_home) {
 
     private var _binding: FragmentPhinmaedHomeBinding? = null
     private val binding get() = _binding!!
@@ -64,7 +63,6 @@ class PhinmaedDefaultHome : Fragment() {
     }
     override fun onResume() {
         super.onResume()
-        (activity as MainActivity).updateActionBarTitle("Home")
         if (!isVideoPlaying) {
             videoView.seekTo(currentPosition)
             videoView.start()

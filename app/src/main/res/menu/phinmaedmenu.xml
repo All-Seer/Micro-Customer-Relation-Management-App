@@ -1,79 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
         <item
             android:id="@+id/itemhome"
-            android:title="Home" />
-    </group>
+            android:title="Home"
+            android:icon="@drawable/ic_home"/>
 
-        <item android:title="Schools">
-            <menu>
-                <group android:checkableBehavior="single">
-
-                    <item
-                        android:id="@+id/itemCoc"
-                        android:title="@string/phinmacoc"
-                        android:icon="@drawable/phinmacoc"/>
-
-                    <item
-                        android:id="@+id/itemarAullo"
-                        android:title="@string/phinmaau"
-                        android:icon="@drawable/phinmaau"/>
-                    <item
-                        android:id="@+id/itemUpang"
-                        android:title="@string/phinmaupang"
-                        android:icon="@drawable/phinmaupang"/>
-
-                    <item
-                        android:id="@+id/itemIloilo"
-                        android:title="@string/phinmaui"
-                        android:icon="@drawable/phinmaui"/>
-
-                    <item
-                        android:id="@+id/itemSWU"
-                        android:title="@string/phinmaswu"
-                        android:icon="@drawable/phinmaeswu"/>
-
-                    <item
-                        android:id="@+id/itemSJC"
-                        android:title="@string/phinmasjc"
-                        android:icon="@drawable/phinmasjc"/>
-
-                    <item
-                        android:id="@+id/itemRC"
-                        android:title="@string/phinmarc"
-                        android:icon="@drawable/phinmaeswu"/>
-
-                    <item
-                        android:id="@+id/itemRCL"
-                        android:title="@string/phinmarcl"
-                        android:icon="@drawable/phinmaeswu"/>
-
-                    <item
-                        android:id="@+id/itemUCL"
-                        android:title="@string/phinmaucl"
-                        android:icon="@drawable/phinmaeswu"/>
-                    <item
-                        android:id="@+id/itemHorizon"
-                        android:title="@string/phinmahorizon"
-                        android:icon="@drawable/phinmahorizon"/>
-
-                </group>
-            </menu>
-        </item>
-
-
-    <group android:checkableBehavior="single"
-        android:id="@+id/group2">
+        <item android:title="Schools"
+            android:id="@+id/itemSchools"
+            android:icon="@drawable/ic_schools"/>
         <item
             android:id="@+id/itemCommunity"
-            android:title="Community" />
+            android:title="Community"
+            android:icon="@drawable/ic_community"/>
         <item
             android:id="@+id/itemAbout"
-            android:title="About" />
-    </group>
-
+            android:title="About"
+            android:icon="@drawable/ic_about" />
 </menu>

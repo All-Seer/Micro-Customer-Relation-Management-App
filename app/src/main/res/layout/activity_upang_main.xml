@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/upangdrawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context=".UpangMainActivity"
-    android:background="@color/white">
+    tools:context=".UpangMainActivity">
 
     <!-- Parent -->
 
-
-    <FrameLayout
-        android:id="@+id/upangFragment"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/upangtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/phinmaPrimary"/>
+
+        <FrameLayout
+            android:id="@+id/upangFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 
     <!-- Navigation Bar -->
@@ -24,9 +35,8 @@
         android:id="@+id/upangnavView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:headerLayout="@layout/phinmaedmenuheader"
-        app:menu="@menu/upangmenu"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"/>
+        app:headerLayout="@layout/phinmaedmenuheader"
+        app:menu="@menu/upangmenu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

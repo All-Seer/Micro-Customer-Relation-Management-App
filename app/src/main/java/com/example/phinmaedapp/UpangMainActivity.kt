@@ -1,91 +1,92 @@
 package com.example.phinmaedapp
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.ActivityUpangMainBinding
+import com.google.android.material.navigation.NavigationView
 
-class UpangMainActivity : AppCompatActivity() {
+class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val upanghomeFragment = UpangHomeFragment()
-    lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navView: NavigationView
+    private lateinit var toolbar: Toolbar
+    private val upangpdFragment = UpangPersonalDetailsFragment()
+    private val upangspFragment = UpangSchoolMap()
+    private val upangmodalityFragment = UpangModalityFragment()
+    private val upangscholarshipFragment = UpangScholarshipFragment()
+
     private lateinit var binding: ActivityUpangMainBinding
+    private lateinit var toggle: ActionBarDrawerToggle // Declare toggle here
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityUpangMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        window.statusBarColor = Color.TRANSPARENT
 
+        toolbar = findViewById(R.id.upangtoolbar)
+        setSupportActionBar(toolbar)
 
-        val upangpdFragment = UpangPersonalDetailsFragment()
-        val upangspFragment = UpangSchoolMap()
-        val upangmodalityFragment = UpangModalityFragment()
-        val upangscholarshipFragment = UpangScholarshipFragment()
+        drawerLayout = findViewById(R.id.upangdrawerLayout)
+        navView = binding.upangnavView
+
+        // Initialize toggle here
+        toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        navView.setNavigationItemSelectedListener(this)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (savedInstanceState == null) {
             setCurrentFragment(upanghomeFragment)
         }
-
-        toggle = ActionBarDrawerToggle(this, binding.upangdrawerLayout, R.string.open, R.string.close)
-        binding.upangdrawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-
-        binding.upangnavView.setNavigationItemSelectedListener{
-            when (it.itemId) {
-                R.id.itemUpanghome -> setCurrentFragment(upanghomeFragment)
-
-                R.id.itemPersonalDetails -> setCurrentFragment(upangpdFragment)
-
-                R.id.itemSchoolMap -> setCurrentFragment(upangspFragment)
-
-                R.id.itemModality -> setCurrentFragment(upangmodalityFragment)
-
-                R.id.itemScholar -> setCurrentFragment(upangscholarshipFragment)
-
-                R.id.itemLogOut -> startActivity(Intent(this, MainActivity::class.java))
-            }
-            it.isChecked = false
-            binding.upangdrawerLayout.closeDrawer(GravityCompat.START)
-            true
-        }
-
     }
 
-    override fun onBackPressed() {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.flFragment)
-
-        if (currentFragment !is UpangHomeFragment){
-            setCurrentFragment(upanghomeFragment)
-        }else {
-            super.onBackPressed()
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.itemUpanghome -> setCurrentFragment(upanghomeFragment)
+            R.id.itemPersonalDetails -> setCurrentFragment(upangpdFragment)
+            R.id.itemSchoolMap -> setCurrentFragment(upangspFragment)
+            R.id.itemModality -> setCurrentFragment(upangmodalityFragment)
+            R.id.itemScholar -> setCurrentFragment(upangscholarshipFragment)
+            R.id.itemLogOut -> startActivity(Intent(this, MainActivity::class.java))
         }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Pass the event to ActionBarDrawerToggle
         if (toggle.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)
     }
+
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.upangFragment, fragment).addToBackStack(null)
             commit()
         }
+
     fun updateActionBarTitle(title: String) {
         supportActionBar?.title = title
     }
