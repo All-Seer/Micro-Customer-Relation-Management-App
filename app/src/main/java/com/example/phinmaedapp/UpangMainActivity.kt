@@ -51,7 +51,6 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             setCurrentFragment(upanghomeFragment)
         }
     }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.itemUpanghome -> setCurrentFragment(upanghomeFragment)
@@ -64,7 +63,6 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Pass the event to ActionBarDrawerToggle
         if (toggle.onOptionsItemSelected(item)) {
@@ -72,7 +70,6 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         }
         return super.onOptionsItemSelected(item)
     }
-
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
@@ -80,13 +77,11 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             super.onBackPressed()
         }
     }
-
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.upangFragment, fragment).addToBackStack(null)
             commit()
         }
-
     fun updateActionBarTitle(title: String) {
         supportActionBar?.title = title
     }

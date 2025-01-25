@@ -1,5 +1,6 @@
 package com.example.phinmaedapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.enableEdgeToEdge
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         hideActionBar()
         setStatusBarColor(R.color.phinmaPrimary)
 
-
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
         val phinmaedhomeFragment = PhinmaedDefaultHome()
@@ -33,21 +33,16 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             setCurrentFragment(phinmaedhomeFragment)
         }
-
-
-        //Navigation Bar Settings
-
         binding.navView.setOnItemSelectedListener{
             when (it.itemId) {
                 R.id.itemhome -> setCurrentFragment(phinmaedhomeFragment)
-                R.id.itemSchools -> setCurrentFragment(phinmaedschoolsFragment)
+                R.id.itemSchools -> startActivity(Intent(this, LoginActivity::class.java))
                 R.id.itemAbout -> setCurrentFragment(phinmaedaboutFragment)
                 R.id.itemCommunity -> setCurrentFragment(phinmaedcommunityFragment)
                 else -> return@setOnItemSelectedListener false
             }
             true
         }
-
     }
     override fun onBackPressed() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.flFragment)
@@ -68,10 +63,8 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
     private fun setStatusBarColor(colorResId: Int) {
-        // Get the color from resources
         val color = ContextCompat.getColor(this, colorResId)
 
-        // Set the status bar color
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.statusBarColor = color
