@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
@@ -14,42 +12,34 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/itemPersonalDetails"
-                    android:title="Personal Details"/>
+                    android:title="Personal Details" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Guide">
+        <menu>
+            <group
+                android:id="@+id/group2"
+                android:checkableBehavior="single">
 
                 <item
-                    android:id="@+id/itemAddressDetails"
-                    android:title="Address Details" />
-
+                    android:id="@+id/itemSchoolMap"
+                    android:title="School Map Page" />
                 <item
-                    android:id="@+id/itemCourseDetails"
-                    android:title="Course Details" />
-
+                    android:id="@+id/itemModality"
+                    android:title="Modality Help Page" />
                 <item
-                    android:id="@+id/itemPhotoSignature"
-                    android:title="Photo Signature" />
-
-                <item
-                    android:id="@+id/itemEnlistedSubjects"
-                    android:title="Enlisted Subjects" />
+                    android:id="@+id/itemScholar"
+                    android:title="Scholarship Page" />
             </group>
         </menu>
     </item>
 
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/group2">
-        <item
-            android:id="@+id/itemSchoolMap"
-            android:title="School Map Page" />
-        <item
-            android:id="@+id/itemModality"
-            android:title="Modality Help Page" />
-        <item
-            android:id="@+id/itemScholar"
-            android:title="Scholarship Page" />
-    </group>
-    <group android:checkableBehavior="single"
-        android:id="@+id/group3">
+    <group
+        android:id="@+id/group3"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/itemLogOut"
             android:title="Log Out" />

@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:background="@drawable/upanglogin1"
     tools:context=".UpangMainActivity">
 
     <!-- Logo at the top -->
@@ -16,18 +17,17 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_gravity="top"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="80dp"
         android:contentDescription="phinmaedbanner"
         android:src="@drawable/phinmaedbanner" />
 
     <!-- Card for Login -->
     <androidx.cardview.widget.CardView
-        android:layout_width="340dp"
-        android:layout_height="450dp"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="8dp">
+        app:cardElevation="50dp">
 
         <!-- LinearLayout inside CardView -->
         <LinearLayout

@@ -6,5 +6,6 @@
     <color name="darkgrey">#aaaaaa</color>
     <color name="Turquiose">#00BFFF</color>"
     <color name="lightBg">#fbf6ed</color>
-    <color name="phinmaPrimary">#036e03</color>
+    <color name="phinmaPrimary">#394e25</color>
+    <color name="phinmaSecondary">#a98c00</color>
 </resources>

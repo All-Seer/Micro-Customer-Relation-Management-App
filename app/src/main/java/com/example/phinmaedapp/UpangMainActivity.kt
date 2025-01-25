@@ -29,10 +29,6 @@ class UpangMainActivity : AppCompatActivity() {
 
 
         val upangpdFragment = UpangPersonalDetailsFragment()
-        val upangadFragment = UpangAddressDetailsFragment()
-        val upangcdFragment = UpangCourseDetailsFragment()
-        val upangpsFragment = UpangPhotoSignatureFragment()
-        val upangesFragment = UpangEnlistedSubjectsFragment()
         val upangspFragment = UpangSchoolMap()
         val upangmodalityFragment = UpangModalityFragment()
         val upangscholarshipFragment = UpangScholarshipFragment()
@@ -53,14 +49,6 @@ class UpangMainActivity : AppCompatActivity() {
                 R.id.itemUpanghome -> setCurrentFragment(upanghomeFragment)
 
                 R.id.itemPersonalDetails -> setCurrentFragment(upangpdFragment)
-
-                R.id.itemAddressDetails -> setCurrentFragment(upangadFragment)
-
-                R.id.itemCourseDetails -> setCurrentFragment(upangcdFragment)
-
-                R.id.itemPhotoSignature -> setCurrentFragment(upangpsFragment)
-
-                R.id.itemEnlistedSubjects -> setCurrentFragment(upangesFragment)
 
                 R.id.itemSchoolMap -> setCurrentFragment(upangspFragment)
 
