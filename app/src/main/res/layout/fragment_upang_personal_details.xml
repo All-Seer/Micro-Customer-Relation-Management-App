@@ -9,15 +9,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:gravity="center">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp">
+            android:layout_margin="12dp"
+            app:cardElevation="10dp">
 
 
             <LinearLayout
@@ -179,10 +179,11 @@
                         android:textColor="@color/black" />
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="350dp"
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_gravity="center"
+                    app:cardElevation="4dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
                     android:layout_weight="1">
@@ -191,12 +192,15 @@
                         android:layout_width="325dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangIDLayout"
-                            android:layout_width="match_parent"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="13dp"
+                            android:layout_marginTop="13dp"
                             app:boxBackgroundMode="outline"
                             app:boxStrokeWidthFocused="2dp"
                             app:endIconMode="clear_text">
@@ -213,8 +217,9 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangLastNameLayout"
-                            android:layout_width="match_parent"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="13dp"
                             app:boxBackgroundMode="outline"
                             app:boxStrokeWidthFocused="2dp"
                             app:endIconMode="clear_text">
@@ -231,8 +236,9 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangFirstNameLayout"
-                            android:layout_width="match_parent"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="13dp"
                             app:boxBackgroundMode="outline"
                             app:boxStrokeWidthFocused="2dp"
                             app:endIconMode="clear_text">
@@ -249,8 +255,9 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangMiddleNameLayout"
-                            android:layout_width="match_parent"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="13dp"
                             app:boxBackgroundMode="outline"
                             app:boxStrokeWidthFocused="2dp"
                             app:endIconMode="clear_text">
@@ -267,8 +274,9 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangExtensionNameLayout"
-                            android:layout_width="match_parent"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="13dp"
                             app:boxBackgroundMode="outline"
                             app:boxStrokeWidthFocused="2dp"
                             app:endIconMode="clear_text">
@@ -283,66 +291,28 @@
                                 android:textSize="14sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/upangDateofBirthLayout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:boxBackgroundMode="outline"
-                            app:boxStrokeWidthFocused="2dp"
-                            app:endIconMode="clear_text">
-
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etDateofBirth"
-                                android:layout_width="match_parent"
-                                android:layout_height="48dp"
-                                android:hint="Date of Birth"
-                                android:inputType="date"
-                                android:paddingStart="16dp"
-                                android:textSize="14sp" />
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/upangPlaceofBirthLayout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:boxBackgroundMode="outline"
-                            app:boxStrokeWidthFocused="2dp"
-                            app:endIconMode="clear_text">
-
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etPlaceofBirth"
-                                android:layout_width="match_parent"
-                                android:layout_height="48dp"
-                                android:hint="Place of Birth"
-                                android:inputType="text"
-                                android:paddingStart="16dp"
-                                android:textSize="14sp" />
-                        </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangGenderLayout"
-                            android:layout_width="match_parent"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
                             app:boxBackgroundMode="outline"
                             app:boxStrokeWidthFocused="2dp"
                             app:hintEnabled="false">
 
-                            <Spinner
+                            <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/spinnerGender"
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
-                                android:paddingStart="16dp"
-                                android:paddingEnd="16dp"
                                 android:textSize="14sp" />
 
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangEmailLayout"
-                            android:layout_width="match_parent"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="13dp"
                             app:boxBackgroundMode="outline"
                             app:boxStrokeWidthFocused="2dp"
                             app:endIconMode="clear_text">
@@ -359,8 +329,9 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangContactLayout"
-                            android:layout_width="match_parent"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="13dp"
                             app:boxBackgroundMode="outline"
                             app:boxStrokeWidthFocused="2dp"
                             app:endIconMode="clear_text">
@@ -377,8 +348,9 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangFBnameLayout"
-                            android:layout_width="match_parent"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="13dp"
                             app:boxBackgroundMode="outline"
                             app:boxStrokeWidthFocused="2dp"
                             app:endIconMode="clear_text">
@@ -397,17 +369,17 @@
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.appcompat.widget.AppCompatButton
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btpdSubmit"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center"
                     android:background="@drawable/submit_button_layout"
                     android:text="Submit" />
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </ScrollView>
