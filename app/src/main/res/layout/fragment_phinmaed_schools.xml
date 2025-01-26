@@ -24,272 +24,295 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="50sp"
-            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
             android:text="SCHOOLS"
-            android:layout_marginBottom="20dp"/>
+            android:textAlignment="center"
+            android:textColor="@color/phinmaSecondary"
+            android:textSize="50sp"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/s_au"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmaau" />
-
-                <TextView
-                    android:id="@+id/s_au2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma AU"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/s_coc"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmacoc" />
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/s_coc2"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s_au"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmaau"
+                            android:contentDescription="AULoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_au2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma AU"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s_coc"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmacoc"
+                            android:contentDescription="COCLoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_coc2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma COC"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/supang"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmaupang"
+                            android:contentDescription="UpangLoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_upang2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma UPANG"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma COC"
-                    android:textAlignment="center" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:baselineAligned="false"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s_UI"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmaui"
+                            android:contentDescription="UILoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_ui2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma UI"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s_swu"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmaeswu"
+                            android:contentDescription="SWULoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_swu2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma SWU"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s_sjc"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmasjc"
+                            android:contentDescription="SJCLoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_sjc2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma SJC"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginBottom="20dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s_RC"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmarc"
+                            android:contentDescription="RCLoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_rc2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma RC"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s_rcl"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmarcl"
+                            android:contentDescription="RCLLoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_rcl2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma RCL"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s_ucl"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmaucl"
+                            android:contentDescription="UCLLoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_ucl2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma UCL"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/s_horizon"
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:background="@color/fully_transparent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/phinmahorizon"
+                            android:contentDescription="HorizonLoginDirectory"/>
+
+                        <TextView
+                            android:id="@+id/s_horizon2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phinma Horizon"
+                            android:textAlignment="center" />
+                </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/s_upang"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmaupang" />
-
-                <TextView
-                    android:id="@+id/s_upang2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma UPANG"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/s_UI"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmaui" />
-
-                <TextView
-                    android:id="@+id/s_ui2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma UI"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/s_swu"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmaeswu" />
-
-                <TextView
-                    android:id="@+id/s_swu2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma SWU"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/s_sjc"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmasjc" />
-
-                <TextView
-                    android:id="@+id/s_sjc2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma SJC"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/s_RC"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmarc" />
-
-                <TextView
-                    android:id="@+id/s_rc2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma RC"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/s_rcl"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmarcl" />
-
-                <TextView
-                    android:id="@+id/s_rcl2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma RCL"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/s_ucl"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmaucl" />
-
-                <TextView
-                    android:id="@+id/s_ucl2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma UCL"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <ImageButton
-                    android:id="@+id/s_horizon"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:background="#0000000"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/phinmahorizon" />
-
-                <TextView
-                    android:id="@+id/s_horizon2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phinma Horizon"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
+
 </androidx.core.widget.NestedScrollView>

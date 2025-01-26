@@ -102,13 +102,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Sign In Button -->
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btSignin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/phinmaPrimary"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/phinmaSecondary"
                 android:text="@string/btSign"
+                android:textSize="20dp"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
         </LinearLayout>

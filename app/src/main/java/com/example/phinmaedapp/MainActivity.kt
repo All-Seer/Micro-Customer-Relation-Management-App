@@ -1,6 +1,5 @@
 package com.example.phinmaedapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.enableEdgeToEdge
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding.navView.setOnItemSelectedListener{
             when (it.itemId) {
                 R.id.itemhome -> setCurrentFragment(phinmaedhomeFragment)
-                R.id.itemSchools -> startActivity(Intent(this, LoginActivity::class.java))
+                R.id.itemSchools -> setCurrentFragment(phinmaedschoolsFragment)
                 R.id.itemAbout -> setCurrentFragment(phinmaedaboutFragment)
                 R.id.itemCommunity -> setCurrentFragment(phinmaedcommunityFragment)
                 else -> return@setOnItemSelectedListener false
