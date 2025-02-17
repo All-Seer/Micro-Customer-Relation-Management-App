@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhinmaedSchools">
+    tools:context=".UpangMainActivity">
 
 
     <LinearLayout
@@ -33,6 +33,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:baselineAligned="false"
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
 
@@ -46,7 +47,8 @@
                     android:id="@+id/s_au"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmaau" />
 
@@ -69,7 +71,8 @@
                     android:id="@+id/s_coc"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmacoc" />
 
@@ -92,7 +95,8 @@
                     android:id="@+id/s_upang"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmaupang" />
 
@@ -111,6 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
+            android:baselineAligned="false"
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
 
@@ -124,7 +129,8 @@
                     android:id="@+id/s_UI"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmaui" />
 
@@ -147,7 +153,8 @@
                     android:id="@+id/s_swu"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmaeswu" />
 
@@ -170,7 +177,8 @@
                     android:id="@+id/s_sjc"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmasjc" />
 
@@ -187,6 +195,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="170dp"
+            android:baselineAligned="false"
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
 
@@ -200,7 +209,8 @@
                     android:id="@+id/s_RC"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmarc" />
 
@@ -223,7 +233,8 @@
                     android:id="@+id/s_rcl"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmarcl" />
 
@@ -246,7 +257,8 @@
                     android:id="@+id/s_ucl"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmaucl" />
 
@@ -276,7 +288,8 @@
                     android:id="@+id/s_horizon"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
-                    android:background="#0000000"
+                    android:background="#00000000"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/phinmahorizon" />
 

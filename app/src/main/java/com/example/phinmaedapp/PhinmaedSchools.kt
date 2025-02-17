@@ -19,7 +19,7 @@ class PhinmaedSchools : Fragment() {
     ): View? {
         _binding = FragmentPhinmaedSchoolsBinding.inflate(inflater, container, false)
 
-        binding.supang.setOnClickListener {
+        binding.sUpang.setOnClickListener {
             startActivity(Intent(this.context, LoginActivity::class.java))
         }
 

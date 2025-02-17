@@ -1,10 +1,9 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.PhinmaEdApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/phinmaPrimary</item>
         <item name="colorPrimaryDark">@color/phinmaPrimary</item>
         <item name="colorAccent">@color/phinmaPrimary</item>
     </style>
-
     <style name="Theme.PhinmaEdApp" parent="Base.Theme.PhinmaEdApp" />
 </resources>

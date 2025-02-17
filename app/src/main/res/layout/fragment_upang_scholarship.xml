@@ -26,7 +26,7 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="2dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/phinmascholarship"/>
+                android:src="@drawable/phinmascholarship" />
         </RelativeLayout>
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="SCHOLARSHIPS"
-            android:textSize="27dp"
+            android:textSize="27sp"
             android:textStyle="bold" />
 
         <TextView
@@ -47,7 +47,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/scholarshipDesc"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/instruction"
@@ -58,12 +58,20 @@
             android:gravity="center"
             android:text="@string/scholarshipInstruc" />
 
-        <Spinner
-            android:id="@+id/selection"
-            android:layout_width="325dp"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10sp"/>
+            app:cardBackgroundColor="@color/phinmaSecondary"
+            app:cardCornerRadius="4dp">
+
+            <Spinner
+                android:id="@+id/selection"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:dropDownWidth="300dp"/>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
