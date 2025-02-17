@@ -18,6 +18,9 @@ class UpangSchoolMap : Fragment() {
     private var currentPosition: Int = 0
     private var isVideoPlaying: Boolean = false
 
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,7 +31,6 @@ class UpangSchoolMap : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        videoView = binding.upangMapVideo
         val videoPath = "android.resource://" + activity?.packageName + "/" + R.raw.phinma_upang_facilities
         val uri = Uri.parse(videoPath)
         videoView.setVideoURI(uri)
@@ -36,19 +38,9 @@ class UpangSchoolMap : Fragment() {
             mediaPlayer.setVolume(0f, 0f)
             videoView.start()
         }
-        scrollHorizontallySlowly()
         scrollHorizontallySlowlyUrdaneta()
     }
-    private fun scrollHorizontallySlowly() {
-        val scrollView = binding.horizontalScrollView
-        val scrollAmount = 9000
-        val duration = 20000L
 
-        ObjectAnimator.ofInt(scrollView, "scrollX", scrollAmount).apply {
-            this.duration = duration
-            start()
-        }
-    }
 
     private fun scrollHorizontallySlowlyUrdaneta() {
         val scrollView = binding.horizontalScrollViewUrdaneta

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UpangSchoolMap">
 
     <LinearLayout
@@ -17,175 +18,6 @@
             android:src="@drawable/upang_dagupan_banner"
             android:scaleType="centerCrop"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="DAGUPAN CAMPUS"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/phinmaPrimary"
-            android:layout_marginBottom="30dp"
-            android:textSize="32dp"
-            android:textAlignment="center"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/upang_dagupan_map"
-            android:layout_marginBottom="30dp"/>
-\
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="30dp"
-            android:fontFamily="monospace"
-            android:text="FACILITIES"
-            android:textColor="@color/phinmaPrimary"
-            android:textSize="26sp"
-            android:textStyle="bold" />
-
-        <VideoView
-            android:id="@+id/upangMapVideo"
-            android:layout_width="match_parent"
-            android:layout_height="300dp" />
-
-        <HorizontalScrollView
-            android:id="@+id/horizontalScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="school Images"
-            android:padding="8sp">
-
-            <LinearLayout
-                android:id="@+id/imageContainer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/ivupangfacility1"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility1" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility2"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility2" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility3"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility3" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility4"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility4" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility5"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility5" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility6"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility6" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility7"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility7" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility8"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility8" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility9"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility9" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility10"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility10" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility11"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility11" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility12"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility12" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility13"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility13" />
-
-                <ImageView
-                    android:id="@+id/ivupangfacility14"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_marginEnd="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/upangfacility14" />
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="30dp"
-            android:background="#D3D3D3" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -196,13 +28,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="60dp"
                 android:layout_marginBottom="30dp"
                 android:text="URDANETA CAMPUS"
                 android:fontFamily="sans-serif-black"
                 android:textColor="@color/phinmaPrimary"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+            
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="30dp"
+                android:layout_gravity="center">
+
+                <Spinner
+                    android:id="@+id/floorSpinner"
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
+                    android:padding="20dp"
+                    android:spinnerMode="dropdown"/>
+
+
+
+            </androidx.cardview.widget.CardView>
 
 
             <ImageView
@@ -223,6 +73,20 @@
                 android:textColor="@color/phinmaPrimary"
                 android:textSize="26sp"
                 android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:id="@+id/cardImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/upanglogin1" />
+            </androidx.cardview.widget.CardView>
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollViewUrdaneta"
