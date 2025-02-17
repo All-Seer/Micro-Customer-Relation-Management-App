@@ -8,4 +8,5 @@
     <color name="lightBg">#fbf6ed</color>
     <color name="phinmaPrimary">#394e25</color>
     <color name="phinmaSecondary">#a98c00</color>
+    <color name="transparent">#00000000</color>
 </resources>
