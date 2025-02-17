@@ -22,6 +22,7 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     private val upangspFragment = UpangSchoolMap()
     private val upangmodalityFragment = UpangModalityFragment()
     private val upangscholarshipFragment = UpangScholarshipFragment()
+    private val upangcalendarfragment = UpangCalendarFragment()
 
     private lateinit var binding: ActivityUpangMainBinding
     private lateinit var toggle: ActionBarDrawerToggle // Declare toggle here
@@ -55,6 +56,7 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         when (item.itemId) {
             R.id.itemUpanghome -> setCurrentFragment(upanghomeFragment)
             R.id.itemPersonalDetails -> setCurrentFragment(upangpdFragment)
+            R.id.itemSchoolCalendar -> setCurrentFragment(upangcalendarfragment)
             R.id.itemSchoolMap -> setCurrentFragment(upangspFragment)
             R.id.itemModality -> setCurrentFragment(upangmodalityFragment)
             R.id.itemScholar -> setCurrentFragment(upangscholarshipFragment)

@@ -24,6 +24,15 @@
                 android:checkableBehavior="single">
 
                 <item
+                    android:id="@+id/itemSchoolEvents"
+                    android:title="Event Page"/>
+
+
+                <item
+                    android:id="@+id/itemSchoolCalendar"
+                    android:title="Calendar Page"/>
+
+                <item
                     android:id="@+id/itemSchoolMap"
                     android:title="School Map Page" />
                 <item
