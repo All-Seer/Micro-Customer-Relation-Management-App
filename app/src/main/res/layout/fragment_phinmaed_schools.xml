@@ -24,11 +24,12 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="50sp"
-            android:textStyle="bold"
+            android:layout_margin="30dp"
             android:text="SCHOOLS"
-            android:layout_marginBottom="20dp"/>
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="50sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
