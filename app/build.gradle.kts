@@ -50,7 +50,9 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.play.services.maps)
     implementation("com.github.skydoves:expandablelayout:1.0.7")
+    implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }

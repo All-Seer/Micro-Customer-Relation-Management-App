@@ -107,4 +107,19 @@
     <string name="c_year4">Year Attended</string>
     <string name="c_type4">Type</string>
 
+    <string name="manual">STUDENT MANUAL</string>
+    <string name="manual2">summarization</string>
+    <string name="pdff">Complete student manual</string>
+    <string name="missionvision">MISSION AND VISION</string>
+    <string name="missionvision2">Mission of the PHINMA Education Network</string>
+    <string name="missionvision3">Through the application of effective management in institutions of higher and basic learning, to give Filipinos better access to affordable, high quality education in key cities throughout the Philippines, preparing them to be globally competitive.</string>
+    <string name="missionvision4">School Mission</string>
+    <string name="missionvision5">To develop the filipino youth into empoyable global professional thru the endowment of knowledge and skills and the formation of character and spirit.</string>
+    <string name="missionvision6">School Vision</string>
+    <string name="missionvision7">With distinct advantage in English Communication and Information Technology, to be the leading institution of higher learning in the region in the development of globally competitive professionals.</string>
+    <string name="policy">Academic Policies</string>
+    <string name="policy2">A. Grading System</string>
+    <string name="policy3">The grading system  will be provided to the students by their respective teacher through the syllabus. If understanding  of the system is not clear, it is the responsibility  of the student to seek clarification from his/her teacher, program head or dean.</string>
+    <string name="policy4">Grades are given out in numerical format. A student who passed the subject will receive any of the following grades: 1.00, 1.25, 1.50, 1.75, 2.00. 2.25, 2.50, 2.75, 3.00. The grade of 1.00 is the highest possible grade that a student may get. A student who has failed a subject will receive a grade of 5.00.</string>
+
 </resources>
