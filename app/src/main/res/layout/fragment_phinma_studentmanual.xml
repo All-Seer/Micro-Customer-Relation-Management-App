@@ -18,7 +18,7 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
-                android:layout_height="87dp"
+                android:layout_height="91dp"
                 android:scaleType="fitStart"
                 android:src="@drawable/student_manual" />
 
@@ -128,8 +128,112 @@
                 android:textSize="15sp"
                 android:layout_margin="10dp"
                 android:text="@string/policy4" />
+            <TextView
+                android:id="@+id/policy5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/policy5"/>
+            <TextView
+                android:id="@+id/policy6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_margin="10dp"
+                android:text="@string/policy6" />
+            <TextView
+                android:id="@+id/policy7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/policy7"/>
+
+
+            <TextView
+                android:id="@+id/policy8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/policy8"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_margin="40dp"
+                android:text="@string/services" />
+            <TextView
+                android:id="@+id/services2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/services2"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/conduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_margin="40dp"
+                android:text="@string/conduct" />
+            <TextView
+                android:id="@+id/conduct2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/conduct2" />
+            <TextView
+                android:id="@+id/conduct3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/conduct3"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/conduct4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/conduct4" />
+            <TextView
+                android:id="@+id/conduct5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/conduct5"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/structure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_margin="40dp"
+                android:text="@string/structure" />
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="235dp"
+                android:src="@drawable/organizational" />
 
             <Button
+                android:layout_marginTop="50dp"
                 android:id="@+id/manual3"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
