@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.flFragment)
 
-        if (currentFragment !is UpangHomeFragment){
+        if (currentFragment !is PhinmaedDefaultHome){
             setCurrentFragment(phinmaedhomeFragment)
             binding.navView.selectedItemId = R.id.itemhome
         }else {

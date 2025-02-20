@@ -105,9 +105,9 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btSignin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginTop="24dp"
-                android:backgroundTint="@color/phinmaSecondary"
+                android:backgroundTint="@color/phinmaPrimary"
                 android:text="@string/btSign"
                 android:textSize="20dp"
                 android:textColor="@android:color/white"

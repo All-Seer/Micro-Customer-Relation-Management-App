@@ -25,8 +25,11 @@
 
                 <item
                     android:id="@+id/itemSchoolEvents"
-                    android:title="Event Page"/>
+                    android:title="School Event Page"/>
 
+                <item
+                    android:id="@+id/itemSchoolManual"
+                    android:title="School Manual Page"/>
 
                 <item
                     android:id="@+id/itemSchoolCalendar"

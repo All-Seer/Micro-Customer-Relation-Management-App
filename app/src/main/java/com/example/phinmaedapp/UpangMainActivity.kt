@@ -23,9 +23,11 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     private val upangmodalityFragment = UpangModalityFragment()
     private val upangscholarshipFragment = UpangScholarshipFragment()
     private val upangcalendarfragment = UpangCalendarFragment()
+    private val upangeventpagefragment = UpangEventPageFragment()
+    private val upangstudentmanualFragment = phinma_studentmanual()
 
     private lateinit var binding: ActivityUpangMainBinding
-    private lateinit var toggle: ActionBarDrawerToggle // Declare toggle here
+    private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,23 +58,27 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         when (item.itemId) {
             R.id.itemUpanghome -> setCurrentFragment(upanghomeFragment)
             R.id.itemPersonalDetails -> setCurrentFragment(upangpdFragment)
+            R.id.itemSchoolEvents -> setCurrentFragment(upangeventpagefragment)
             R.id.itemSchoolCalendar -> setCurrentFragment(upangcalendarfragment)
             R.id.itemSchoolMap -> setCurrentFragment(upangspFragment)
             R.id.itemModality -> setCurrentFragment(upangmodalityFragment)
             R.id.itemScholar -> setCurrentFragment(upangscholarshipFragment)
             R.id.itemLogOut -> startActivity(Intent(this, MainActivity::class.java))
+            R.id.itemSchoolManual -> setCurrentFragment(upangstudentmanualFragment)
+            else -> setCurrentFragment(upanghomeFragment)
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Pass the event to ActionBarDrawerToggle
         if (toggle.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)
     }
     override fun onBackPressed() {
+
+
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
