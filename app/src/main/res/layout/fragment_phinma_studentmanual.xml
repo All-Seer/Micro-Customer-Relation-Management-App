@@ -26,144 +26,131 @@
                 android:id="@+id/manual"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:text="@string/manual"
                 android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
                 android:textColor="@color/black"
                 android:textSize="40sp"
-                android:textStyle="bold" />
+                android:text="@string/manual" />
 
             <TextView
                 android:id="@+id/manual2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:text="@string/manual2"
+                android:layout_margin="10dp"
                 android:textAlignment="center"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="25sp"/>
 
             <TextView
                 android:id="@+id/missionvission"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
-                android:text="@string/missionvision"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="40dp"
+                android:text="@string/missionvision" />
             <TextView
-                android:id="@+id/missionvission2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/missionvision2"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
+            android:id="@+id/missionvission2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:text="@string/missionvision2" />
             <TextView
                 android:id="@+id/missionvission3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:layout_margin="10dp"
-                android:text="@string/missionvision3"
-                android:textSize="15sp" />
-
+                android:text="@string/missionvision3" />
             <TextView
                 android:id="@+id/missionvission4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/missionvision4"
                 android:textSize="15sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/missionvision4"/>
             <TextView
                 android:id="@+id/missionvission5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:layout_margin="10dp"
-                android:text="@string/missionvision5"
-                android:textSize="15sp" />
-
+                android:text="@string/missionvision5" />
             <TextView
                 android:id="@+id/missionvission6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/missionvision6"
                 android:textSize="15sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/missionvision6"/>
             <TextView
                 android:id="@+id/missionvission7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:layout_margin="10dp"
-                android:text="@string/missionvision7"
-                android:textSize="15sp" />
-
+                android:text="@string/missionvision7" />
             <TextView
                 android:id="@+id/policy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
-                android:text="@string/policy"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="40dp"
+                android:text="@string/policy" />
             <TextView
                 android:id="@+id/policy2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/policy2"
                 android:textSize="15sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/policy2"/>
             <TextView
                 android:id="@+id/policy3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:layout_margin="10dp"
-                android:text="@string/policy3"
-                android:textSize="15sp" />
-
+                android:text="@string/policy3" />
             <TextView
                 android:id="@+id/policy4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:layout_margin="10dp"
-                android:text="@string/policy4"
-                android:textSize="15sp" />
-
+                android:text="@string/policy4" />
             <TextView
                 android:id="@+id/policy5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/policy5"
                 android:textSize="15sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/policy5"/>
             <TextView
                 android:id="@+id/policy6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:layout_margin="10dp"
-                android:text="@string/policy6"
-                android:textSize="15sp" />
-
+                android:text="@string/policy6" />
             <TextView
                 android:id="@+id/policy7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/policy7"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/policy7"/>
 
 
             <TextView
@@ -173,17 +160,15 @@
                 android:layout_margin="10dp"
                 android:text="@string/policy8"
                 android:textSize="15sp" />
-
             <TextView
                 android:id="@+id/services"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
-                android:text="@string/services"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="40dp"
+                android:text="@string/services" />
             <TextView
                 android:id="@+id/services2"
                 android:layout_width="match_parent"
@@ -191,26 +176,23 @@
                 android:layout_margin="10dp"
                 android:text="@string/services2"
                 android:textSize="15sp" />
-
             <TextView
                 android:id="@+id/conduct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
-                android:text="@string/conduct"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="40dp"
+                android:text="@string/conduct" />
             <TextView
                 android:id="@+id/conduct2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/conduct2"
                 android:textSize="20sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/conduct2" />
             <TextView
                 android:id="@+id/conduct3"
                 android:layout_width="match_parent"
@@ -218,16 +200,14 @@
                 android:layout_margin="10dp"
                 android:text="@string/conduct3"
                 android:textSize="15sp" />
-
             <TextView
                 android:id="@+id/conduct4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/conduct4"
                 android:textSize="20sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:text="@string/conduct4" />
             <TextView
                 android:id="@+id/conduct5"
                 android:layout_width="match_parent"
@@ -235,16 +215,15 @@
                 android:layout_margin="10dp"
                 android:text="@string/conduct5"
                 android:textSize="15sp" />
-
             <TextView
                 android:id="@+id/structure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
-                android:text="@string/structure"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_margin="40dp"
+                android:text="@string/structure" />
 
 
             <ImageView
@@ -253,27 +232,19 @@
                 android:layout_height="235dp"
                 android:src="@drawable/organizational" />
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/manual3"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:layout_centerHorizontal="true"
-                    android:text="@string/pdff" />
+            <Button
+                android:layout_marginTop="50dp"
+                android:id="@+id/manual3"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="@string/pdff"
+                android:layout_gravity="center"/>
 
 
-                <FrameLayout
-                    android:id="@+id/fragment_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@id/manual3"
-                    android:layout_alignParentBottom="true"/>
-            </RelativeLayout>
-
+            <FrameLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"/>
 
         </LinearLayout>
     </ScrollView>
