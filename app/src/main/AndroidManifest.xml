@@ -33,6 +33,9 @@
             android:name=".UpangFloorList"
             android:exported="false" />
         <activity
+            android:name=".CompleteStudentManual"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
