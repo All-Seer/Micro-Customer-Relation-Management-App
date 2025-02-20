@@ -228,23 +228,10 @@
 
             <ImageView
                 android:id="@+id/imageView4"
+                android:layout_margin="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="235dp"
                 android:src="@drawable/organizational" />
-
-            <Button
-                android:layout_marginTop="50dp"
-                android:id="@+id/manual3"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pdff"
-                android:layout_gravity="center"/>
-
-
-            <FrameLayout
-                android:id="@+id/fragment_container"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"/>
 
         </LinearLayout>
     </ScrollView>

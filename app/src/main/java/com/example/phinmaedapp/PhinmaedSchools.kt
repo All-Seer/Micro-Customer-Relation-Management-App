@@ -12,21 +12,19 @@ class PhinmaedSchools : Fragment() {
     private var _binding: FragmentPhinmaedSchoolsBinding? = null
     private val binding get() = _binding!!
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPhinmaedSchoolsBinding.inflate(inflater, container, false)
 
-        binding.sUpang.setOnClickListener {
-            startActivity(Intent(this.context, LoginActivity::class.java))
+        binding.upang.setOnClickListener {
+            startActivity(Intent(requireContext(), LoginActivity::class.java))
         }
-
-
 
         return binding.root
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

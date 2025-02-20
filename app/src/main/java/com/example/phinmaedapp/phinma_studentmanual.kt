@@ -1,5 +1,6 @@
 package com.example.phinmaedapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,17 +15,15 @@ class phinma_studentmanual : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPhinmaStudentmanualBinding.inflate(inflater, container, false)
-        binding.manual3.setOnClickListener(){
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, pdf())
-                .addToBackStack(null)
-                .commit()
-        }
+
         return binding.root
     }
 
-
+    override fun onResume() {
+        super.onResume()
+        (activity as UpangMainActivity).updateActionBarTitle("Student Manual")
+    }
 
 }
