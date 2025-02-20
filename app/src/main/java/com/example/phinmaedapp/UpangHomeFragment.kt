@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.FragmentUpangHomeBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class UpangHomeFragment : Fragment() {
 
@@ -33,6 +34,10 @@ class UpangHomeFragment : Fragment() {
             binding.tvStudContact.text = "$contact"
             binding.tvStudFB.text = "$fblink"
             binding.tvstudName.text = "$lastName, $firstName $middleName $extensionName"
+        }
+        BottomSheetBehavior.from(binding.calendarsheet).apply {
+            peekHeight = 100
+            this.state= BottomSheetBehavior.STATE_COLLAPSED
         }
         return binding.root
     }

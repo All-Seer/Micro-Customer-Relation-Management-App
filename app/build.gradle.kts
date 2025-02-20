@@ -56,6 +56,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-
+    implementation(libs.material.v1110)
     implementation ("com.applandeo:material-calendar-view:1.9.2")
 }

@@ -23,7 +23,7 @@ class pdf : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val PDFView = binding.pdfView
-        PDFView.fromAsset("student_manual.pdf").load()
+        PDFView.fromAsset("studentmanual.pdf").load()
     }
 
     override fun onDestroyView() {

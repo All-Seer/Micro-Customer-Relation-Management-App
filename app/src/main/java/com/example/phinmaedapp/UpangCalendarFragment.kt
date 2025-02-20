@@ -1,6 +1,7 @@
 package com.example.phinmaedapp
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.applandeo.materialcalendarview.CalendarDay
 import com.applandeo.materialcalendarview.EventDay
 import com.applandeo.materialcalendarview.listeners.OnCalendarDayClickListener
 import com.example.phinmaedapp.databinding.FragmentUpangCalendarBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import java.util.Calendar
 
 
@@ -34,11 +36,13 @@ class UpangCalendarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+
         calendarView = binding.calendar
 
         val eventDays: ArrayList<EventDay> = ArrayList()
 
-        // Add events with custom colors and icons
         addEvent(2025, Calendar.JANUARY, 3, "Eucharistic Celebration", eventDays)
         addEvent(2025, Calendar.JANUARY, 9, "Strand Day", eventDays)
         addEvent(2025, Calendar.JANUARY, 6, "P1 Examination (Upper Years)", eventDays)
