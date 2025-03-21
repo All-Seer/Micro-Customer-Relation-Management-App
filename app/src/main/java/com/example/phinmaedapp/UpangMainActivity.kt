@@ -35,7 +35,6 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         binding = ActivityUpangMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         toolbar = findViewById(R.id.upangtoolbar)
         setSupportActionBar(toolbar)
 

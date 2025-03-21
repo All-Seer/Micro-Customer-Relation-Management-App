@@ -6,4 +6,8 @@
         <item name="colorAccent">@color/phinmaPrimary</item>
     </style>
     <style name="Theme.PhinmaEdApp" parent="Base.Theme.PhinmaEdApp" />
+
+    <style name="ToolbarColoredBackArrow" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
 </resources>

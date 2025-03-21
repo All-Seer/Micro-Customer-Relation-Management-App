@@ -21,7 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/phinmaPrimary"
-            app:titleTextColor="@color/white"/>
+            app:theme="@style/ToolbarColoredBackArrow"
+            app:titleTextColor="@color/white"
+            app:navigationIconTint="@color/white"
+            app:navigationIcon="@drawable/baseline_menu_24"/>
 
         <FrameLayout
             android:id="@+id/upangFragment"
