@@ -1,188 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".UpangSchoolMap">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollViewUrdaneta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Urdaneta School Images"
+            android:padding="8sp">
+
+            <LinearLayout
+                android:id="@+id/imageContainerUrdaneta"
+                android:layout_width="wrap_content"
+                android:layout_height="175dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivurdaneta1"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Com Lab"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_computerlab" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta2"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Mac Lab"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdanet_mac" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta3"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Atrium"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_atrium" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta4"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Atrium"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_accounting" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta5"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Atrium"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_atrium2" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta6"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Atrium"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_chemistry" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta7"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Atrium"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_collegedep" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta8"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Atrium"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_csdl" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta9"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Atrium"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_gate" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta10"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Atrium"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_library" />
+
+                <ImageView
+                    android:id="@+id/ivurdaneta11"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Atrium"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urdaneta_csdl" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:padding="8dp">
-
-            <HorizontalScrollView
-                android:id="@+id/horizontalScrollViewUrdaneta"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="Urdaneta School Images"
-                android:padding="8sp">
-
-                <LinearLayout
-                    android:id="@+id/imageContainerUrdaneta"
-                    android:layout_width="wrap_content"
-                    android:layout_height="175dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta1"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Com Lab"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_computerlab" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta2"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Mac Lab"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdanet_mac" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta3"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Atrium"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_atrium" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta4"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Atrium"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_accounting" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta5"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Atrium"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_atrium2" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta6"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Atrium"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_chemistry" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta7"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Atrium"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_collegedep" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta8"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Atrium"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_csdl" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta9"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Atrium"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_gate" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta10"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Atrium"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_library" />
-
-                    <ImageView
-                        android:id="@+id/ivurdaneta11"
-                        android:layout_width="175dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="20dp"
-                        android:contentDescription="Atrium"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/urdaneta_csdl" />
-                </LinearLayout>
-            </HorizontalScrollView>
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="30dp"
-                android:fontFamily="sans-serif-black"
-                android:text="URDANETA CAMPUS"
-                android:textColor="@color/phinmaPrimary"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    app:cardElevation="12dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="PHINMA UPang College Urdaneta"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                </androidx.cardview.widget.CardView>
 
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginBottom="30dp"
-                android:contentDescription="Map of Phinma Upang"
-                android:scaleType="centerInside"
-                android:src="@drawable/pu_map" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="30dp"
-                android:background="#D3D3D3" />
+                    <fragment
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:context=".UpangSchoolMapFragment" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-
-            <Button
-                android:id="@+id/btFloorPick"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="30dp"
-                android:backgroundTint="@color/phinmaSecondary"
-                android:text="Floor Navigation" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="30dp"
-                android:background="#D3D3D3" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="30dp"
+            android:background="#D3D3D3" />
 
 
-        </LinearLayout>
+        <Button
+            android:id="@+id/btFloorPick"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/phinmaSecondary"
+            android:text="Floor Navigation" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="30dp"
+            android:background="#D3D3D3" />
 
 
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>

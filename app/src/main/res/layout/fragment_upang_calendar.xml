@@ -29,4 +29,16 @@
         app:type="one_day_picker" />
 
     </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/calendarsheet"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/bottomsheetstyle"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_insetEdge="bottom"
+        app:behavior_peekHeight="100dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

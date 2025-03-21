@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.ActivityUpangMainBinding
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val upanghomeFragment = UpangHomeFragment()
@@ -25,6 +26,8 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     private val upangcalendarfragment = UpangCalendarFragment()
     private val upangeventpagefragment = UpangEventPageFragment()
     private val upangstudentmanualFragment = phinma_studentmanual()
+    private lateinit var auth: FirebaseAuth
+
 
     private lateinit var binding: ActivityUpangMainBinding
     private lateinit var toggle: ActionBarDrawerToggle
@@ -34,6 +37,8 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         enableEdgeToEdge()
         binding = ActivityUpangMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
 
         toolbar = findViewById(R.id.upangtoolbar)
         setSupportActionBar(toolbar)
@@ -62,7 +67,13 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.id.itemSchoolMap -> setCurrentFragment(upangspFragment)
             R.id.itemModality -> setCurrentFragment(upangmodalityFragment)
             R.id.itemScholar -> setCurrentFragment(upangscholarshipFragment)
-            R.id.itemLogOut -> startActivity(Intent(this, MainActivity::class.java))
+            R.id.itemLogOut -> {
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            }
             R.id.itemSchoolManual -> setCurrentFragment(upangstudentmanualFragment)
             else -> setCurrentFragment(upanghomeFragment)
         }

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 
@@ -10,6 +11,10 @@ android {
     compileSdk = 35
     buildFeatures{
         viewBinding = true
+    }
+
+    secrets {
+        defaultPropertiesFileName = "secret.properties"
     }
 
     defaultConfig {
@@ -38,24 +43,35 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
 }
 
+
 dependencies {
-    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
-    implementation("com.google.firebase:firebase-analytics")
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.play.services.maps)
-    implementation("com.github.skydoves:expandablelayout:1.0.7")
+    implementation(libs.expandablelayout)
     implementation(libs.androidx.ui.text.android)
-    implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
+    implementation(libs.android.pdf.viewer)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation (libs.circleimageview)
+    implementation(libs.secrets.gradle.plugin)
+
 
     implementation(libs.material.v1110)
-    implementation ("com.applandeo:material-calendar-view:1.9.2")
+    implementation (libs.material.calendar.view)
 }

@@ -1,7 +1,6 @@
 package com.example.phinmaedapp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -134,6 +133,10 @@ class UpangCalendarFragment : Fragment() {
                 }
             }
         })
+        BottomSheetBehavior.from(binding.calendarsheet).apply {
+            peekHeight = 100
+            this.state= BottomSheetBehavior.STATE_COLLAPSED
+        }
     }
 
     private fun addEvent(year: Int, month: Int, day: Int, eventName: String, eventDays: ArrayList<EventDay>) {

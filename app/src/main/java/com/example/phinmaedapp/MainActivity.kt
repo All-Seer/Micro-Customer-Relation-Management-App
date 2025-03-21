@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.FirebaseAnalytics
 
 
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         hideActionBar()
         setStatusBarColor(R.color.phinmaPrimary)
+        FirebaseApp.initializeApp(this)
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
 

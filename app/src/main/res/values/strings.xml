@@ -54,7 +54,7 @@
     <string name="etPass">Enter Password</string>
     <string name="btSign">SIGN IN</string>
     <string name="tvPass">Password</string>
-    <string name="tvUser">Username</string>
+    <string name="tvUser">Email</string>
 
     <string name="ModFlex1">• A combination of studying in school and studying at home.</string>
     <string name="ModFlex2">• 2 days face-to-face and 4 days remote learning.</string>
@@ -134,6 +134,8 @@
     <string name="conduct4">PEN Student Code of Conduct</string>
     <string name="conduct5">Together with the PEN Student\'s Right is the PEN Student\'s responsibilities to: \n\n<b>1</b>. live up to the standards of academic excellence and integrity. \n\n<b>2</b>. live and work according to the PEN Values.</string>
     <string name="structure">ORGANIZATIONAL STRUCTURE</string>
+    <string name="register">New User? <b><u>Register now</u></b></string>
+    <string name="login">Already have an account? <b><u>Login</u></b></string>
 
 
 </resources>
