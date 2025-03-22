@@ -1,1031 +1,1087 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".UpangEventPageFragment">
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvJanuaryActivities"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="20dp">
+
+        <com.applandeo.materialcalendarview.CalendarView
+            android:id="@+id/calendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
+            app:eventsEnabled="true"
+            app:forwardButtonSrc="@drawable/baseline_arrow_forward_24"
+            app:headerColor="@color/phinmaPrimary"
+            app:highlightedDaysLabelsColor="@color/phinmaPrimary"
+            app:previousButtonSrc="@drawable/baseline_arrow_back_24"
+            app:selectionColor="@color/phinmaSecondary"
+            app:selectionLabelColor="@color/white"
+            app:todayLabelColor="@color/phinmaSecondary"
+            app:type="one_day_picker" />
+
+    </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bottomsheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:behavior_peekHeight="50dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:elevation="20dp"
+            android:backgroundTint="@color/phinmaSecondary"
+            app:cardCornerRadius="20dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btJanuaryActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="January"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
+                android:orientation="vertical"
+                android:gravity="center">
 
                 <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
+                    android:layout_width="50dp"
+                   android:layout_height="30dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/baseline_remove_24"/>
 
-                <LinearLayout
-                    android:id="@+id/layoutJanuaryActivities"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvJanuaryActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="January 3 - Eucharistic Celebration"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="January 6-11 - P1 Examination (Upper Years)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        <Button
+                            android:id="@+id/btJanuaryActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/white"
+                            android:text="January"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="January 9 - Strand Day"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="January 14 - Seminar For the DSPC"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        <LinearLayout
+                            android:id="@+id/layoutJanuaryActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="January 16 - Tree Planting"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="January 3 - Eucharistic Celebration"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="January 17 - Seminar Calctech Safety"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="January 6-11 - P1 Examination (Upper Years)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="January 23 - Book Disclosure Gathering"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="January 9 - Strand Day"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvFebruaryActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="January 14 - Seminar For the DSPC"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="January 16 - Tree Planting"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/btFebruaryActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="February"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="January 17 - Seminar Calctech Safety"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="January 23 - Book Disclosure Gathering"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:id="@+id/layoutFebruaryActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="February 3 - Eucharistic Celebration"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="February 5 - Outreach Program"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="February 7 - Mass Blood Donation"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="February 11 - Thanks Giving Mass"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="February 13 - Valentine's Day"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="February 14 - 10TH FDC"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="February 10-14 - P2 Examination (Upperclassmen)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvMarchActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btMarchActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="March"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    android:id="@+id/layoutMarchActivities"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvFebruaryActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="March 5 - Ash Wednesday"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="March 6 - Caption Multimedia Club Event"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        <Button
+                            android:id="@+id/btFebruaryActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="February"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="March 3-8 - P2 Examination (Freshmen)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="March 13 - Tourism Day"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        <LinearLayout
+                            android:id="@+id/layoutFebruaryActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="March 14 - JPIA DAY"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="February 3 - Eucharistic Celebration"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="March 24-29 - P3 Examination (Upper Years/ Graduating)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="February 5 - Outreach Program"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="March 24-29 - P3 Examination (Upper Years/Non-Graduating and gr 11)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="February 7 - Mass Blood Donation"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvAprilActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="February 11 - Thanks Giving Mass"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="February 13 - Valentine's Day"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/btAprilActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="April"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="February 14 - 10TH FDC"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="February 10-14 - P2 Examination (Upperclassmen)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:id="@+id/layoutAprilActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="April 4 - Eucharistic Celebration"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="April 7-12 - P3 Examination (Freshmen / gr 11)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="April 15 - Criminology Testimonial"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="April 25 - Pulse Award"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvMayActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btMayActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="May"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    android:id="@+id/layoutMayActivities"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvMarchActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="NONE"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        android:orientation="vertical">
 
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                        <Button
+                            android:id="@+id/btMarchActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="March"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvJuneActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/layoutMarchActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                <Button
-                    android:id="@+id/btJuneActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="June"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="March 5 - Ash Wednesday"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="March 6 - Caption Multimedia Club Event"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                <LinearLayout
-                    android:id="@+id/layoutJuneActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="March 3-8 - P2 Examination (Freshmen)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="June 24 - First Week Hi"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="March 13 - Tourism Day"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="June 28 - KUDOS"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="March 14 - JPIA DAY"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="March 24-29 - P3 Examination (Upper Years/ Graduating)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvJulyActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="March 24-29 - P3 Examination (Upper Years/Non-Graduating and gr 11)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btJulyActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="July"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    android:id="@+id/layoutJulyActivities"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAprilActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="July 17 - Welcome Assembly"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="July 18 - General Assembly"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        <Button
+                            android:id="@+id/btAprilActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="April"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text=" July 19 - Bridging The Gaps"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="July 15-19 - First Week Hi v.2"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        <LinearLayout
+                            android:id="@+id/layoutAprilActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="July 25 - Bridging The Gap 2.0"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="April 4 - Eucharistic Celebration"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="July 26 - Assembly GPA  and Tactical"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="April 7-12 - P3 Examination (Freshmen / gr 11)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="July 31 - Nutrition Month Celebration (TVL)"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="April 15 - Criminology Testimonial"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvAugustActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="April 25 - Pulse Award"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btAugustActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="August"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    android:id="@+id/layoutAugustActivities"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvMayActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="August 1 - Convention PICE"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="August 2 - Youth Search 2024 (UYFCYM)"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        <Button
+                            android:id="@+id/btMayActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="May"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="August 5-10 - Examinations (Upper Years)"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="August 15 - Buwan ng Wika"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        <LinearLayout
+                            android:id="@+id/layoutMayActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="August 23 - Abel Kamustahan"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="NONE"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="Assembly GPA  and Tactical, 26"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="Nutrition Month Celebration (TVL), 31"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvSeptemberActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btSeptemberActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="September"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    android:id="@+id/layoutSeptemberActivities"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvJuneActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="September 6 - Eucharistic Celebration"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="September 12 - Mathematics and Science Fest"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        <Button
+                            android:id="@+id/btJuneActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="June"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="September 13 - Social Entrepeneur ship"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="September 19 - Business Expo "
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                        <LinearLayout
+                            android:id="@+id/layoutJuneActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="September 19 - Abel Kamustahan"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="June 24 - First Week Hi"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="September 20 - PUCU Fest "
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="June 28 - KUDOS"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
 
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="September 20-21 - CITE Fest  "
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvOctoberActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btOctoberActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="October"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    android:id="@+id/layoutOctoberActivities"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvJulyActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="October 1-4 - P2 Examination (Freshmen)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="October 3 - Teachers and Staff Appreciation Day"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        <Button
+                            android:id="@+id/btJulyActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="July"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="October 4 -Rosary Devotion"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="October 9 - League of Leaders "
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        <LinearLayout
+                            android:id="@+id/layoutJulyActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="October 10 - Criminology Day"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="July 17 - Welcome Assembly"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="October 12 - Clean Up drive"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="July 18 - General Assembly"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
 
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text=" July 19 - Bridging The Gaps"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="October 21-25 - P3 Examination (Upperclassmen)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="July 15-19 - First Week Hi v.2"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvNovemberActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="July 25 - Bridging The Gap 2.0"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="July 26 - Assembly GPA  and Tactical"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
 
-                <Button
-                    android:id="@+id/btNovemberActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="November"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="July 31 - Nutrition Month Celebration (TVL)"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    android:id="@+id/layoutNovemberActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="November 6 - English Fest"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="November 8 - Testimonial CEA"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="November 21-25 - P3 Examination (Freshmen)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="November 31 - SHS Sports Fest"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvDecemberActivities"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btDecemberActivities"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/phinmaPrimary"
-                    android:text="December"
-                    android:textColor="@color/white"
-                    android:textSize="26sp" />
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/twotone_keyboard_double_arrow_down_24"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    android:id="@+id/layoutDecemberActivities"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAugustActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="December 3 - Lamaparaan"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        android:orientation="vertical">
 
-                    <TextView
+                        <Button
+                            android:id="@+id/btAugustActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="August"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout
+                            android:id="@+id/layoutAugustActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="August 1 - Convention PICE"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="August 2 - Youth Search 2024 (UYFCYM)"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="August 5-10 - Examinations (Upper Years)"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="August 15 - Buwan ng Wika"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="August 23 - Abel Kamustahan"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="Assembly GPA  and Tactical, 26"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="Nutrition Month Celebration (TVL), 31"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvSeptemberActivities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="December 9 - Ningning Project"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
+                        android:orientation="vertical">
 
-                    <TextView
+                        <Button
+                            android:id="@+id/btSeptemberActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="September"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout
+                            android:id="@+id/layoutSeptemberActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="September 6 - Eucharistic Celebration"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="September 12 - Mathematics and Science Fest"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="September 13 - Social Entrepeneur ship"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="September 19 - Business Expo "
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="September 19 - Abel Kamustahan"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="September 20 - PUCU Fest "
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:ignore="HardcodedText" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="September 20-21 - CITE Fest  "
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvOctoberActivities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="December 16-20 - 2nd Quarterly Exam (Gr 11)"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-                </LinearLayout>
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btOctoberActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="October"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout
+                            android:id="@+id/layoutOctoberActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="October 1-4 - P2 Examination (Freshmen)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="October 3 - Teachers and Staff Appreciation Day"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="October 4 -Rosary Devotion"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="October 9 - League of Leaders "
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="October 10 - Criminology Day"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="October 12 - Clean Up drive"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="October 21-25 - P3 Examination (Upperclassmen)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvNovemberActivities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btNovemberActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="November"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout
+                            android:id="@+id/layoutNovemberActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="November 6 - English Fest"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="November 8 - Testimonial CEA"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="November 21-25 - P3 Examination (Freshmen)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="November 31 - SHS Sports Fest"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvDecemberActivities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btDecemberActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/phinmaPrimary"
+                            android:text="December"
+                            android:textColor="@color/white"
+                            android:textSize="26sp" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/twotone_keyboard_double_arrow_down_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout
+                            android:id="@+id/layoutDecemberActivities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="December 3 - Lamaparaan"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="December 9 - Ningning Project"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="December 16-20 - 2nd Quarterly Exam (Gr 11)"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
             </LinearLayout>
+        </ScrollView>
         </androidx.cardview.widget.CardView>
-
-
-
-
-
     </LinearLayout>
 
-</ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -23,7 +23,6 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     private val upangspFragment = UpangSchoolMap()
     private val upangmodalityFragment = UpangModalityFragment()
     private val upangscholarshipFragment = UpangScholarshipFragment()
-    private val upangcalendarfragment = UpangCalendarFragment()
     private val upangeventpagefragment = UpangEventPageFragment()
     private val upangstudentmanualFragment = phinma_studentmanual()
     private lateinit var auth: FirebaseAuth
@@ -63,7 +62,6 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.id.itemUpanghome -> setCurrentFragment(upanghomeFragment)
             R.id.itemPersonalDetails -> setCurrentFragment(upangpdFragment)
             R.id.itemSchoolEvents -> setCurrentFragment(upangeventpagefragment)
-            R.id.itemSchoolCalendar -> setCurrentFragment(upangcalendarfragment)
             R.id.itemSchoolMap -> setCurrentFragment(upangspFragment)
             R.id.itemModality -> setCurrentFragment(upangmodalityFragment)
             R.id.itemScholar -> setCurrentFragment(upangscholarshipFragment)

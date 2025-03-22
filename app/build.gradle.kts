@@ -65,11 +65,14 @@ dependencies {
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
     implementation(libs.firebase.firestore)
+    implementation(libs.firebase.messaging)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.circleimageview)
     implementation(libs.secrets.gradle.plugin)
+
+    implementation(libs.androidx.work.runtime.ktx)
 
 
     implementation(libs.material.v1110)
