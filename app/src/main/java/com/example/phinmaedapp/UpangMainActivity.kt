@@ -85,10 +85,16 @@ class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         return super.onOptionsItemSelected(item)
     }
     override fun onBackPressed() {
-
-
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
+            return
+        }
+
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.upangFragment)
+
+        if (currentFragment !is UpangHomeFragment) {
+            setCurrentFragment(upanghomeFragment)
+            navView.setCheckedItem(R.id.itemUpanghome)
         } else {
             super.onBackPressed()
         }
