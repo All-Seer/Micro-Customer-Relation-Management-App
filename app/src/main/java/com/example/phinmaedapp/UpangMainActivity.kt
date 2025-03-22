@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 class UpangMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val upanghomeFragment = UpangHomeFragment()
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navView: NavigationView
+    lateinit var navView: NavigationView
     private lateinit var toolbar: Toolbar
     private val upangpdFragment = UpangPersonalDetailsFragment()
     private val upangspFragment = UpangSchoolMap()

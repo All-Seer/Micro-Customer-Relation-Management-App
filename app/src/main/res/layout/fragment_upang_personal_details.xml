@@ -134,21 +134,16 @@
                                 android:textSize="14sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/upangGenderLayout"
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            app:boxBackgroundMode="outline"
-                            app:boxStrokeWidthFocused="2dp"
-                            app:hintEnabled="false">
 
                             <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/spinnerGender"
                                 android:layout_width="match_parent"
-                                android:layout_height="48dp"
+                                android:layout_height="35dp"
+                                android:layout_marginStart="13dp"
+                                android:layout_marginBottom="13dp"
+                                android:layout_marginEnd="13dp"
                                 android:textSize="14sp" />
 
-                        </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/upangEmailLayout"

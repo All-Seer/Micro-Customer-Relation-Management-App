@@ -11,6 +11,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.phinmaedapp.databinding.FragmentUpangPersonalDetailsBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -28,7 +29,7 @@ class UpangPersonalDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentUpangPersonalDetailsBinding.inflate(inflater, container, false)
         db = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
@@ -113,25 +114,41 @@ class UpangPersonalDetailsFragment : Fragment() {
             "profilePictureBase64" to profilePictureBase64
         )
 
-        // Save details to Firestore
         db.collection("users").document(userId)
-            .set(userDetails, SetOptions.merge()) // Merge with existing data
+            .set(userDetails, SetOptions.merge())
             .addOnSuccessListener {
                 Snackbar.make(requireView(), "Details saved successfully!", Snackbar.LENGTH_SHORT).show()
+                navigateToHomeFragment()
             }
             .addOnFailureListener { e ->
                 Snackbar.make(requireView(), "Failed to save details: ${e.message}", Snackbar.LENGTH_SHORT).show()
             }
     }
 
-    private fun validateInput(): Boolean {
-        val studentId = binding.etStudentID.text.toString()
-        val lastName = binding.etLastName.text.toString()
-        val firstName = binding.etFirstName.text.toString()
-        val email = binding.etEmail.text.toString()
-        val contact = binding.etContact.text.toString()
+    private fun navigateToHomeFragment() {
+        val homeFragment = UpangHomeFragment()
 
-        if (studentId.isEmpty() || lastName.isEmpty() || firstName.isEmpty() || email.isEmpty() || contact.isEmpty()) {
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+
+        val fragmentTransaction = fragmentManager.beginTransaction()
+
+        fragmentTransaction.replace(R.id.upangFragment, homeFragment)
+        fragmentTransaction.addToBackStack(null)
+
+        fragmentTransaction.commit()
+
+        val activity = requireActivity() as UpangMainActivity
+        activity.navView.setCheckedItem(R.id.itemUpanghome)
+    }
+
+    private fun validateInput(): Boolean {
+        val studentId = binding.etStudentID.text.toString().trim()
+        val lastName = binding.etLastName.text.toString().trim()
+        val firstName = binding.etFirstName.text.toString().trim()
+        val email = binding.etEmail.text.toString().trim()
+        val contact = binding.etContact.text.toString().trim()
+
+        if (studentId.isEmpty() || lastName.isEmpty() || firstName.isEmpty() || email.isEmpty() || contact.isEmpty() || spinnerGender === {"Select Gender"} || imageUri == null) {
             Snackbar.make(requireView(), "Please fill in all required fields", Snackbar.LENGTH_SHORT).show()
             return false
         }
@@ -167,4 +184,6 @@ class UpangPersonalDetailsFragment : Fragment() {
     companion object {
         private const val PICK_IMAGE_REQUEST = 1
     }
+
+
 }
