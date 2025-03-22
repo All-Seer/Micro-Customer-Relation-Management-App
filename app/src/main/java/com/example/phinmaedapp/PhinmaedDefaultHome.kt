@@ -30,11 +30,8 @@ class PhinmaedDefaultHome : Fragment(R.layout.fragment_phinmaed_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnOpenLink.setOnClickListener{
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.phinma.edu.ph/contact-us/"))
-            if (browserIntent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(browserIntent)
-            }
+        binding.btnOpenLink.setOnClickListener {
+            openLink("https://www.phinma.edu.ph/contact-us/")
         }
 
         videoView = binding.phinmaedVideo
@@ -46,6 +43,10 @@ class PhinmaedDefaultHome : Fragment(R.layout.fragment_phinmaed_home) {
 
             videoView.start()
         }
+    }
+    private fun openLink(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
     }
 
     override fun onDestroyView() {

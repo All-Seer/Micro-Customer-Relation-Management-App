@@ -18,6 +18,7 @@
             android:id="@+id/phinmatop"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/phinmaedbanner" />
 
 
@@ -28,7 +29,7 @@
             android:layout_margin="30dp"
             android:text="SCHOOLS"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/phinmaPrimary"
             android:textSize="50sp"
             android:textStyle="bold" />
 
