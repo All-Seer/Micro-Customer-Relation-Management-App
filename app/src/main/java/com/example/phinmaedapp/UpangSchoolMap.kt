@@ -14,12 +14,14 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class UpangSchoolMap : Fragment(), OnMapReadyCallback {
 
     private var _binding: FragmentUpangSchoolMapBinding? = null
     private val binding get() = _binding!!
     private lateinit var googleMap: GoogleMap
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<View>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,9 +38,57 @@ class UpangSchoolMap : Fragment(), OnMapReadyCallback {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
 
-        // Set up the floor pick button
+        // Initialize the bottom sheet
+        bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomsheet) // Use bottomsheet ID
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+
+        // Handle button click to show/hide the bottom sheet
         binding.btFloorPick.setOnClickListener {
-            startActivity(Intent(requireContext(), UpangFloorList::class.java))
+            if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+            } else {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
+
+        // Handle bottom sheet state changes (optional)
+        bottomSheetBehavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                when (newState) {
+                    BottomSheetBehavior.STATE_EXPANDED -> {
+                        // Bottom sheet is fully expanded
+                    }
+                    BottomSheetBehavior.STATE_HIDDEN -> {
+                        // Bottom sheet is hidden
+                    }
+                }
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                // Handle slide events (optional)
+            }
+        })
+        // Set click listeners for the buttons inside the included layout
+        binding.btn1stFloor.setOnClickListener {
+            println("1st Floor Button Clicked")
+            // Use requireContext() to get the correct Context
+            startActivity(Intent(requireContext(), UpangFirstFloor::class.java))
+        }
+        binding.btn2ndFloor.setOnClickListener {
+            val intent = Intent(requireContext(), UpangSecondFloor::class.java)
+            startActivity(intent)
+        }
+        binding.btn3rdFloor.setOnClickListener {
+            val intent = Intent(requireContext(), UpangThirdFloor::class.java)
+            startActivity(intent)
+        }
+        binding.btn4thFloor.setOnClickListener {
+            val intent = Intent(requireContext(), UpangFourthFloor::class.java)
+            startActivity(intent)
+        }
+        binding.btn5thFloor.setOnClickListener {
+            val intent = Intent(requireContext(), UpangFifthFloor::class.java)
+            startActivity(intent)
         }
 
         // Start the horizontal scroll animation
