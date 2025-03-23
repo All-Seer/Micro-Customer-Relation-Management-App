@@ -39,13 +39,12 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        app:behavior_peekHeight="50dp"
+        app:behavior_peekHeight="20dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:elevation="20dp"
             android:backgroundTint="@color/phinmaSecondary"
             app:cardCornerRadius="20dp">

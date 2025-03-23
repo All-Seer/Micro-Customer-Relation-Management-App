@@ -17,6 +17,7 @@ materialCalendarView = "1.9.2"
 materialVersion = "1.12.0"
 playServicesMaps = "19.1.0"
 secretsGradlePlugin = "2.0.1"
+smoothbottombarVersion = "1.7.9"
 uiTextAndroid = "1.7.8"
 firebaseDatabase = "21.0.0"
 firebaseAuth = "23.2.0"
@@ -35,6 +36,7 @@ circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circ
 expandablelayout = { module = "com.github.skydoves:expandablelayout", version.ref = "expandablelayout" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+ibrahimsn98-smoothbottombar = { module = "com.github.ibrahimsn98:SmoothBottomBar", version.ref = "smoothbottombarVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
