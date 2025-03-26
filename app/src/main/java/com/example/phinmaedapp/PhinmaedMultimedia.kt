@@ -5,22 +5,33 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.res.painterResource
@@ -36,6 +47,7 @@ import com.example.phinmaedapp.databinding.FragmentPhinmaedMultimediaBinding
 class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
     private var _binding: FragmentPhinmaedMultimediaBinding? = null
     private val binding get() = _binding!!
+    private var selectedVideo: VideoItem? by mutableStateOf(null)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,28 +55,45 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
     ): View {
         _binding = FragmentPhinmaedMultimediaBinding.inflate(inflater, container, false)
 
-        // Sample video list
         val videos = listOf(
             VideoItem(
                 id = "1",
                 title = "PHINMA UPang Hymn",
-                url = "https://www.youtube.com/watch?v=WZX8gYbuCbQ",
-                thumbnail = null
+                url = "android.resource://${requireContext().packageName}/${R.raw.phinmaedvideo}",
+                thumbnail = R.drawable.phinmaheader,
+                duration = "3:45"
             ),
             VideoItem(
                 id = "2",
-                title = "Sasamahan Kita - PHINMA Education",
-                url = "https://www.youtube.com/watch?v=G6utWsyb5AY",
-                thumbnail = null
-            ),
-
-
+                title = "Sasamahan Kita",
+                url = "android.resource://${requireContext().packageName}/${R.raw.phinmaupangvideo}",
+                thumbnail = R.drawable.phinmaheader2,
+                duration = "4:20"
+            )
         )
 
         binding.composeView.apply {
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
-                VideoListScreen(videos = videos)
+                Column {
+                    selectedVideo?.let { video ->
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(200.dp)
+                        ) {
+                            VideoPlayer(
+                                video = video,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                    }
+
+                    VideoListScreen(
+                        videos = videos,
+                        onVideoSelected = { video -> selectedVideo = video }
+                    )
+                }
             }
         }
 
@@ -80,6 +109,7 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
 @Composable
 fun VideoListScreen(
     videos: List<VideoItem>,
+    onVideoSelected: (VideoItem) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
@@ -87,23 +117,67 @@ fun VideoListScreen(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(videos) { video ->
-            VideoPlayerItem(
+            VideoListItem(
                 video = video,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .aspectRatio(16f / 9f)
+                onVideoSelected = onVideoSelected,
+                modifier = Modifier.fillMaxWidth()
             )
         }
     }
 }
 
 @Composable
-fun VideoPlayerItem(
+fun VideoListItem(
+    video: VideoItem,
+    onVideoSelected: (VideoItem) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier
+            .fillMaxWidth()
+            .clickable { onVideoSelected(video) },
+        elevation = CardDefaults.cardElevation(4.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = video.title,
+                    style = MaterialTheme.typography.titleMedium,
+                    modifier = Modifier.padding(bottom = 4.dp)
+                )
+                Text(
+                    text = video.duration,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+
+            Image(
+                painter = painterResource(id = video.thumbnail),
+                contentDescription = "Thumbnail",
+                modifier = Modifier
+                    .size(80.dp)
+                    .clip(RoundedCornerShape(4.dp)),
+                contentScale = ContentScale.Crop
+            )
+        }
+    }
+}
+
+@Composable
+fun VideoPlayer(
     video: VideoItem,
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
-    var isPlaying by remember { mutableStateOf(false) }
 
     AndroidView(
         modifier = modifier,
@@ -112,35 +186,18 @@ fun VideoPlayerItem(
                 player = ExoPlayer.Builder(ctx).build().apply {
                     setMediaItem(MediaItem.fromUri(video.url))
                     prepare()
+                    playWhenReady = true
                 }
                 useController = true
             }
-        },
-        update = { playerView ->
-            if (isPlaying) {
-                playerView.player?.play()
-            } else {
-                playerView.player?.pause()
-            }
         }
     )
-
-    Box(modifier = modifier) {
-        IconButton(
-            onClick = { isPlaying = !isPlaying },
-            modifier = Modifier.align(Alignment.Center)
-        ) {
-            Icon(
-                if (isPlaying) painterResource(id = R.drawable.baseline_pause_24) else painterResource(id = R.drawable.baseline_play_arrow_24),
-                contentDescription = if (isPlaying) "Pause" else "Play"
-            )
-        }
-    }
 }
 
 data class VideoItem(
     val id: String,
     val title: String,
     val url: String,
-    val thumbnail: String?
+    @DrawableRes val thumbnail: Int,
+    val duration: String
 )
