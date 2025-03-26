@@ -57,12 +57,7 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
                 url = "https://www.youtube.com/watch?v=G6utWsyb5AY",
                 thumbnail = null
             ),
-            VideoItem(
-                id = "3",
-                title = "Kasama mo ang PHINMA Education",
-                url = "https://www.youtube.com/watch?v=WEUBSKaW2xM",
-                thumbnail = null
-            )
+
 
         )
 
