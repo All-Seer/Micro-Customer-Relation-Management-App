@@ -10,9 +10,9 @@
             android:id="@+id/itemSchools"
             android:icon="@drawable/ic_schools"/>
         <item
-            android:id="@+id/itemCommunity"
-            android:title="Community"
-            android:icon="@drawable/ic_community"/>
+            android:id="@+id/itemMultimedia"
+            android:title="Multimedia"
+            android:icon="@drawable/outline_video_library_24"/>
         <item
             android:id="@+id/itemAbout"
             android:title="About"

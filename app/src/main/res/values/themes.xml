@@ -5,6 +5,7 @@
         <item name="colorPrimaryDark">@color/phinmaPrimary</item>
         <item name="colorAccent">@color/phinmaPrimary</item>
     </style>
+
     <style name="Theme.PhinmaEdApp" parent="Base.Theme.PhinmaEdApp" />
 
     <style name="ToolbarColoredBackArrow" parent="Widget.AppCompat.DrawerArrowToggle">

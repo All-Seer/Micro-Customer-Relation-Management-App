@@ -136,6 +136,7 @@
     <string name="structure">ORGANIZATIONAL STRUCTURE</string>
     <string name="register">New User? <b><u>Register now</u></b></string>
     <string name="login">Already have an account? <b><u>Login</u></b></string>
+    <string name="title_activity_multimedia_compose">MultimediaCompose</string>
 
 
 </resources>

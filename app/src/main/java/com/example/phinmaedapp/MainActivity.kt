@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         val phinmaedhomeFragment = PhinmaedDefaultHome()
         val phinmaedaboutFragment = PhinmaedAbout()
-        val phinmaedcommunityFragment = PhinmaedCommunity()
+        val phinmaedmultimediaFragment = PhinmaedMultimedia()
         val phinmaedschoolsFragment = PhinmaedSchools()
 
         if (savedInstanceState == null) {
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.itemhome -> setCurrentFragment(phinmaedhomeFragment)
                 R.id.itemSchools -> setCurrentFragment(phinmaedschoolsFragment)
                 R.id.itemAbout -> setCurrentFragment(phinmaedaboutFragment)
-                R.id.itemCommunity -> setCurrentFragment(phinmaedcommunityFragment)
+                R.id.itemMultimedia -> setCurrentFragment(phinmaedmultimediaFragment)
                 else -> return@setOnItemSelectedListener false
             }
             true

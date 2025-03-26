@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    alias(libs.plugins.kotlin.compose)
 }
 
 
@@ -11,6 +12,7 @@ android {
     compileSdk = 35
     buildFeatures{
         viewBinding = true
+        compose = true
     }
 
     secrets {
@@ -43,9 +45,8 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
+    buildToolsVersion = "34.0.0"
 }
-
 
 dependencies {
     implementation(platform(libs.firebase.bom))
@@ -66,14 +67,28 @@ dependencies {
     implementation(libs.googleid)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.messaging)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.circleimageview)
     implementation(libs.secrets.gradle.plugin)
 
-    implementation(libs.androidx.work.runtime.ktx)
 
-    implementation(libs.material.v1110)
+
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation (libs.androidx.ui)
+    implementation (libs.androidx.media3.exoplayer)
+    implementation (libs.androidx.media3.ui)
+
+    implementation (libs.androidx.material3)
     implementation (libs.material.calendar.view)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
 }
