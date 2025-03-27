@@ -1,15 +1,18 @@
 package com.example.phinmaedapp
 
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.annotation.OptIn
+import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.DialogFragment
 import androidx.media3.common.MediaItem
+import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.ui.PlayerView
 import com.example.phinmaedapp.databinding.FragmentVideoPlayerDialogBinding
 
 
@@ -31,6 +34,11 @@ class VideoPlayerDialogFragment : DialogFragment() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL, R.style.FullScreenDialog)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,32 +48,70 @@ class VideoPlayerDialogFragment : DialogFragment() {
         return binding.root
     }
 
+    @OptIn(UnstableApi::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val videoUrl = arguments?.getString(ARG_VIDEO_URL) ?: return
 
-        exoPlayer = ExoPlayer.Builder(requireContext()).build().apply {
-            setMediaItem(MediaItem.fromUri(videoUrl))
-            prepare()
-            playWhenReady = true
+        binding.playerView.apply {
+            // Hide navigation buttons
+            setShowNextButton(false)
+            setShowPreviousButton(false)
+
+            // Keep other default controls
+            useController = true
+            setShowBuffering(PlayerView.SHOW_BUFFERING_WHEN_PLAYING)
+
+            // Player initialization
+            exoPlayer = ExoPlayer.Builder(requireContext())
+                .setSeekForwardIncrementMs(5000)
+                .setSeekBackIncrementMs(5000)
+                .build()
+                .apply {
+                    setMediaItem(MediaItem.fromUri(videoUrl))
+                    prepare()
+                    playWhenReady = true
+                }
+            player = exoPlayer
         }
 
-        binding.playerView.player = exoPlayer
+        binding.touchInterceptor.setOnClickListener {
+            dismiss()
+        }
     }
 
     override fun onStart() {
         super.onStart()
         dialog?.window?.apply {
             setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
+
+            // Make sure touches outside don't go through
+            setFlags(
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+            )
+            clearFlags(WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH)
+        }
+    }
+
+    override fun dismiss() {
+        stopPlayer()
+        super.dismiss()
+    }
+
+    private fun stopPlayer() {
+        exoPlayer?.let {
+            it.stop()
+            it.release()
+            exoPlayer = null
         }
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
-        exoPlayer?.release()
-        exoPlayer = null
+        stopPlayer()
         _binding = null
+        super.onDestroyView()
     }
 }

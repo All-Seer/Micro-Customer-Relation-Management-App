@@ -9,7 +9,6 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -22,31 +21,20 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.fragment.app.Fragment
-import androidx.media3.common.MediaItem
-import androidx.media3.exoplayer.ExoPlayer
-import androidx.media3.ui.PlayerView
 import com.example.phinmaedapp.databinding.FragmentPhinmaedMultimediaBinding
 
 
@@ -77,19 +65,19 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
             )
         )
 
-        binding.composeView.apply {
-            setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
-            setContent {
-                VideoListScreen(
-                    videos = videos,
-                    onVideoSelected = { video ->
-                        VideoPlayerDialogFragment.newInstance(video.url)
-                            .show(parentFragmentManager, "VideoPlayerDialog")
+        binding.composeView.setContent {
+            VideoListScreen(
+                videos = videos,
+                onVideoSelected = { video ->
+                    parentFragmentManager.findFragmentByTag("VideoPlayerDialog")?.let {
+                        (it as? VideoPlayerDialogFragment)?.dismiss()
                     }
-                )
-            }
-        }
 
+                    VideoPlayerDialogFragment.newInstance(video.url)
+                        .show(parentFragmentManager, "VideoPlayerDialog")
+                }
+            )
+        }
         return binding.root
     }
 
@@ -106,7 +94,7 @@ fun VideoListScreen(
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize().padding(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(videos) { video ->

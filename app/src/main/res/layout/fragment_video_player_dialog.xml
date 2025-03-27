@@ -1,22 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/dialog_background">
+    android:layout_height="match_parent">
 
-    <androidx.media3.ui.PlayerView
-        android:id="@+id/playerView"
+    <!-- Touch interceptor -->
+    <View
+        android:id="@+id/touchInterceptor"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:use_controller="true" >
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"/>
 
-    </androidx.media3.ui.PlayerView>
+    <!-- Player container with fixed aspect ratio -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/black">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/playerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:theme="@style/PlayerTheme"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:show_buffering="when_playing"
+            app:surface_type="texture_view"
+            app:resize_mode="fit"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
