@@ -62,7 +62,65 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
                 url = "android.resource://${requireContext().packageName}/${R.raw.phinmaedvideo}",
                 thumbnail = R.drawable.upangfacility2,
                 duration = "4:20"
-            )
+            ),
+            VideoItem(
+                id = "3",
+                title = "PHINMA UPang Board Performance",
+                url = "android.resource://${requireContext().packageName}/${R.raw.phinmaupangbp}",
+                thumbnail = R.drawable.phinmaupangbp,
+                duration = "2:21"
+            ),
+            VideoItem(
+                id = "4",
+                title = "How to Enroll",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upang_howtoenroll}",
+                thumbnail = R.drawable.upang_howtoenroll,
+                duration = "1:50"
+                ),
+            VideoItem(
+                id = "5",
+                title = "PHINMA UPang TVC",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upangtvc}",
+                thumbnail = R.drawable.upangtvc,
+                duration = "2:45"
+            ),
+            VideoItem(
+                id = "6",
+                title = "How to make Lives Better Through Education",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upang_howtomakelivesbetter}",
+                thumbnail = R.drawable.upang_howtomakelivesbetter,
+                duration = "1:48"
+            ),
+            VideoItem(
+                id = "7",
+                title = "PHINMA UPang BS Nursing",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upangbsnursing}",
+                thumbnail = R.drawable.upangbsnursing,
+                duration = "0:39"
+            ),
+            VideoItem(
+                id = "8",
+                title = "Sa Pangarap Mong Maging Nurse",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upangnurse}",
+                thumbnail = R.drawable.upangnurse,
+                duration = "0:31"
+            ),
+            VideoItem(
+                id = "9",
+                title = "Sa Pangarap Mong Maging I.T. Professional",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upangpangarapit}",
+                thumbnail = R.drawable.upangpangarapit,
+                duration = "0:29"
+            ),
+            VideoItem(
+                id = "10",
+                title = "Sa Pangarap Mong Maging Teacher",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upangteacher}",
+                thumbnail = R.drawable.upangteacher,
+                duration = "0:31"
+            ),
+
+
         )
 
         binding.composeView.setContent {
