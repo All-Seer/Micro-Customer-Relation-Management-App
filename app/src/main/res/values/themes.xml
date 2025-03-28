@@ -5,5 +5,18 @@
         <item name="colorPrimaryDark">@color/phinmaPrimary</item>
         <item name="colorAccent">@color/phinmaPrimary</item>
     </style>
+
     <style name="Theme.PhinmaEdApp" parent="Base.Theme.PhinmaEdApp" />
+
+    <style name="ToolbarColoredBackArrow" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+    <style name="PlayerTheme" parent="">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+    <style name="FullScreenDialog" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
 </resources>

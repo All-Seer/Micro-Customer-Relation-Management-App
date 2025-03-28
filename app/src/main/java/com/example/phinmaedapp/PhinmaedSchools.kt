@@ -19,7 +19,7 @@ class PhinmaedSchools : Fragment() {
         _binding = FragmentPhinmaedSchoolsBinding.inflate(inflater, container, false)
 
         binding.upang.setOnClickListener {
-            startActivity(Intent(requireContext(), LoginActivity::class.java))
+            startActivity(Intent(requireContext(), UpangLoginActivity::class.java))
         }
 
         return binding.root

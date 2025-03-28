@@ -18,6 +18,7 @@
             android:id="@+id/phinmatop"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/phinmaedbanner" />
 
 
@@ -28,7 +29,7 @@
             android:layout_margin="30dp"
             android:text="SCHOOLS"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/phinmaPrimary"
             android:textSize="50sp"
             android:textStyle="bold" />
 
@@ -95,8 +96,37 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/phinma_dagupan"
+                    android:layout_width="168dp"
+                    android:layout_height="136dp"
+                    android:background="@color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/phinmadagupan" />
+
+                <Button
+                    android:id="@+id/phinma_dagupan2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:textAlignment="textStart"
+                    android:text="PHINMA UNIVERSITY OF PANGASINAN"
+
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/upang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,7 +157,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
-                    android:text="PHINMA UNIVERSITY OF PANGASINAN"
+                    android:text="PHINMA UPANG COLLEGE URDANETA"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:clickable="false"

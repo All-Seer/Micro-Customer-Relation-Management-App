@@ -23,10 +23,6 @@
                 <item
                     android:id="@+id/itemSchoolEvents"
                     android:title="School Event Page"/>
-
-                <item
-                    android:id="@+id/itemSchoolCalendar"
-                    android:title="Calendar Page"/>
             </group>
         </menu>
     </item>
@@ -36,6 +32,7 @@
             <group
                 android:id="@+id/group2"
                 android:checkableBehavior="single">
+
                 <item
                     android:id="@+id/itemSchoolManual"
                     android:title="School Manual Page"/>

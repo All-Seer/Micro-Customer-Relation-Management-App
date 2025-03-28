@@ -54,7 +54,7 @@
     <string name="etPass">Enter Password</string>
     <string name="btSign">SIGN IN</string>
     <string name="tvPass">Password</string>
-    <string name="tvUser">Username</string>
+    <string name="tvUser">Email</string>
 
     <string name="ModFlex1">• A combination of studying in school and studying at home.</string>
     <string name="ModFlex2">• 2 days face-to-face and 4 days remote learning.</string>
@@ -134,6 +134,11 @@
     <string name="conduct4">PEN Student Code of Conduct</string>
     <string name="conduct5">Together with the PEN Student\'s Right is the PEN Student\'s responsibilities to: \n\n<b>1</b>. live up to the standards of academic excellence and integrity. \n\n<b>2</b>. live and work according to the PEN Values.</string>
     <string name="structure">ORGANIZATIONAL STRUCTURE</string>
+    <string name="register">New User? <b><u>Register now</u></b></string>
+    <string name="login">Already have an account? <b><u>Login</u></b></string>
+    <string name="title_activity_multimedia_compose">MultimediaCompose</string>
+    <string name="about_description">PHINMA Education seeks to provide quality tertiary education to underserved Filipino youth. Our various learning strategies and interventions equip our students with professional and core work skills to attain gainful employment, whether or not they graduate. By knowing who our students are and where they come from, we are able to tailor our programs to what they want to achieve. We are guided by the following core values:</string>
+    <string name="about_phinma_companies">The PHINMA Group seeks to provide the essentials for a dignified life for every Filipino family through our tradition of professional and effective management in various industries. We currently have investments in education, property development, hospitality, and construction materials.\n\n\n\n Our competitiveness and professionalism help give communities, both in and out of the Philippines, improved access to the essentials of a dignified life.\n\n\n\n The PHINMA group demonstrates that private businesses can serve both the needs of society and its shareholders.</string>
 
 
 </resources>

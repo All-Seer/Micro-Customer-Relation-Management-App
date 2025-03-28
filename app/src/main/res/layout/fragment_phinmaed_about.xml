@@ -1,14 +1,554 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PhinmaedAbout">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:background="@drawable/about_header"
+            android:gravity="center"
+            android:text="ABOUT PHINMA EDUCATION"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-</FrameLayout>
+        <VideoView
+            android:layout_margin="20dp"
+            android:id="@+id/Video"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VALUES"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_description"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:textAlignment="center"/>
+
+        <HorizontalScrollView
+            android:layout_marginTop="20dp"
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="16dp">
+
+            <LinearLayout
+                android:id="@+id/carouselContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:text="OUR TIMELINE"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="3dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp"
+                android:text="2004"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ARAULLO UNIVERSITY (PHINMA AU)"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA Education acquired PHINMA AU in Cabanatuan City, Nueva Ecija as its first venture into the education industry. It is now a major educational institution that provides basic, tertiary, and professional education."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp"
+                android:text="2005"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CAGAYAN DE ORO COLLEGE (PHINMA COC)"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA COC was acquired to make quality education accessible to students from all walks of life in Mindanao, especially Misamis Oriental, Camiguin, and Bukidnon."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:padding="3dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp"
+                android:text="2009"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UNIVERSITY OF ILOILO (PHINMA UI)"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="The historic PHINMA UI was acquired by PHINMA Education and now continues its tradition of quality learning toward national development."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UNIVERSITY OF PANGASINAN (PHINMA UPANG))"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="The historic PHINMA UI was acquired by PHINMA Education and now continues its tradition of quality learning toward national development."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:text="2012"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA COC PUERTO CAMPUS"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA COC opened its second campus in Barangay Puerto, Cagayan de Oro"
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:text="2014"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA AU SOUTH CAMPUS"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA AU opened its South Campus to cater to students in the southern part of Nueva Ecija."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10 YEARS IN EDUCATION"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA Education celebrated its 10th year anniversary with four schools and six campuses."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:text="2015"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA UPANG URDANETA CAMPUS"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA UPang opened its campus to students in Urdaneta City and other eastern towns."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SOUTHWESTERN UNIVERSITY (SWU)"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA SWU was acquired and its affiliate, Sacred Heart Hospital, became Southwestern University Medical Center (SWU Med).."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA EDUCATION HOLDINGS, INC. (PEHI)"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA Education Holdings, Inc. (PEHI) was incorporated in the Philippines and registered with the SEC on August 28, 2015 to invest in, purchase, acquire, own, hold, use, sell, assign, transfer, mortgage, pledge, exchange, dispose of real and personal property of every kind and description, including shares of stock and other property of educational institutions. It now holds all PHINMA Education institutions."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:text="2016"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA TRAINING CENTER (PTC) MYANMAR"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA Saytanar Education Ltd. opened PTC in Yangon in 2016 in partnership with Victoria Hospital, one of Myanmar’s leading private hospitals. It offered courses on Child Caregiving, Elderly Caregiving, and Special Care Assistance. Operations ceased in May 2020."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:text="2017"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SAINT JUDE COLLEGE (PHINMA SJC)"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA SJC was acquired as the first PHINMA Education school in Metro Manila."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:text="2019"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REPUBLICAN COLLEGE (PHINMA RC)"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA Republican College, Inc. (RC) was acquired as the second PHINMA Education school in Metro Manila."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PT IND PHIL MANAGEMENT (IPM) INDONESIA"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PEHI entered into a joint venture agreement with Tripersada Global Management for the establishment of IPM in 2019. It oversees tertiary institutions for Yayasan Triputra Persada Horizon Education, the first of which is located in Karawang, West Java, Indonesia."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15 YEARS IN EDUCATION"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA Education celebrated its 15th year anniversary with seven schools across the country."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:padding="3dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:text="2020"
+            android:textAlignment="center"
+            android:textColor="#009688"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHINMA RIZAL COLLEGE OF LAGUNA (PHINMA RCL)"
+                android:textSize="13sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHINMA Education acquired PHINMA Rizal College of Laguna in June of 2020 as part of the planned Laguna network of schools."
+                android:textColor="@color/black"
+                android:textSize="8sp" />
+        </LinearLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:text="2021"
+                android:textAlignment="center"
+                android:textColor="#009688"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA AU SAN JOSE CAMPUS"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TIn 2021, the San Jose campus of PHINMA AU was officially opened."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA UNION COLLEGE OF LAGUNA (PHINMA UCL)"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHINMA Education acquired PHINMA Union College of Laguna in May 2021 as the second school in the Laguna network of schools."
+                    android:textSize="8sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Philippine Investment Management or PHINMA began as an investment firm in 1956. It has now grown to become one of the most prestigious and reputable conglomerates in the country: the PHINMA Group of Companies"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/about_phinma_companies"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="10dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="50dp"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -2,60 +2,104 @@ package com.example.phinmaedapp
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.HorizontalScrollView
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
+import android.widget.VideoView
 import androidx.fragment.app.Fragment
+import com.google.android.material.imageview.ShapeableImageView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [PhinmaedAbout.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PhinmaedAbout : Fragment(R.layout.fragment_phinmaed_about) {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val carouselItems = listOf(
+        CarouselItem(R.drawable.integrity, "INTEGRITY"),
+        CarouselItem(R.drawable.competence, "COMPETENCE"),
+        CarouselItem(R.drawable.commitment, "COMMITMENT"),
+        CarouselItem(R.drawable.professionalism, "PROFESSIONALISM"),
+        CarouselItem(R.drawable.teamwork, "TEAMWORK"),
+        CarouselItem(R.drawable.openness, "OPENNESS"),
+        CarouselItem(R.drawable.love_of_country, "LOVE OF COUNTRY")
+    )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    data class CarouselItem(val imageRes: Int, val title: String)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupVideoPlayer(view)
+        setupCarousel(view)
+        setupSnapBehavior(view)
+    }
+
+    private fun setupVideoPlayer(view: View) {
+        val videoView = view.findViewById<VideoView>(R.id.Video)
+        val videoPath = "android.resource://" + requireContext().packageName + "/" + R.raw.phinmaaboutvideo
+
+        videoView.setVideoPath(videoPath)
+        videoView.setOnPreparedListener { mp ->
+            mp.isLooping = true
+            mp.start()
+        }
+
+        videoView.setOnErrorListener { mp, what, extra ->
+            Toast.makeText(context, "Error playing video", Toast.LENGTH_SHORT).show()
+            true
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_phinmaed_about, container, false)
+    private fun setupCarousel(view: View) {
+        val container = view.findViewById<LinearLayout>(R.id.carouselContainer)
+
+        carouselItems.forEach { item ->
+            val itemView = LayoutInflater.from(context)
+                .inflate(R.layout.item_carousel, container, false)
+
+            itemView.findViewById<ShapeableImageView>(R.id.itemImage).apply {
+                setImageResource(item.imageRes)
+                elevation = 4f
+            }
+
+            itemView.findViewById<TextView>(R.id.itemText).text = item.title
+
+            itemView.setOnClickListener {
+                Toast.makeText(context, "PHINMA Value: ${item.title}", Toast.LENGTH_SHORT).show()
+            }
+
+            container.addView(itemView)
+        }
     }
 
+    private fun setupSnapBehavior(view: View) {
+        val scrollView = view.findViewById<HorizontalScrollView>(R.id.horizontalScrollView)
 
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PhinmaedAbout.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PhinmaedAbout().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        scrollView.setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_UP -> {
+                    snapToNearestItem(view)
+                    false
                 }
+                else -> false
             }
+        }
+    }
+
+    private fun snapToNearestItem(view: View) {
+        val scrollView = view.findViewById<HorizontalScrollView>(R.id.horizontalScrollView)
+        val container = view.findViewById<LinearLayout>(R.id.carouselContainer)
+
+        if (container.childCount == 0) return
+
+        val firstChild = container.getChildAt(0)
+        val itemWidth = firstChild.width +
+                (firstChild.layoutParams as ViewGroup.MarginLayoutParams).marginEnd
+
+        val scrollX = scrollView.scrollX
+        val nearestItem = (scrollX + itemWidth / 2) / itemWidth
+        val targetScroll = nearestItem.coerceIn(0, carouselItems.size - 1) * itemWidth
+
+        scrollView.smoothScrollTo(targetScroll, 0)
     }
 }
