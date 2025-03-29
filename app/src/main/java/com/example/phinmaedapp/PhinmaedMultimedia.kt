@@ -119,6 +119,41 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
                 thumbnail = R.drawable.upangteacher,
                 duration = "0:31"
             ),
+            VideoItem(
+                id = "11",
+                title = "UPANG Campus Experience",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upangcampusexp}",
+                thumbnail = R.drawable.upangcampusexp,
+                duration = "0:31"
+            ),
+            VideoItem(
+                id = "12",
+                title = "Kasama Mo Ang PHINAMA ED",
+                url = "android.resource://${requireContext().packageName}/${R.raw.kasamamophinmaed}",
+                thumbnail = R.drawable.kasamamophinmaed,
+                duration = "3:11"
+            ),
+            VideoItem(
+                id = "13",
+                title = "Quality Criminology Program",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upangbscrim}",
+                thumbnail = R.drawable.upangbscrim,
+                duration = "0:27"
+            ),
+            VideoItem(
+                id = "14",
+                title = "PHINMA UPang Alumni",
+                url = "android.resource://${requireContext().packageName}/${R.raw.phinmaupangalumni}",
+                thumbnail = R.drawable.phinmaupangalumni,
+                duration = "2:34"
+            ),
+            VideoItem(
+                id = "15",
+                title = "Student Special Program",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upangssp}",
+                thumbnail = R.drawable.upangssp,
+                duration = "2:04"
+            ),
 
 
         )
