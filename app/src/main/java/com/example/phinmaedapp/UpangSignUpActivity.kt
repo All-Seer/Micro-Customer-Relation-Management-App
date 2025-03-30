@@ -2,13 +2,13 @@ package com.example.phinmaedapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
@@ -18,94 +18,136 @@ import com.google.firebase.firestore.FirebaseFirestore
 class UpangSignUpActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_upang_sign_up)
 
-
         auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
 
+        setupClickListeners()
+    }
 
-        val btSignUp = findViewById<MaterialButton>(R.id.btSignin)
-        btSignUp.setOnClickListener {
-            val email = findViewById<TextInputEditText>(R.id.etStudUsername).text.toString()
-            val password = findViewById<TextInputEditText>(R.id.etStudPassword).text.toString()
-            val confirmPassword = findViewById<TextInputEditText>(R.id.etStudConfirmPassword).text.toString()
+    private fun setupClickListeners() {
+        findViewById<MaterialButton>(R.id.btSignin).setOnClickListener {
+            val email = findViewById<TextInputEditText>(R.id.etStudUsername).text.toString().trim()
+            val password = findViewById<TextInputEditText>(R.id.etStudPassword).text.toString().trim()
+            val confirmPassword = findViewById<TextInputEditText>(R.id.etStudConfirmPassword).text.toString().trim()
 
             if (validateInput(email, password, confirmPassword)) {
                 signUp(email, password)
             }
         }
 
-        val tvLogin = findViewById<TextView>(R.id.tvLogin)
-        tvLogin.setOnClickListener {
-            startActivity(Intent(this, UpangLoginActivity::class.java))
+        findViewById<TextView>(R.id.tvLogin).setOnClickListener {
+            navigateToLogin()
         }
     }
 
     private fun signUp(email: String, password: String) {
+        showLoading(true)
         auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
+            .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // Sign-up success
-                    val user = auth.currentUser
-                    val userId = user?.uid ?: ""
-
-                    // Save user details to Firestore
-                    saveUserDetails(userId, email)
-
-                    Snackbar.make(findViewById(R.id.rootlayout), "Sign-up successful!", Snackbar.LENGTH_SHORT).show()
-                    // Navigate to the main activity
-                    startActivity(Intent(this, UpangMainActivity::class.java))
-                    finish() // Close the sign-up activity
+                    sendVerificationEmail(email)
                 } else {
-                    // Sign-up failed
-                    val errorMessage = when (task.exception) {
-                        is FirebaseAuthUserCollisionException -> "Email already in use."
-                        is FirebaseAuthWeakPasswordException -> "Password is too weak."
-                        else -> "Sign-up failed: ${task.exception?.message}"
-                    }
-                    Snackbar.make(findViewById(R.id.rootlayout), errorMessage, Snackbar.LENGTH_SHORT).show()
+                    showLoading(false)
+                    handleSignUpError(task.exception)
                 }
             }
     }
 
-    private fun saveUserDetails(userId: String, email: String) {
-        val db = FirebaseFirestore.getInstance()
-        val user = hashMapOf(
-            "email" to email,
-            "createdAt" to FieldValue.serverTimestamp() // Optional: Add a timestamp
-        )
+    private fun sendVerificationEmail(email: String) {
+        val user = auth.currentUser
+        val actionCodeSettings = ActionCodeSettings.newBuilder()
+            .setUrl("https://phinmaedapp.firebaseapp.com/__/auth/action")
+            .setAndroidPackageName(
+                packageName,
+                true, // Install if not available
+                null  // Minimum version
+            )
+            .setHandleCodeInApp(true)
+            .build()
 
+        user?.sendEmailVerification(actionCodeSettings)
+            ?.addOnCompleteListener { task ->
+                showLoading(false)
+                if (task.isSuccessful) {
+                    saveUserAndNavigate(user.uid, email)
+                } else {
+                    user.delete().addOnCompleteListener {
+                        showError("Failed to send verification: ${task.exception?.message}")
+                    }
+                }
+            } ?: showError("User creation failed")
+    }
+
+    private fun saveUserAndNavigate(userId: String, email: String) {
         db.collection("users").document(userId)
-            .set(user)
-            .addOnSuccessListener {
-                Log.d("Firestore", "User details saved successfully")
-            }
-            .addOnFailureListener { e ->
-                Log.e("Firestore", "Error saving user details", e)
+            .set(createUserData(email))
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    navigateToVerification(email)
+                } else {
+                    showError("Failed to save user data")
+                }
             }
     }
 
+    private fun createUserData(email: String) = hashMapOf(
+        "email" to email,
+        "verified" to false,
+        "createdAt" to FieldValue.serverTimestamp()
+    )
+
+    private fun navigateToVerification(email: String) {
+        startActivity(Intent(this, EmailVerificationActivity::class.java).apply {
+            putExtra("email", email)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        })
+        finish()
+    }
+
+    private fun navigateToLogin() {
+        startActivity(Intent(this, UpangLoginActivity::class.java))
+        finish()
+    }
+
+    private fun handleSignUpError(exception: Exception?) {
+        val error = when (exception) {
+            is FirebaseAuthUserCollisionException -> "Email already registered"
+            is FirebaseAuthWeakPasswordException -> "Password must be 6+ characters"
+            else -> "Signup failed: ${exception?.message}"
+        }
+        showError(error)
+    }
+
     private fun validateInput(email: String, password: String, confirmPassword: String): Boolean {
-
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Snackbar.make(findViewById(R.id.rootlayout), "Invalid email address", Snackbar.LENGTH_SHORT).show()
-            return false
+        return when {
+            !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                showError("Invalid email format")
+                false
+            }
+            password.length < 6 -> {
+                showError("Password must be 6+ characters")
+                false
+            }
+            password != confirmPassword -> {
+                showError("Passwords don't match")
+                false
+            }
+            else -> true
         }
+    }
 
-        if (password.length < 6) {
-            Snackbar.make(findViewById(R.id.rootlayout), "Password must be at least 6 characters", Snackbar.LENGTH_SHORT).show()
-            return false
-        }
+    private fun showLoading(show: Boolean) {
+        // Implement your loading indicator
+    }
 
-        if (password != confirmPassword) {
-            Snackbar.make(findViewById(R.id.rootlayout), "Passwords do not match", Snackbar.LENGTH_SHORT).show()
-            return false
-        }
-
-        return true
+    private fun showError(message: String) {
+        Snackbar.make(findViewById(R.id.rootlayout), message, Snackbar.LENGTH_LONG).show()
     }
 }

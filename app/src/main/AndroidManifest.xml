@@ -20,6 +20,9 @@
         tools:replace="android:label,android:theme,android:icon,android:roundIcon"
         tools:targetApi="31">
         <activity
+            android:name=".EmailVerificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".MultimediaCompose"
             android:exported="false"
             android:label="@string/title_activity_multimedia_compose"
@@ -32,6 +35,8 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -66,6 +71,14 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Handle Firebase's default domain -->
+                <data android:scheme="https"
+                    android:host="phinmaedapp.firebaseapp.com"
+                    android:pathPrefix="/__/auth/action"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
