@@ -27,6 +27,14 @@ class EmailVerificationActivity : AppCompatActivity() {
         // Handle both direct opens and link clicks
         handleIncomingLink(intent.data)
         setupUI()
+
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user?.email == "admin@admin.com") {
+            // Skip verification for admin
+            startActivity(Intent(this, UpangMainActivity::class.java))
+            finish()
+            return
+        }
     }
 
     override fun onNewIntent(intent: Intent) {

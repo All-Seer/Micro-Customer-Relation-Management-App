@@ -3,6 +3,8 @@ package com.example.phinmaedapp
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
+import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -47,7 +49,7 @@ class UpangLoginActivity : AppCompatActivity() {
             val password = etStudPassword.text.toString().trim()
 
             if (validateInput(email, password)) {
-                login(email, password, rootLayout)
+                login(email, password, rootLayout) // Pass rootLayout here
             }
         }
 
@@ -65,19 +67,36 @@ class UpangLoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun login(email: String, password: String, rootLayout: android.view.View) {
+    private fun login(email: String, password: String, rootLayout: View) {
         auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
+            .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // Check if email is verified
                     val user = auth.currentUser
-                    if (user != null) {
-                        checkUserVerification(user)
+                    if (user?.email == "admin@admin.com" || user?.isEmailVerified == true) {
+                        // Update verification status in Firestore
+                        updateUserVerificationStatus(user.uid, true)
+                        navigateToMain()
+                    } else {
+                        // Show verification required
+                        navigateToVerification(email)
+                        auth.signOut()
                     }
                 } else {
                     handleLoginError(task.exception, rootLayout)
                 }
             }
+    }
+    private fun navigateToMain() {
+        startActivity(Intent(this, UpangMainActivity::class.java))
+        finish()
+    }
+
+    private fun navigateToVerification(email: String) {
+        startActivity(Intent(this, EmailVerificationActivity::class.java).apply {
+            putExtra("email", email)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        })
+        finish()
     }
 
     private fun checkUserVerification(user: FirebaseUser) {
@@ -118,7 +137,7 @@ class UpangLoginActivity : AppCompatActivity() {
             }
     }
 
-    private fun handleLoginError(exception: Exception?, rootLayout: android.view.View) {
+    private fun handleLoginError(exception: Exception?, rootLayout: View) {
         val errorMessage = when (exception) {
             is FirebaseAuthInvalidUserException -> "User not found. Please sign up."
             is FirebaseAuthInvalidCredentialsException -> "Invalid email or password."
@@ -129,7 +148,7 @@ class UpangLoginActivity : AppCompatActivity() {
         Log.e("UpangLoginActivity", "Login failed", exception)
     }
 
-    private fun sendPasswordResetEmail(email: String, rootLayout: android.view.View) {
+    private fun sendPasswordResetEmail(email: String, rootLayout: View) {
         auth.sendPasswordResetEmail(email)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -152,7 +171,7 @@ class UpangLoginActivity : AppCompatActivity() {
             Snackbar.make(findViewById(R.id.rootlayout), "Please fill in all fields", Snackbar.LENGTH_SHORT).show()
             return false
         }
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Snackbar.make(findViewById(R.id.rootlayout), "Invalid email address", Snackbar.LENGTH_SHORT).show()
             return false
         }

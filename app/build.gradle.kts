@@ -60,13 +60,11 @@ dependencies {
     implementation(libs.expandablelayout)
     implementation(libs.androidx.ui.text.android)
     implementation(libs.android.pdf.viewer)
-    implementation(libs.firebase.database)
-    implementation(libs.firebase.auth)
+
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
-    implementation(libs.firebase.firestore)
-    implementation(libs.firebase.messaging)
+
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -77,6 +75,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.circleimageview)
     implementation(libs.secrets.gradle.plugin)
+    implementation ("androidx.recyclerview:recyclerview:1.4.0")
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation ("androidx.fragment:fragment-ktx:1.8.6")
 
 
 
@@ -84,6 +85,10 @@ dependencies {
     implementation (libs.androidx.ui)
     implementation (libs.androidx.media3.exoplayer)
     implementation (libs.androidx.media3.ui)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.messaging)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.auth)
 
     implementation (libs.androidx.material3)
     implementation (libs.material.calendar.view)

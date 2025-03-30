@@ -2,47 +2,53 @@ package com.example.phinmaedapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
+import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.button.MaterialButton
+import com.example.phinmaedapp.databinding.ActivityUpangSignUpBinding
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class UpangSignUpActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityUpangSignUpBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_upang_sign_up)
+        binding = ActivityUpangSignUpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        auth = FirebaseAuth.getInstance()
-        db = FirebaseFirestore.getInstance()
+        auth = Firebase.auth
+        db = Firebase.firestore
 
         setupClickListeners()
     }
 
     private fun setupClickListeners() {
-        findViewById<MaterialButton>(R.id.btSignin).setOnClickListener {
-            val email = findViewById<TextInputEditText>(R.id.etStudUsername).text.toString().trim()
-            val password = findViewById<TextInputEditText>(R.id.etStudPassword).text.toString().trim()
-            val confirmPassword = findViewById<TextInputEditText>(R.id.etStudConfirmPassword).text.toString().trim()
+        binding.btSignin.setOnClickListener {
+            val email = binding.etStudUsername.text.toString().trim()
+            val password = binding.etStudPassword.text.toString().trim()
+            val confirmPassword = binding.etStudConfirmPassword.text.toString().trim()
 
             if (validateInput(email, password, confirmPassword)) {
                 signUp(email, password)
             }
         }
 
-        findViewById<TextView>(R.id.tvLogin).setOnClickListener {
+        binding.tvLogin.setOnClickListener {
             navigateToLogin()
         }
     }
@@ -52,7 +58,14 @@ class UpangSignUpActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    sendVerificationEmail(email)
+                    val user = auth.currentUser
+                    if (user?.email != "admin@admin.com") {
+                        sendVerificationEmail(user)
+                    } else {
+                        // Skip verification for admin
+                        saveUserDetails(user.uid, email, true)
+                        navigateToMain()
+                    }
                 } else {
                     showLoading(false)
                     handleSignUpError(task.exception)
@@ -60,14 +73,13 @@ class UpangSignUpActivity : AppCompatActivity() {
             }
     }
 
-    private fun sendVerificationEmail(email: String) {
-        val user = auth.currentUser
+    private fun sendVerificationEmail(user: FirebaseUser?) {
         val actionCodeSettings = ActionCodeSettings.newBuilder()
             .setUrl("https://phinmaedapp.firebaseapp.com/__/auth/action")
             .setAndroidPackageName(
                 packageName,
-                true, // Install if not available
-                null  // Minimum version
+                true,
+                null
             )
             .setHandleCodeInApp(true)
             .build()
@@ -76,32 +88,29 @@ class UpangSignUpActivity : AppCompatActivity() {
             ?.addOnCompleteListener { task ->
                 showLoading(false)
                 if (task.isSuccessful) {
-                    saveUserAndNavigate(user.uid, email)
+                    saveUserDetails(user.uid, user.email ?: "", false)
+                    navigateToVerification(user.email ?: "")
                 } else {
-                    user.delete().addOnCompleteListener {
-                        showError("Failed to send verification: ${task.exception?.message}")
-                    }
-                }
-            } ?: showError("User creation failed")
-    }
-
-    private fun saveUserAndNavigate(userId: String, email: String) {
-        db.collection("users").document(userId)
-            .set(createUserData(email))
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    navigateToVerification(email)
-                } else {
-                    showError("Failed to save user data")
+                    user.delete()
+                    showError("Failed to send verification email")
                 }
             }
     }
 
-    private fun createUserData(email: String) = hashMapOf(
-        "email" to email,
-        "verified" to false,
-        "createdAt" to FieldValue.serverTimestamp()
-    )
+    private fun saveUserDetails(userId: String, email: String, isVerified: Boolean) {
+        val userData = hashMapOf(
+            "email" to email,
+            "verified" to isVerified,
+            "isAdmin" to (email == "admin@admin.com"),
+            "createdAt" to FieldValue.serverTimestamp()
+        )
+
+        db.collection("users").document(userId)
+            .set(userData)
+            .addOnFailureListener { e ->
+                Log.e("SignUp", "Error saving user data", e)
+            }
+    }
 
     private fun navigateToVerification(email: String) {
         startActivity(Intent(this, EmailVerificationActivity::class.java).apply {
@@ -113,6 +122,11 @@ class UpangSignUpActivity : AppCompatActivity() {
 
     private fun navigateToLogin() {
         startActivity(Intent(this, UpangLoginActivity::class.java))
+        finish()
+    }
+
+    private fun navigateToMain() {
+        startActivity(Intent(this, UpangMainActivity::class.java))
         finish()
     }
 
@@ -145,9 +159,11 @@ class UpangSignUpActivity : AppCompatActivity() {
 
     private fun showLoading(show: Boolean) {
         // Implement your loading indicator
+        binding.progressBar.visibility = if (show) View.VISIBLE else View.GONE
+        binding.btSignin.isEnabled = !show
     }
 
     private fun showError(message: String) {
-        Snackbar.make(findViewById(R.id.rootlayout), message, Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.root, message, Snackbar.LENGTH_LONG).show()
     }
 }
