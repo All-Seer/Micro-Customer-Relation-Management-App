@@ -14,8 +14,8 @@
         <DialogSelection />
       </SelectionState>
       <SelectionState runConfigName="Micro-Customer-Relation-Management-App.PhinmaEdApp.app">
-        <option name="selectionMode" value="DIALOG" />
-        <DropdownSelection timestamp="2025-03-30T16:37:51.727584400Z">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2025-04-01T11:12:59.145670400Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="PhysicalDevice" identifier="serial=QCGU65GAJJL7ZPLB" />

@@ -10,7 +10,8 @@ plugins {
 android {
     namespace = "com.example.phinmaedapp"
     compileSdk = 35
-    buildFeatures{
+    buildFeatures {
+        buildConfig = true
         viewBinding = true
         compose = true
     }
@@ -45,7 +46,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
@@ -73,25 +73,25 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation (libs.circleimageview)
+    implementation(libs.circleimageview)
     implementation(libs.secrets.gradle.plugin)
-    implementation ("androidx.recyclerview:recyclerview:1.4.0")
-    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    implementation ("androidx.fragment:fragment-ktx:1.8.6")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("androidx.fragment:fragment-ktx:1.8.6")
 
 
 
     implementation(libs.androidx.work.runtime.ktx)
-    implementation (libs.androidx.ui)
-    implementation (libs.androidx.media3.exoplayer)
-    implementation (libs.androidx.media3.ui)
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.messaging)
     implementation(libs.firebase.database)
     implementation(libs.firebase.auth)
 
-    implementation (libs.androidx.material3)
-    implementation (libs.material.calendar.view)
+    implementation(libs.androidx.material3)
+    implementation(libs.material.calendar.view)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)

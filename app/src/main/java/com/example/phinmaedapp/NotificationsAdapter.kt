@@ -54,7 +54,7 @@ class NotificationsAdapter : ListAdapter<AppNotification, NotificationsAdapter.N
                 if (notification.isRead) {
                     itemView.setBackgroundColor("#FFFFFF".toColorInt())
                 } else {
-                    itemView.setBackgroundColor("#FFDBBB".toColorInt())
+                    itemView.setBackgroundColor("#bbc8af".toColorInt())
                 }
             }
         }

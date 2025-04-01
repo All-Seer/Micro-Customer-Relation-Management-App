@@ -73,18 +73,22 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
+            <!-- LAUNCHER Intent Filter (for app icon) -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
+            <!-- Deep Link Intent Filter (for Firebase Auth) -->
+            <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Handle Firebase's default domain -->
-                <data android:scheme="https"
+                <data
+                    android:scheme="https"
                     android:host="phinmaedapp.firebaseapp.com"
                     android:pathPrefix="/__/auth/action"/>
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
