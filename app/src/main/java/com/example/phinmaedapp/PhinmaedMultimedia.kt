@@ -159,6 +159,38 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
                 thumbnail = R.drawable.upangssp,
                 duration = "2:04"
             ),
+            VideoItem(
+                id = "16",
+                title = "100th FDC",
+                url = "android.resource://${requireContext().packageName}/${R.raw.fdc}",
+                thumbnail = R.drawable.fdc,
+                duration = "0:57"
+            ),
+            VideoItem(
+                id = "17",
+                title = "May Kasama Ka",
+                url = "android.resource://${requireContext().packageName}/${R.raw.maykasamaka}",
+                thumbnail = R.drawable.maykasamaka,
+                duration = "4:25"
+            ),
+            VideoItem(
+                id = "18",
+                title = "BSIT vs BSCE",
+                url = "android.resource://${requireContext().packageName}/${R.raw.upangvid1}",
+                thumbnail = R.drawable.upangvid1,
+                duration = "1:45"
+            ),
+            VideoItem(
+                id = "19",
+                title = "Program War",
+                url = "android.resource://${requireContext().packageName}/${R.raw.programwar}",
+                thumbnail = R.drawable.programawar,
+                duration = "0:13"
+            ),
+
+
+
+
         )
 
         binding.composeView.setContent {
