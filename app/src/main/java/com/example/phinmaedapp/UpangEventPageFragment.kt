@@ -58,6 +58,14 @@ class UpangEventPageFragment : Fragment() {
             }
         })
 
+        binding.btnEvents.setOnClickListener {
+            if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+            } else {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
+
 
         calendarView = binding.calendar
 

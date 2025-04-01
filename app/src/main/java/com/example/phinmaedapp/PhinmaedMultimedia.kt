@@ -2,6 +2,7 @@ package com.example.phinmaedapp
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -206,7 +207,7 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
                     parentFragmentManager.findFragmentByTag("VideoPlayerDialog")?.let {
                         (it as? VideoPlayerDialogFragment)?.dismiss()
                     }
-
+                    Log.d("ThemeDebug", "Background color: $MaterialTheme")
                     VideoPlayerDialogFragment.newInstance(video.url)
                         .show(parentFragmentManager, "VideoPlayerDialog")
                 }
@@ -229,11 +230,13 @@ fun VideoListScreen(
     onVideoSelected: (VideoItem) -> Unit
 ) {
     Surface(
-        modifier = Modifier.fillMaxSize(),
-        color = Color.White // Absolute background guarantee
+        modifier = Modifier.fillMaxSize()
+        .background(Color.White),
+        color = Color.White
     ) {
         LazyColumn(
             modifier = Modifier
+                .background(Color.White)
                 .fillMaxSize()
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
@@ -265,6 +268,7 @@ fun VideoListItem(
 ) {
     Card(
         modifier = modifier
+
             .background(Color.White)
             .fillMaxWidth()
             .clickable { onVideoSelected(video) },

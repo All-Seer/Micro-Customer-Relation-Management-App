@@ -32,6 +32,13 @@
             app:type="one_day_picker" />
 
     </androidx.cardview.widget.CardView>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEvents"
+            android:layout_marginTop="13dp"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:text="See The List Of All Events"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/bottomsheet"
@@ -39,14 +46,16 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        app:behavior_peekHeight="20dp"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        >
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="20dp"
-            android:backgroundTint="@color/phinmaSecondary"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/grey"
             app:cardCornerRadius="20dp">
 
         <ScrollView
@@ -70,7 +79,9 @@
                     android:id="@+id/cvJanuaryActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -166,7 +177,9 @@
                     android:id="@+id/cvFebruaryActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -262,7 +275,9 @@
                     android:id="@+id/cvMarchActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -358,7 +373,9 @@
                     android:id="@+id/cvAprilActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -430,7 +447,9 @@
                     android:id="@+id/cvMayActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -479,7 +498,9 @@
                     android:id="@+id/cvJuneActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -538,7 +559,9 @@
                     android:id="@+id/cvJulyActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -641,7 +664,9 @@
                     android:id="@+id/cvAugustActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -744,7 +769,9 @@
                     android:id="@+id/cvSeptemberActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -847,7 +874,9 @@
                     android:id="@+id/cvOctoberActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -944,7 +973,9 @@
                     android:id="@+id/cvNovemberActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -1016,7 +1047,9 @@
                     android:id="@+id/cvDecemberActivities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
@@ -1079,7 +1112,7 @@
 
             </LinearLayout>
         </ScrollView>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
 

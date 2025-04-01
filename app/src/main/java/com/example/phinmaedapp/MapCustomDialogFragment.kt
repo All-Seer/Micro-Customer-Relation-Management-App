@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.Dialog
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.DialogFragment
 
 class MapCustomDialogFragment : DialogFragment() {
@@ -23,7 +23,7 @@ class MapCustomDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))  // Removes the ugly grey bg
+        dialog?.window?.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())  // Removes the ugly grey bg
         return inflater.inflate(R.layout.fragment_map_custom_dialog, container, false)
     }
 

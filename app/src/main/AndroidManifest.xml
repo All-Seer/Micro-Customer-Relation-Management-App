@@ -25,11 +25,7 @@
         <activity
             android:name=".EmailVerificationActivity"
             android:exported="false" />
-        <activity
-            android:name=".MultimediaCompose"
-            android:exported="false"
-            android:label="@string/title_activity_multimedia_compose"
-            android:theme="@style/Theme.PhinmaEdApp" />
+
 
         <service
             android:name=".MyFirebaseMessagingService"

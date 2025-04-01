@@ -4,6 +4,8 @@
         <item name="colorPrimary">@color/phinmaPrimary</item>
         <item name="colorPrimaryDark">@color/phinmaPrimary</item>
         <item name="colorAccent">@color/phinmaPrimary</item>
+        <item name="tint">@color/white</item>
+        <item name="backgroundTint">@color/white</item>
     </style>
 
     <style name="Theme.PhinmaEdApp" parent="Base.Theme.PhinmaEdApp" />
