@@ -73,10 +73,7 @@ class UpangPersonalDetailsFragment : Fragment() {
         return binding.root
     }
 
-    override fun onResume() {
-        super.onResume()
-        (activity as UpangMainActivity).updateActionBarTitle("Personal Details")
-    }
+
 
     private fun savePersonalDetails() {
         val userId = auth.currentUser?.uid ?: run {
@@ -185,5 +182,8 @@ class UpangPersonalDetailsFragment : Fragment() {
         private const val PICK_IMAGE_REQUEST = 1
     }
 
-
+    override fun onResume() {
+        super.onResume()
+        (activity as UpangMainActivity).updateActionBarTitle("Personal Details")
+    }
 }

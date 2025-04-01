@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,17 +27,20 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import com.example.phinmaedapp.databinding.FragmentPhinmaedMultimediaBinding
+import com.example.phinmaedapp.ui.theme.PhinmaEdAppTheme
 
 
 class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
@@ -154,11 +159,15 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
                 thumbnail = R.drawable.upangssp,
                 duration = "2:04"
             ),
-
-
         )
 
         binding.composeView.setContent {
+            PhinmaEdAppTheme {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.White)
+                ){
             VideoListScreen(
                 videos = videos,
                 onVideoSelected = { video ->
@@ -170,6 +179,8 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
                         .show(parentFragmentManager, "VideoPlayerDialog")
                 }
             )
+                }
+            }
         }
         return binding.root
     }
@@ -183,19 +194,33 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
 @Composable
 fun VideoListScreen(
     videos: List<VideoItem>,
-    onVideoSelected: (VideoItem) -> Unit,
-    modifier: Modifier = Modifier
+    onVideoSelected: (VideoItem) -> Unit
 ) {
-    LazyColumn(
-        modifier = modifier.fillMaxSize().padding(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = Color.White // Absolute background guarantee
     ) {
-        items(videos) { video ->
-            VideoListItem(
-                video = video,
-                onVideoSelected = onVideoSelected,
-                modifier = Modifier.fillMaxWidth()
-            )
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            items(videos) { video ->
+                Card(
+                    colors = CardDefaults.cardColors(
+                        containerColor = Color.White
+                    ),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    VideoListItem(
+                        video = video,
+                        onVideoSelected = onVideoSelected,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    // Your existing item content
+                }
+            }
         }
     }
 }
@@ -208,9 +233,11 @@ fun VideoListItem(
 ) {
     Card(
         modifier = modifier
+            .background(Color.White)
             .fillMaxWidth()
             .clickable { onVideoSelected(video) },
         elevation = CardDefaults.cardElevation(4.dp)
+
     ) {
         Row(
             modifier = Modifier

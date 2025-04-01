@@ -18,13 +18,12 @@
             app:layout_constraintEnd_toEndOf="@id/constrainer"
             app:layout_constraintStart_toStartOf="@id/constrainer"
             app:layout_constraintTop_toTopOf="@id/constrainer">
-            <!-- ScrollView child -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Header Section -->
                 <RelativeLayout
                     android:id="@+id/header"
                     android:layout_width="match_parent"

@@ -1,5 +1,6 @@
 package com.example.phinmaedapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -72,6 +73,7 @@ class PhinmaedAbout : Fragment(R.layout.fragment_phinmaed_about) {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun setupSnapBehavior(view: View) {
         val scrollView = view.findViewById<HorizontalScrollView>(R.id.horizontalScrollView)
 

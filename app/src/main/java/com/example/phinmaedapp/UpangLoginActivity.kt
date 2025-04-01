@@ -3,6 +3,8 @@ package com.example.phinmaedapp
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
+import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,10 +16,13 @@ import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 
 class UpangLoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +30,11 @@ class UpangLoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_upang_login)
 
         auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
 
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-
-            startActivity(Intent(this, UpangMainActivity::class.java))
-            finish()
-            return
+        // Check if user is already logged in and verified
+        auth.currentUser?.let { user ->
+            checkUserVerification(user)
         }
 
         val btSignIn = findViewById<MaterialButton>(R.id.btSignin)
@@ -46,9 +49,7 @@ class UpangLoginActivity : AppCompatActivity() {
             val password = etStudPassword.text.toString().trim()
 
             if (validateInput(email, password)) {
-                login(email, password, rootLayout)
-            } else {
-                Snackbar.make(rootLayout, "Please fill in all fields", Snackbar.LENGTH_SHORT).show()
+                login(email, password, rootLayout) // Pass rootLayout here
             }
         }
 
@@ -66,65 +67,111 @@ class UpangLoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun login(email: String, password: String, rootLayout: android.view.View) {
+    private fun login(email: String, password: String, rootLayout: View) {
         auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
+            .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Snackbar.make(rootLayout, "Login successful!", Snackbar.LENGTH_SHORT).show()
-                    startActivity(Intent(this, UpangMainActivity::class.java))
-                    finish()
-                } else {
-                    val exception = task.exception
-                    when (exception) {
-                        is FirebaseAuthInvalidUserException -> {
-                            Snackbar.make(rootLayout, "User not found.", Snackbar.LENGTH_SHORT).show()
-                        }
-                        is FirebaseAuthInvalidCredentialsException -> {
-                            Snackbar.make(rootLayout, "Invalid email or password.", Snackbar.LENGTH_SHORT).show()
-                        }
-                        is FirebaseNetworkException -> {
-                            Snackbar.make(rootLayout, "Network error. Please check your connection.", Snackbar.LENGTH_SHORT).show()
-                        }
-                        else -> {
-                            Snackbar.make(rootLayout, "Login failed: ${exception?.message}", Snackbar.LENGTH_SHORT).show()
-                        }
+                    val user = auth.currentUser
+                    if (user?.email == "admin@admin.com" || user?.isEmailVerified == true) {
+                        // Update verification status in Firestore
+                        updateUserVerificationStatus(user.uid, true)
+                        navigateToMain()
+                    } else {
+                        // Show verification required
+                        navigateToVerification(email)
+                        auth.signOut()
                     }
-                    Log.e("UpangLoginActivity", "Login failed", exception)
+                } else {
+                    handleLoginError(task.exception, rootLayout)
                 }
             }
     }
+    private fun navigateToMain() {
+        startActivity(Intent(this, UpangMainActivity::class.java))
+        finish()
+    }
 
-    private fun sendPasswordResetEmail(email: String, rootLayout: android.view.View) {
+    private fun navigateToVerification(email: String) {
+        startActivity(Intent(this, EmailVerificationActivity::class.java).apply {
+            putExtra("email", email)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        })
+        finish()
+    }
+
+    private fun checkUserVerification(user: FirebaseUser) {
+        user.reload().addOnCompleteListener { reloadTask ->
+            if (reloadTask.isSuccessful) {
+                if (user.isEmailVerified) {
+                    // User is verified, proceed to main activity
+                    updateUserVerificationStatus(user.uid, true)
+                    startActivity(Intent(this, UpangMainActivity::class.java))
+                    finish()
+                } else {
+                    // Email not verified, show verification screen
+                    val intent = Intent(this, EmailVerificationActivity::class.java).apply {
+                        putExtra("email", user.email)
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    }
+                    startActivity(intent)
+                    finish()
+                }
+            } else {
+                Snackbar.make(
+                    findViewById(R.id.rootlayout),
+                    "Error checking verification status: ${reloadTask.exception?.message}",
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
+        }
+    }
+
+    private fun updateUserVerificationStatus(userId: String, isVerified: Boolean) {
+        db.collection("users").document(userId)
+            .update("verified", isVerified)
+            .addOnSuccessListener {
+                Log.d("Firestore", "User verification status updated")
+            }
+            .addOnFailureListener { e ->
+                Log.e("Firestore", "Error updating verification status", e)
+            }
+    }
+
+    private fun handleLoginError(exception: Exception?, rootLayout: View) {
+        val errorMessage = when (exception) {
+            is FirebaseAuthInvalidUserException -> "User not found. Please sign up."
+            is FirebaseAuthInvalidCredentialsException -> "Invalid email or password."
+            is FirebaseNetworkException -> "Network error. Please check your connection."
+            else -> "Login failed: ${exception?.message}"
+        }
+        Snackbar.make(rootLayout, errorMessage, Snackbar.LENGTH_LONG).show()
+        Log.e("UpangLoginActivity", "Login failed", exception)
+    }
+
+    private fun sendPasswordResetEmail(email: String, rootLayout: View) {
         auth.sendPasswordResetEmail(email)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Snackbar.make(rootLayout, "Password reset email sent", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(rootLayout, "Password reset email sent to $email", Snackbar.LENGTH_LONG).show()
                 } else {
-                    val exception = task.exception
-                    when (exception) {
-                        is FirebaseAuthInvalidUserException -> {
-                            Snackbar.make(rootLayout, "User not found.", Snackbar.LENGTH_SHORT).show()
-                        }
-                        is FirebaseAuthInvalidCredentialsException -> {
-                            Snackbar.make(rootLayout, "Invalid email format.", Snackbar.LENGTH_SHORT).show()
-                        }
-                        is FirebaseNetworkException -> {
-                            Snackbar.make(rootLayout, "Network error. Please check your connection.", Snackbar.LENGTH_SHORT).show()
-                        }
-                        else -> {
-                            Snackbar.make(rootLayout, "Failed to send reset email: ${exception?.message}", Snackbar.LENGTH_SHORT).show()
-                        }
+                    val errorMessage = when (task.exception) {
+                        is FirebaseAuthInvalidUserException -> "User not found."
+                        is FirebaseAuthInvalidCredentialsException -> "Invalid email format."
+                        is FirebaseNetworkException -> "Network error. Please check your connection."
+                        else -> "Failed to send reset email: ${task.exception?.message}"
                     }
-                    Log.e("UpangLoginActivity", "Failed to send reset email", exception)
+                    Snackbar.make(rootLayout, errorMessage, Snackbar.LENGTH_LONG).show()
+                    Log.e("UpangLoginActivity", "Failed to send reset email", task.exception)
                 }
             }
     }
 
     private fun validateInput(email: String, password: String): Boolean {
         if (email.isEmpty() || password.isEmpty()) {
+            Snackbar.make(findViewById(R.id.rootlayout), "Please fill in all fields", Snackbar.LENGTH_SHORT).show()
             return false
         }
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Snackbar.make(findViewById(R.id.rootlayout), "Invalid email address", Snackbar.LENGTH_SHORT).show()
             return false
         }

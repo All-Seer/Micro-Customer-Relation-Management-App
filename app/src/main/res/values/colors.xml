@@ -8,6 +8,15 @@
     <color name="lightBg">#fbf6ed</color>
     <color name="phinmaPrimary">#394e25</color>
     <color name="phinmaSecondary">#a98c00</color>
-    <color name="red">#CA0303</color>
+    <color name="red">#F44336</color>
     <color name="transparent">#00000000</color>
+    <color name="primary_color">#6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="hint_color">#BDBDBD</color>
+    <color name="divider_color">#E0E0E0</color>
+    <color name="light_gray_background">#FAFAFA</color>
+    <color name="card_stroke">#E0E0E0</color>
+    <color name="unread_notification_bg">#E3F2FD</color>
 </resources>

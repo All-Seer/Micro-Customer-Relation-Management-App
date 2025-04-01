@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@android:color/white"
     tools:context=".PhinmaedMultimedia">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,6 +13,7 @@
         android:id="@+id/composeView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/hello_blank_fragment"
+        android:background="@android:color/white"/>
 
 </LinearLayout>
