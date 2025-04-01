@@ -86,7 +86,7 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
             ),
             VideoItem(
                 id = "6",
-                title = "How to make Lives Better Through Education",
+                title = "Education Improves Lives",
                 url = "android.resource://${requireContext().packageName}/${R.raw.upang_howtomakelivesbetter}",
                 thumbnail = R.drawable.upang_howtomakelivesbetter,
                 duration = "1:48"
@@ -100,14 +100,14 @@ class PhinmaedMultimedia : Fragment(R.layout.fragment_phinmaed_multimedia) {
             ),
             VideoItem(
                 id = "8",
-                title = "Sa Pangarap Mong Maging Nurse",
+                title = "Pangarap Maging Nurse",
                 url = "android.resource://${requireContext().packageName}/${R.raw.upangnurse}",
                 thumbnail = R.drawable.upangnurse,
                 duration = "0:31"
             ),
             VideoItem(
                 id = "9",
-                title = "Sa Pangarap Mong Maging I.T. Professional",
+                title = "I.T. Pangarap Mo",
                 url = "android.resource://${requireContext().packageName}/${R.raw.upangpangarapit}",
                 thumbnail = R.drawable.upangpangarapit,
                 duration = "0:29"
