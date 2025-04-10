@@ -1,3 +1,1 @@
-TODO :
--Remove PHINMA SIS
--Change to PhinmaEd School Guide
+This is a mobile application for our school project
